@@ -1,7 +1,13 @@
 AllCops:
   TargetRubyVersion: 2.6
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
 Layout/LineLength:
-  Max: 150
+  Max: 80
 Layout/EndOfLine:
   EnforcedStyle: lf
 Style/Documentation:
