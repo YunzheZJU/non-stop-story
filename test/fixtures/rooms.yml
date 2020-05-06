@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+channel_one:
+  room: WQhBCy6usZA
+  platform: youtube
+
+channel_two:
+  room: 21144047
+  platform: bilibili

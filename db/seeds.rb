@@ -7,4 +7,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Article.create(title: 'Hello world', content: 'lorem ipso', slug: 'hello-world')
+Platform.create(platform: 'youtube')
+Platform.create(platform: 'bilibili')
