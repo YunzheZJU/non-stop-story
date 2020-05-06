@@ -2,7 +2,7 @@
 
 class Room < ApplicationRecord
   belongs_to :platform
-  has_many :lives, inverse_of: :room
+  has_many :lives
   validates :platform, presence: true
   validates :room, presence: true
   validate :validate_room_format
