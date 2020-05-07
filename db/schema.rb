@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_164736) do
+ActiveRecord::Schema.define(version: 2020_05_07_173547) do
 
   create_table "archives", force: :cascade do |t|
     t.integer "duration"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_05_07_164736) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "member_id"
+    t.integer "editor_id"
+    t.index ["editor_id"], name: "index_channels_on_editor_id"
     t.index ["member_id"], name: "index_channels_on_member_id"
     t.index ["platform_id"], name: "index_channels_on_platform_id"
   end
@@ -39,6 +41,12 @@ ActiveRecord::Schema.define(version: 2020_05_07_164736) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["live_id"], name: "index_clips_on_live_id"
+  end
+
+  create_table "editors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lives", force: :cascade do |t|
@@ -87,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_164736) do
 
   add_foreign_key "archives", "lives"
   add_foreign_key "archives", "videos"
+  add_foreign_key "channels", "editors"
   add_foreign_key "channels", "members"
   add_foreign_key "channels", "platforms"
   add_foreign_key "clips", "lives"
