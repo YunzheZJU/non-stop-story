@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_173547) do
+ActiveRecord::Schema.define(version: 2020_05_07_180250) do
 
   create_table "archives", force: :cascade do |t|
     t.integer "duration"
@@ -20,6 +20,27 @@ ActiveRecord::Schema.define(version: 2020_05_07_173547) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["live_id"], name: "index_archives_on_live_id"
     t.index ["video_id"], name: "index_archives_on_video_id"
+  end
+
+  create_table "arranges", force: :cascade do |t|
+    t.integer "video_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["video_id"], name: "index_arranges_on_video_id"
+  end
+
+  create_table "arranges_clips", id: false, force: :cascade do |t|
+    t.integer "arrange_id"
+    t.integer "clip_id"
+    t.index ["arrange_id"], name: "index_arranges_clips_on_arrange_id"
+    t.index ["clip_id"], name: "index_arranges_clips_on_clip_id"
+  end
+
+  create_table "arranges_editors", id: false, force: :cascade do |t|
+    t.integer "arrange_id"
+    t.integer "editor_id"
+    t.index ["arrange_id"], name: "index_arranges_editors_on_arrange_id"
+    t.index ["editor_id"], name: "index_arranges_editors_on_editor_id"
   end
 
   create_table "channels", force: :cascade do |t|
@@ -95,6 +116,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_173547) do
 
   add_foreign_key "archives", "lives"
   add_foreign_key "archives", "videos"
+  add_foreign_key "arranges", "videos"
   add_foreign_key "channels", "editors"
   add_foreign_key "channels", "members"
   add_foreign_key "channels", "platforms"

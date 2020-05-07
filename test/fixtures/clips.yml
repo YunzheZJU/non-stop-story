@@ -4,3 +4,4 @@ clip:
   in_time: 0
   out_time: 1500
   live: live_untildawn
+  arranges: arrange

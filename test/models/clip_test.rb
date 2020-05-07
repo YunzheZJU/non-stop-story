@@ -7,11 +7,23 @@ class ClipTest < ActiveSupport::TestCase
     clip = Clip.new(
       in_time: 0,
       out_time: 2000,
-      live: lives(:live_untildawn)
+      live: lives(:live_untildawn),
+      arranges: [arranges(:arrange)]
     )
 
     assert clip.valid?
     assert clip.save
+  end
+
+  test 'should succeed to save optional arranges' do
+    optional_arranges = Clip.new(
+      in_time: 0,
+      out_time: 2000,
+      live: lives(:live_untildawn)
+    )
+
+    assert optional_arranges.valid?
+    assert optional_arranges.save
   end
 
   test 'should fail to save invalid in_time' do
