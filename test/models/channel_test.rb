@@ -4,8 +4,16 @@ require 'test_helper'
 
 class ChannelTest < ActiveSupport::TestCase
   test 'should succeed to save' do
-    youtube = Channel.new channel: 'UC123456', platform: platforms(:youtube)
-    bilibili = Channel.new channel: '123456', platform: platforms(:bilibili)
+    youtube = Channel.new(
+      channel: 'UC123456',
+      platform: platforms(:youtube),
+      member: members(:sakuramiko)
+    )
+    bilibili = Channel.new(
+      channel: '123456',
+      platform: platforms(:bilibili),
+      member: members(:sakuramiko)
+    )
 
     assert youtube.valid?
     assert bilibili.valid?
@@ -13,9 +21,27 @@ class ChannelTest < ActiveSupport::TestCase
     assert bilibili.save
   end
 
+  test 'should succeed to save optional member' do
+    optional_member = Channel.new(
+      channel: 'UC123456',
+      platform: platforms(:youtube)
+    )
+
+    assert optional_member.valid?
+    assert optional_member.save
+  end
+
   test 'should fail to save invalid format' do
-    youtube = Channel.new channel: 'UC123456', platform: platforms(:bilibili)
-    bilibili = Channel.new channel: '123456', platform: platforms(:youtube)
+    youtube = Channel.new(
+      channel: 'UC123456',
+      platform: platforms(:bilibili),
+      member: members(:sakuramiko)
+    )
+    bilibili = Channel.new(
+      channel: '123456',
+      platform: platforms(:youtube),
+      member: members(:sakuramiko)
+    )
 
     assert_not youtube.valid?
     assert_not bilibili.valid?
@@ -24,8 +50,15 @@ class ChannelTest < ActiveSupport::TestCase
   end
 
   test 'should fail to save nil platform' do
-    absent_platform = Channel.new channel: 'UC123456'
-    nil_platform = Channel.new channel: 'UC123456', platform: nil
+    absent_platform = Channel.new(
+      channel: 'UC123456',
+      member: members(:sakuramiko)
+    )
+    nil_platform = Channel.new(
+      channel: 'UC123456',
+      platform: nil,
+      member: members(:sakuramiko)
+    )
 
     assert_not absent_platform.valid?
     assert_not absent_platform.save
