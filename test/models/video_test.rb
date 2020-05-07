@@ -5,12 +5,14 @@ require 'test_helper'
 class VideoTest < ActiveSupport::TestCase
   test 'should succeed to save' do
     youtube = Video.new(
-      video: 'abcdef',
+      title: 'sakurakaze',
+      video: 'WQhBCy6usZA',
       duration: 1000,
       platform: platforms(:youtube)
     )
     bilibili = Video.new(
-      video: 'bv123456',
+      title: 'untildawn',
+      video: 'BV1Va4y1i7sv',
       duration: 1000,
       platform: platforms(:bilibili)
     )
@@ -23,7 +25,8 @@ class VideoTest < ActiveSupport::TestCase
 
   test 'should fail to save invalid format' do
     youtube = Video.new(
-      video: 'abcdef',
+      title: 'sakurakaze',
+      video: 'WQhBCy6usZA',
       duration: 1000,
       platform: platforms(:bilibili)
     )
@@ -33,8 +36,17 @@ class VideoTest < ActiveSupport::TestCase
   end
 
   test 'should fail to save nil platform' do
-    absent_platform = Video.new video: 'abcdef', duration: 1000
-    nil_platform = Video.new video: 'abcdef', duration: 1000, platform: nil
+    absent_platform = Video.new(
+      title: 'sakurakaze',
+      video: 'WQhBCy6usZA',
+      duration: 1000
+    )
+    nil_platform = Video.new(
+      title: 'sakurakaze',
+      video: 'WQhBCy6usZA',
+      duration: 1000,
+      platform: nil
+    )
 
     assert_not absent_platform.valid?
     assert_not absent_platform.save
@@ -44,14 +56,16 @@ class VideoTest < ActiveSupport::TestCase
 
   test 'should fail to save negative duration' do
     zero_duration = Video.new(
-      video: 'abcdef',
+      title: 'sakurakaze',
+      video: 'WQhBCy6usZA',
       duration: 0,
-      platform: platforms(:bilibili)
+      platform: platforms(:youtube)
     )
     negative_duration = Video.new(
-      video: 'abcdef',
+      title: 'sakurakaze',
+      video: 'WQhBCy6usZA',
       duration: -1,
-      platform: platforms(:bilibili)
+      platform: platforms(:youtube)
     )
 
     assert_not zero_duration.valid?

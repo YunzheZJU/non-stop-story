@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_170723) do
+ActiveRecord::Schema.define(version: 2020_05_07_153709) do
 
   create_table "channels", force: :cascade do |t|
     t.string "channel"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_170723) do
     t.integer "platform_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
     t.index ["platform_id"], name: "index_videos_on_platform_id"
   end
 
