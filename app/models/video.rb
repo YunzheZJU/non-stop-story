@@ -2,6 +2,7 @@
 
 class Video < ApplicationRecord
   belongs_to :platform
+  has_one :live
   validates :platform, presence: true
   validates :title, presence: true
   validates :duration, presence: true, numericality: {
