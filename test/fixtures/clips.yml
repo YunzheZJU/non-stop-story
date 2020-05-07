@@ -1,0 +1,6 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+clip:
+  in_time: 0
+  out_time: 1500
+  live: live_untildawn

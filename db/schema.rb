@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_155840) do
+ActiveRecord::Schema.define(version: 2020_05_07_164736) do
 
   create_table "archives", force: :cascade do |t|
     t.integer "duration"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2020_05_07_155840) do
     t.integer "member_id"
     t.index ["member_id"], name: "index_channels_on_member_id"
     t.index ["platform_id"], name: "index_channels_on_platform_id"
+  end
+
+  create_table "clips", force: :cascade do |t|
+    t.integer "in_time"
+    t.integer "out_time"
+    t.integer "live_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["live_id"], name: "index_clips_on_live_id"
   end
 
   create_table "lives", force: :cascade do |t|
@@ -80,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_155840) do
   add_foreign_key "archives", "videos"
   add_foreign_key "channels", "members"
   add_foreign_key "channels", "platforms"
+  add_foreign_key "clips", "lives"
   add_foreign_key "lives", "members"
   add_foreign_key "lives", "rooms"
   add_foreign_key "lives", "videos"

@@ -3,6 +3,7 @@
 class Live < ApplicationRecord
   belongs_to :member
   belongs_to :room
+  has_many :clip
   belongs_to :video, optional: true
   validates :title, presence: true
   validates :start_at, presence: true
