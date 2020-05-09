@@ -6,8 +6,6 @@ AllCops:
     - 'bin/*'
     - 'db/**/*'
     - 'config/**/*'
-Layout/LineLength:
-  Max: 80
 Layout/EndOfLine:
   EnforcedStyle: lf
 Style/Documentation:
