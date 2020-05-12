@@ -3,6 +3,7 @@
 class Channel < ApplicationRecord
   belongs_to :platform
   belongs_to :member, optional: true
+  belongs_to :editor, optional: true
   validate :validate_channel_format
 
   def validate_channel_format
