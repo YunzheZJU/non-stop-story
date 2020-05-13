@@ -1,11 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-channel_one:
-  channel: UC-hM6YJuNYVAmUWxeIr9FeA
+test_1:
+  channel: TestChannel1
   platform: youtube
-  member: sakuramiko
-
-channel_two:
-  channel: 366690056
-  platform: bilibili
-  member: sakuramiko
+  member: test_1

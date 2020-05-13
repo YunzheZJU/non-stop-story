@@ -1,15 +1,28 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-live_sakurakaze:
-  title: サクラカゼ
+test_1:
+  title: TestLive1
   start_at: 2020-03-27 00:00:00
-  member: sakuramiko
-  room: channel_X9zw0QF12Kc
+  member: test_1
+  room: test_1
 
-live_untildawn:
-  title: 直到黎明
-  start_at: 2020-05-07 00:00:00
-  member: sakuramiko
-  room: channel_21144047
+test_2:
+  title: TestLive2
+  start_at: 2020-03-27 00:00:00
+  member: test_1
+  room: test_2
   duration: 1500
-  video: video_untildawn
+
+test_3:
+  title: TestLive3
+  start_at: 2020-03-27 00:00:00
+  member: test_1
+  room: test_3
+  duration: 1500
+  video: test_1
+
+test_4:
+  title: TestLive4
+  start_at: 2020-03-27 00:00:00
+  member: test_1
+  room: test_4

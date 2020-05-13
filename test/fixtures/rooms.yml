@@ -1,9 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-channel_X9zw0QF12Kc:
-  room: X9zw0QF12Kc
+test_1:
+  room: TestRoom1
   platform: youtube
 
-channel_21144047:
-  room: 21144047
-  platform: bilibili
+test_2:
+  room: TestRoom2
+  platform: youtube
+
+test_3:
+  room: TestRoom3
+  platform: youtube
+
+test_4:
+  room: TestRoom4
+  platform: youtube

@@ -1,5 +1,5 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-editor:
-  name: 樱巫女Official
-  arranges: arrange
+test_1:
+  name: TestEditor1
+  arranges: test_1

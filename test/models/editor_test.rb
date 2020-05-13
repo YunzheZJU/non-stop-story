@@ -4,14 +4,14 @@ require 'test_helper'
 
 class EditorTest < ActiveSupport::TestCase
   test 'should succeed to save' do
-    editor = Editor.new name: '樱巫女Official', arranges: [arranges(:arrange)]
+    editor = Editor.new name: 'NewEditor', arranges: [arranges(:test_1)]
 
     assert editor.valid?
     assert editor.save
   end
 
   test 'should succeed to save optional arranges' do
-    optional_arranges = Editor.new name: '樱巫女Official'
+    optional_arranges = Editor.new name: 'NewEditor'
 
     assert optional_arranges.valid?
     assert optional_arranges.save

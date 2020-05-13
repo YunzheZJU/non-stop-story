@@ -5,9 +5,9 @@ require 'test_helper'
 class ArrangeTest < ActiveSupport::TestCase
   test 'should succeed to save' do
     arrange = Arrange.new(
-      video: videos(:video_sakurakaze),
-      clips: [clips(:clip)],
-      editors: [editors(:editor)]
+      video: videos(:test_2),
+      clips: [clips(:test_1)],
+      editors: [editors(:test_1)]
     )
 
     assert arrange.valid?
@@ -16,12 +16,12 @@ class ArrangeTest < ActiveSupport::TestCase
 
   test 'should succeed to save optional clips and editors' do
     optional_clips = Arrange.new(
-      video: videos(:video_sakurakaze),
-      editors: [editors(:editor)]
+      video: videos(:test_2),
+      editors: [editors(:test_1)]
     )
     optional_editors = Arrange.new(
-      video: videos(:video_sakurakaze),
-      clips: [clips(:clip)]
+      video: videos(:test_2),
+      clips: [clips(:test_1)]
     )
 
     assert optional_clips.valid?
@@ -32,13 +32,13 @@ class ArrangeTest < ActiveSupport::TestCase
 
   test 'should fail to save nil video' do
     absent_video = Arrange.new(
-      clips: [clips(:clip)],
-      editors: [editors(:editor)]
+      clips: [clips(:test_1)],
+      editors: [editors(:test_1)]
     )
     nil_video = Arrange.new(
       video: nil,
-      clips: [clips(:clip)],
-      editors: [editors(:editor)]
+      clips: [clips(:test_1)],
+      editors: [editors(:test_1)]
     )
 
     assert_not absent_video.valid?

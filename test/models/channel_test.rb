@@ -7,12 +7,12 @@ class ChannelTest < ActiveSupport::TestCase
     youtube = Channel.new(
       channel: 'UC123456',
       platform: platforms(:youtube),
-      member: members(:sakuramiko)
+      member: members(:test_1)
     )
     bilibili = Channel.new(
       channel: '123456',
       platform: platforms(:bilibili),
-      member: members(:sakuramiko)
+      member: members(:test_1)
     )
 
     assert youtube.valid?
@@ -35,12 +35,12 @@ class ChannelTest < ActiveSupport::TestCase
     youtube = Channel.new(
       channel: 'UC123456',
       platform: platforms(:bilibili),
-      member: members(:sakuramiko)
+      member: members(:test_1)
     )
     bilibili = Channel.new(
       channel: '123456',
       platform: platforms(:youtube),
-      member: members(:sakuramiko)
+      member: members(:test_1)
     )
 
     assert_not youtube.valid?
@@ -52,12 +52,12 @@ class ChannelTest < ActiveSupport::TestCase
   test 'should fail to save nil platform' do
     absent_platform = Channel.new(
       channel: 'UC123456',
-      member: members(:sakuramiko)
+      member: members(:test_1)
     )
     nil_platform = Channel.new(
       channel: 'UC123456',
       platform: nil,
-      member: members(:sakuramiko)
+      member: members(:test_1)
     )
 
     assert_not absent_platform.valid?

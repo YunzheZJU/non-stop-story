@@ -4,10 +4,10 @@ require 'test_helper'
 
 class MemberTest < ActiveSupport::TestCase
   test 'should succeed to save' do
-    sakuramiko = Member.new name: 'さくらみこ'
+    member = Member.new name: 'NewMember'
 
-    assert sakuramiko.valid?
-    assert sakuramiko.save
+    assert member.valid?
+    assert member.save
   end
 
   test 'should fail to save nil name' do

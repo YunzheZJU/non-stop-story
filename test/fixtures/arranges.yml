@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-arrange:
-  video: video_sakurakaze
-  clips: clip
-  editors: editor
+test_1:
+  video: test_2
+  clips: test_1
+  editors: test_1

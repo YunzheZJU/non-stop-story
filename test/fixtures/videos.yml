@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-video_sakurakaze:
-  title: sakurakaze
-  video: WQhBCy6usZA
-  duration: 1000
+test_1:
+  title: TestVideoTitle1
+  video: TestVideo1
+  duration: 1500
   platform: youtube
 
-video_untildawn:
-  title: untildawn
-  video: BV1Va4y1i7sv
-  duration: 2000
-  platform: bilibili
+test_2:
+  title: TestVideoTitle2
+  video: TestVideo2
+  duration: 1000
+  platform: youtube

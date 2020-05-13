@@ -6,9 +6,9 @@ class ClipTest < ActiveSupport::TestCase
   test 'should succeed to save' do
     clip = Clip.new(
       in_time: 0,
-      out_time: 2000,
-      live: lives(:live_untildawn),
-      arranges: [arranges(:arrange)]
+      out_time: 1500,
+      live: lives(:test_3),
+      arranges: [arranges(:test_1)]
     )
 
     assert clip.valid?
@@ -18,8 +18,8 @@ class ClipTest < ActiveSupport::TestCase
   test 'should succeed to save optional arranges' do
     optional_arranges = Clip.new(
       in_time: 0,
-      out_time: 2000,
-      live: lives(:live_untildawn)
+      out_time: 1500,
+      live: lives(:test_3)
     )
 
     assert optional_arranges.valid?
@@ -27,19 +27,19 @@ class ClipTest < ActiveSupport::TestCase
   end
 
   test 'should fail to save invalid in_time' do
-    zero_in_time = Clip.new(
+    negative_in_time = Clip.new(
       in_time: -1,
-      out_time: 2000,
-      live: lives(:live_untildawn)
+      out_time: 1500,
+      live: lives(:test_3)
     )
     overflow_in_time = Clip.new(
-      in_time: 1001,
-      out_time: 1000,
-      live: lives(:live_untildawn)
+      in_time: 1501,
+      out_time: 1500,
+      live: lives(:test_3)
     )
 
-    assert_not zero_in_time.valid?
-    assert_not zero_in_time.save
+    assert_not negative_in_time.valid?
+    assert_not negative_in_time.save
     assert_not overflow_in_time.valid?
     assert_not overflow_in_time.save
   end
@@ -48,7 +48,7 @@ class ClipTest < ActiveSupport::TestCase
     invalid_live = Clip.new(
       in_time: 0,
       out_time: 1,
-      live: lives(:live_sakurakaze)
+      live: lives(:test_1)
     )
 
     assert_not invalid_live.valid?
@@ -58,8 +58,8 @@ class ClipTest < ActiveSupport::TestCase
   test 'should fail to save invalid out_time' do
     overflow_out_time = Clip.new(
       in_time: 0,
-      out_time: 2001,
-      live: lives(:live_untildawn)
+      out_time: 1501,
+      live: lives(:test_3)
     )
 
     assert_not overflow_out_time.valid?
