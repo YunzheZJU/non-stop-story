@@ -25,6 +25,6 @@ class Clip < ApplicationRecord
 
     return if out_time <= live.video.duration
 
-    errors.add(:in, 'cannot be larger than out')
+    errors.add(:out, 'cannot be larger than duration')
   end
 end
