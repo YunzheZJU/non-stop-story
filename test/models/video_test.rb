@@ -31,7 +31,7 @@ class VideoTest < ActiveSupport::TestCase
     absent_platform = Video.new(
       title: 'NewVideoTitle',
       video: 'NewVideo',
-      duration: 1000,
+      duration: 1000
     )
     nil_platform = Video.new(
       title: 'NewVideoTitle',

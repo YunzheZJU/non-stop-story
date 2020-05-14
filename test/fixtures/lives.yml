@@ -26,3 +26,15 @@ test_4:
   start_at: 2020-03-27 00:00:00
   member: test_1
   room: test_4
+
+test_5:
+  title: TestLive5
+  start_at: 2120-03-27 00:00:00
+  member: test_1
+  room: test_5
+
+test_6:
+  title: TestLive6
+  start_at: 2120-03-27 00:00:00
+  member: test_1
+  room: test_6
