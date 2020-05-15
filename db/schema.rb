@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_180250) do
+ActiveRecord::Schema.define(version: 2020_05_15_192457) do
 
   create_table "archives", force: :cascade do |t|
     t.integer "duration"
@@ -73,13 +73,13 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
   create_table "lives", force: :cascade do |t|
     t.string "title"
     t.datetime "start_at"
-    t.integer "member_id"
     t.integer "room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "duration"
     t.integer "video_id"
-    t.index ["member_id"], name: "index_lives_on_member_id"
+    t.integer "channel_id"
+    t.index ["channel_id"], name: "index_lives_on_channel_id"
     t.index ["room_id"], name: "index_lives_on_room_id"
     t.index ["video_id"], name: "index_lives_on_video_id"
   end
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
   add_foreign_key "channels", "members"
   add_foreign_key "channels", "platforms"
   add_foreign_key "clips", "lives"
-  add_foreign_key "lives", "members"
+  add_foreign_key "lives", "channels"
   add_foreign_key "lives", "rooms"
   add_foreign_key "lives", "videos"
   add_foreign_key "rooms", "platforms"

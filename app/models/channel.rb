@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Channel < ApplicationRecord
+  has_many :lives
   belongs_to :platform
   belongs_to :member, optional: true
   belongs_to :editor, optional: true

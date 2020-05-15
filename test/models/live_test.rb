@@ -7,7 +7,7 @@ class LiveTest < ActiveSupport::TestCase
     live = Live.new(
       title: 'NewLive',
       start_at: Time.now,
-      member: members(:test_1),
+      channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500,
       video: videos(:test_1)
@@ -21,14 +21,14 @@ class LiveTest < ActiveSupport::TestCase
     optional_duration = Live.new(
       title: 'NewLive',
       start_at: Time.now,
-      member: members(:test_1),
+      channel: channels(:test_1),
       room: rooms(:test_1),
       video: videos(:test_1)
     )
     optional_video = Live.new(
       title: 'NewLive',
       start_at: Time.now,
-      member: members(:test_1),
+      channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500
     )
@@ -42,12 +42,12 @@ class LiveTest < ActiveSupport::TestCase
   test 'should fail to save absent field' do
     absent_title = Live.new(
       start_at: Time.now,
-      member: members(:test_1),
+      channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500,
       video: videos(:test_1)
     )
-    absent_member = Live.new(
+    absent_channel = Live.new(
       title: 'サクラカゼ',
       start_at: Time.now,
       room: rooms(:test_1),
@@ -57,15 +57,15 @@ class LiveTest < ActiveSupport::TestCase
 
     assert_not absent_title.valid?
     assert_not absent_title.save
-    assert_not absent_member.valid?
-    assert_not absent_member.save
+    assert_not absent_channel.valid?
+    assert_not absent_channel.save
   end
 
   test 'should fail to save negative duration' do
     zero_duration = Live.new(
       title: 'サクラカゼ',
       start_at: Time.now,
-      member: members(:test_1),
+      channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 0,
       video: videos(:test_1)
@@ -73,7 +73,7 @@ class LiveTest < ActiveSupport::TestCase
     negative_duration = Live.new(
       title: 'サクラカゼ',
       start_at: Time.now,
-      member: members(:test_1),
+      channel: channels(:test_1),
       room: rooms(:test_1),
       duration: -1,
       video: videos(:test_1)
