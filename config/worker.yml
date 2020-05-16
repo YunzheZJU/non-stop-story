@@ -1,0 +1,12 @@
+default: &default
+  youtube:
+    - https://workername.username.workers.dev
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

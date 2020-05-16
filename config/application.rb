@@ -35,5 +35,14 @@ module NonStopStory
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.active_job.queue_name_prefix = Rails.env
+    config.active_job.queue_name_delimiter = '.'
+
+    config.worker = config_for(:worker)
+
+    config.after_initialize do
+      LivesDetectJob.perform_now
+    end
   end
 end

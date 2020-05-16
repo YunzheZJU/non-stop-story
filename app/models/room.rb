@@ -6,6 +6,12 @@ class Room < ApplicationRecord
   validates :room, presence: true
   validate :validate_room_format
 
+  scope :open, lambda { |channel|
+    joins(:platform, :lives)
+      .where(lives: { duration: nil, channel: channel },
+             platform: channel.platform)
+  }
+
   def validate_room_format
     return unless platform.present?
 
