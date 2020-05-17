@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'lives/current', to: 'lives#current'
       get 'lives/scheduled', to: 'lives#scheduled'
       resources :lives
+      resources :platforms
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
