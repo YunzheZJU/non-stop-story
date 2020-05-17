@@ -10,5 +10,8 @@ class CreateLives < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :lives, :title
+    add_index :lives, :start_at
+    add_index :lives, :duration
   end
 end

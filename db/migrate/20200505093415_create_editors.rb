@@ -5,5 +5,6 @@ class CreateEditors < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :editors, :name
   end
 end

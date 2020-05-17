@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
     t.integer "editor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel"], name: "index_channels_on_channel"
     t.index ["editor_id"], name: "index_channels_on_editor_id"
     t.index ["member_id"], name: "index_channels_on_member_id"
     t.index ["platform_id"], name: "index_channels_on_platform_id"
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_editors_on_name"
   end
 
   create_table "lives", force: :cascade do |t|
@@ -70,7 +72,10 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["channel_id"], name: "index_lives_on_channel_id"
+    t.index ["duration"], name: "index_lives_on_duration"
     t.index ["room_id"], name: "index_lives_on_room_id"
+    t.index ["start_at"], name: "index_lives_on_start_at"
+    t.index ["title"], name: "index_lives_on_title"
     t.index ["video_id"], name: "index_lives_on_video_id"
   end
 
@@ -78,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_members_on_name"
   end
 
   create_table "platforms", force: :cascade do |t|
@@ -92,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["platform_id"], name: "index_rooms_on_platform_id"
+    t.index ["room"], name: "index_rooms_on_room"
   end
 
   create_table "videos", force: :cascade do |t|
@@ -101,7 +108,10 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
     t.integer "platform_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["duration"], name: "index_videos_on_duration"
     t.index ["platform_id"], name: "index_videos_on_platform_id"
+    t.index ["title"], name: "index_videos_on_title"
+    t.index ["video"], name: "index_videos_on_video"
   end
 
   add_foreign_key "arranges", "videos"

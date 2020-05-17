@@ -8,5 +8,8 @@ class CreateVideos < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :videos, :video
+    add_index :videos, :title
+    add_index :videos, :duration
   end
 end
