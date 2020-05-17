@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_192457) do
-
-  create_table "archives", force: :cascade do |t|
-    t.integer "duration"
-    t.integer "live_id"
-    t.integer "video_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["live_id"], name: "index_archives_on_live_id"
-    t.index ["video_id"], name: "index_archives_on_video_id"
-  end
+ActiveRecord::Schema.define(version: 2020_05_07_180250) do
 
   create_table "arranges", force: :cascade do |t|
     t.integer "video_id"
@@ -46,10 +36,10 @@ ActiveRecord::Schema.define(version: 2020_05_15_192457) do
   create_table "channels", force: :cascade do |t|
     t.string "channel"
     t.integer "platform_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "member_id"
     t.integer "editor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["editor_id"], name: "index_channels_on_editor_id"
     t.index ["member_id"], name: "index_channels_on_member_id"
     t.index ["platform_id"], name: "index_channels_on_platform_id"
@@ -73,12 +63,12 @@ ActiveRecord::Schema.define(version: 2020_05_15_192457) do
   create_table "lives", force: :cascade do |t|
     t.string "title"
     t.datetime "start_at"
+    t.integer "duration"
+    t.integer "channel_id"
     t.integer "room_id"
+    t.integer "video_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "duration"
-    t.integer "video_id"
-    t.integer "channel_id"
     t.index ["channel_id"], name: "index_lives_on_channel_id"
     t.index ["room_id"], name: "index_lives_on_room_id"
     t.index ["video_id"], name: "index_lives_on_video_id"
@@ -106,16 +96,14 @@ ActiveRecord::Schema.define(version: 2020_05_15_192457) do
 
   create_table "videos", force: :cascade do |t|
     t.string "video"
+    t.string "title"
     t.integer "duration"
     t.integer "platform_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "title"
     t.index ["platform_id"], name: "index_videos_on_platform_id"
   end
 
-  add_foreign_key "archives", "lives"
-  add_foreign_key "archives", "videos"
   add_foreign_key "arranges", "videos"
   add_foreign_key "channels", "editors"
   add_foreign_key "channels", "members"
