@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       get 'lives/current', to: 'lives#current'
       get 'lives/scheduled', to: 'lives#scheduled'
       resources :lives
-      resources :rooms
+      resources :channels
       resources :members
+      resources :rooms
       resources :platforms
     end
   end

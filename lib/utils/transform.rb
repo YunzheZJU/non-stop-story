@@ -12,5 +12,17 @@ class Transform
       array.reject! { |_w, c| c.empty? }
       array.to_h
     end
+
+    def integer!(param)
+      param.to_i
+    end
+
+    def datetime!(param)
+      Time.parse param
+    end
+
+    def record!(param, model)
+      model.find param
+    end
   end
 end

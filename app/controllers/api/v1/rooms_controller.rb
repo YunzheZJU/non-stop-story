@@ -54,11 +54,11 @@ class Api::V1::RoomsController < ApplicationController
     format params.require(:room).permit(:room, :platform)
   end
 
-  def format(live_params)
-    live_params.to_h.each_with_object({}) do |(key, value), hash|
+  def format(room_params)
+    room_params.to_h.each_with_object({}) do |(key, value), hash|
       hash[key] = case key
                   when 'platform'
-                    Platform.find value
+                    Transform.record! value, key.to_s.classify.constantize
                   else
                     value
                   end

@@ -33,8 +33,8 @@ class Api::V1::PlatformsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy platform' do
-    assert_raise(StandardError) {
+    assert_raise(StandardError) do
       delete api_v1_platform_url(@platform), as: :json
-    }
+    end
   end
 end

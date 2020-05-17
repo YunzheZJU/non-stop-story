@@ -28,7 +28,9 @@ class Api::V1::MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update member' do
-    patch api_v1_member_url(@member), params: { member: { name: 'NewMember' } }, as: :json
+    patch api_v1_member_url(@member),
+          params: { member: { name: 'NewMember' } },
+          as: :json
     assert_response 200
   end
 

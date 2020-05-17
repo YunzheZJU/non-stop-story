@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'utils/transform'
+
 class Api::V1::LivesController < ApplicationController
   before_action :set_live, only: %i[show update destroy]
   before_action :filter, only: %i[ended current scheduled]
@@ -32,16 +34,6 @@ class Api::V1::LivesController < ApplicationController
     else
       render json: @live.errors, status: :unprocessable_entity
     end
-  end
-
-  def transform(live)
-    { id: live.id,
-      title: live.title,
-      duration: live.duration,
-      start_at: live.start_at.iso8601,
-      room: live.room.room,
-      channel: live.channel.channel,
-      video: live.video&.video }
   end
 
   def ended
@@ -84,30 +76,28 @@ class Api::V1::LivesController < ApplicationController
     live_params.to_h.each_with_object({}) do |(key, value), hash|
       hash[key] = case key
                   when 'start_at'
-                    datetime value
+                    Transform.datetime! value
                   when 'duration'
-                    integer value
+                    Transform.integer! value
                   when 'channel', 'room', 'video'
-                    record value, key.to_s.classify.constantize
+                    Transform.record! value, key.to_s.classify.constantize
                   else
                     value
                   end
     end
   end
 
-  def integer(param)
-    param.to_i
-  end
-
-  def datetime(param)
-    Time.parse param
-  end
-
-  def record(param, modal)
-    modal.find param
-  end
-
   def filter
     @lives = Live.of_channels(params[:channels])
+  end
+
+  def transform(live)
+    { id: live.id,
+      title: live.title,
+      duration: live.duration,
+      start_at: live.start_at.iso8601,
+      room: live.room.room,
+      channel: live.channel.channel,
+      video: live.video&.video }
   end
 end
