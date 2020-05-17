@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
+require 'concerns/http_auth_concern'
+
 class Api::V1::RoomsController < ApplicationController
+  include HttpAuthConcern
+
+  before_action :authenticate, except: %i[show]
   before_action :set_room, only: %i[show update destroy]
 
   # GET /api/v1/rooms

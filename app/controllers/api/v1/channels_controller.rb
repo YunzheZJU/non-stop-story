@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require 'concerns/http_auth_concern'
 require 'utils/transform'
 
 class Api::V1::ChannelsController < ApplicationController
+  include HttpAuthConcern
+
+  before_action :authenticate, except: %i[index show]
   before_action :set_channel, only: %i[show update destroy]
 
   # GET /api/v1/channels

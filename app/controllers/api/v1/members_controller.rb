@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
+require 'concerns/http_auth_concern'
+
 class Api::V1::MembersController < ApplicationController
+  include HttpAuthConcern
+
+  before_action :authenticate, except: %i[index show]
   before_action :set_member, only: %i[show update destroy]
 
   # GET /api/v1/members

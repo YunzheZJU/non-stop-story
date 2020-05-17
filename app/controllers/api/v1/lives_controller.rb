@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require 'concerns/http_auth_concern'
 require 'utils/transform'
 
 class Api::V1::LivesController < ApplicationController
+  include HttpAuthConcern
+
+  before_action :authenticate, except: %i[show ended current scheduled]
   before_action :set_live, only: %i[show update destroy]
   before_action :filter, only: %i[ended current scheduled]
 
@@ -95,7 +99,7 @@ class Api::V1::LivesController < ApplicationController
     { id: live.id,
       title: live.title,
       duration: live.duration,
-      start_at: live.start_at.iso8601,
+      start_at: live.start_at,
       room: live.room.room,
       channel: live.channel.channel,
       video: live.video&.video }
