@@ -92,7 +92,7 @@ class Api::V1::LivesController < ApplicationController
   end
 
   def filter
-    @lives = Live.of_channels(params[:channels])
+    @lives = Live.includes(:room, :channel, :video).of_channels(params[:channels])
   end
 
   def transform(live)
