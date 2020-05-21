@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   namespace :api do
     namespace :v1 do
       get 'lives/ended', to: 'lives#ended'
