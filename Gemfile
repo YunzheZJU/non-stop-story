@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 group :production do
+  gem 'mysql2'
   gem 'unicorn'
 end
 
