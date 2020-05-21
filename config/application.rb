@@ -42,7 +42,11 @@ module NonStopStory
     config.worker = config_for(:worker)
 
     config.after_initialize do
-      LivesDetectJob.perform_now
+      # Ugly fix for duplicated jobs when multiple workers are running
+      # Leave exactly ONE worker executing jobs and pass ENV['disable-job'] = 'true' to the others
+      unless ENV['disable-job'] == 'true'
+        LivesDetectJob.set(wait: 5.seconds).perform_later
+      end
     end
   end
 end
