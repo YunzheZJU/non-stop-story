@@ -56,7 +56,7 @@ module NonStopStory
     config.after_initialize do
       # Ugly fix for duplicated jobs when multiple workers are running
       # Leave exactly ONE worker executing jobs and pass ENV['disable-job'] = 'true' to the others
-      unless ENV['disable-job'] == 'true'
+      unless ENV['DISABLE_JOB'] == 'true'
         LivesDetectJob.set(wait: 5.seconds).perform_later
       end
     end
