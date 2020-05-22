@@ -9,6 +9,7 @@ class Api::V1::LivesController < ApplicationController
   before_action :authenticate, except: %i[show ended current scheduled]
   before_action :set_live, only: %i[show update destroy]
   before_action :filter, only: %i[ended current scheduled]
+  before_action :pagination, only: %i[ended current scheduled]
 
   def index
     @lives = Live.all
@@ -41,27 +42,30 @@ class Api::V1::LivesController < ApplicationController
   end
 
   def ended
-    # TODO: Group by channel, Order by start_at, Page, Limit
+    # TODO: Group by channel, Order by
     @lives = @lives.ended
+                   .order(start_at: :desc)
                    .all
-                   .map(&method(:transform))
-    render json: @lives
+    render json: { lives: @lives.map(&method(:transform)),
+                   total: @lives.total_count }
   end
 
   def current
     @lives = @lives.not_ended
+                   .order(start_at: :asc)
                    .start_before(Time.now)
                    .all
-                   .map(&method(:transform))
-    render json: @lives
+    render json: { lives: @lives.map(&method(:transform)),
+                   total: @lives.total_count }
   end
 
   def scheduled
     @lives = @lives.not_ended
+                   .order(start_at: :asc)
                    .start_after(Time.now)
                    .all
-                   .map(&method(:transform))
-    render json: @lives
+    render json: { lives: @lives.map(&method(:transform)),
+                   total: @lives.total_count }
   end
 
   private
@@ -92,7 +96,14 @@ class Api::V1::LivesController < ApplicationController
   end
 
   def filter
-    @lives = Live.includes(:room, :channel, :video).of_channels(params[:channels])
+    @lives = Live.includes(:channel, :video, room: :platform)
+                 .of_channels(params[:channels])
+  end
+
+  def pagination
+    pagination_params = params.permit :page, :limit
+    @lives = @lives.page(pagination_params.fetch(:page, 1))
+                   .per(pagination_params.fetch(:limit, 30))
   end
 
   def transform(live)
@@ -101,6 +112,7 @@ class Api::V1::LivesController < ApplicationController
       duration: live.duration,
       start_at: live.start_at,
       room: live.room.room,
+      platform: live.room.platform.platform,
       channel: live.channel.channel,
       video: live.video&.video }
   end

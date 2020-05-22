@@ -2,6 +2,7 @@
 
 class WelcomeController < ApplicationController
   def index
-    render plain: 'Welcome to Holo.dev. You can find many VTuber tools and developer friends here.'
+    render plain: 'Welcome to Holo.dev. ' \
+                  'You can find many VTuber tools and developer friends here.'
   end
 end
