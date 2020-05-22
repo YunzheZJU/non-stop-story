@@ -36,6 +36,18 @@ module NonStopStory
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # config.log_level = :warn if Rails.env.production?
+
+    config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'SAMEORIGIN',
+      'X-XSS-Protection' => '1; mode=block',
+      'X-Content-Type-Options' => 'nosniff',
+      'X-Download-Options' => 'noopen',
+      'X-Permitted-Cross-Domain-Policies' => 'none',
+      'X-Powered-By' => 'Non Stop Story - KARKINOS v1.0',
+      'Referrer-Policy' => 'strict-origin-when-cross-origin'
+    }
+
     config.active_job.queue_name_prefix = Rails.env
     config.active_job.queue_name_delimiter = '.'
 
