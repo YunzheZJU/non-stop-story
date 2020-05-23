@@ -21,6 +21,10 @@ gem 'puma', '~> 4.1'
 gem 'rack-cors'
 # Enable pagination
 gem 'kaminari'
+# Enable GraphQL
+gem "graphql"
+# GUI Devtool for GraphQL is enabled in development
+gem "graphiql-rails"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
