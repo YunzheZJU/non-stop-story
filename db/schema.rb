@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_180250) do
+ActiveRecord::Schema.define(version: 2020_05_23_060001) do
 
   create_table "arranges", force: :cascade do |t|
     t.integer "video_id"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
   end
 
   create_table "channels", force: :cascade do |t|
-    t.string "channel"
-    t.integer "platform_id"
+    t.string "channel", null: false
+    t.integer "platform_id", null: false
     t.integer "member_id"
     t.integer "editor_id"
     t.datetime "created_at", precision: 6, null: false
@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
   end
 
   create_table "lives", force: :cascade do |t|
-    t.string "title"
-    t.datetime "start_at"
+    t.string "title", null: false
+    t.datetime "start_at", null: false
     t.integer "duration"
-    t.integer "channel_id"
-    t.integer "room_id"
+    t.integer "channel_id", null: false
+    t.integer "room_id", null: false
     t.integer "video_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -80,21 +80,21 @@ ActiveRecord::Schema.define(version: 2020_05_07_180250) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_members_on_name"
   end
 
   create_table "platforms", force: :cascade do |t|
-    t.string "platform"
+    t.string "platform", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "room"
-    t.integer "platform_id"
+    t.string "room", null: false
+    t.integer "platform_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["platform_id"], name: "index_rooms_on_platform_id"
