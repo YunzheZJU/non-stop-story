@@ -51,18 +51,16 @@ class Api::V1::LivesController < ApplicationController
   end
 
   def current
-    @lives = @lives.not_ended
+    @lives = @lives.current
                    .order(start_at: :asc)
-                   .start_before(Time.now)
                    .all
     render json: { lives: @lives.map(&method(:transform)),
                    total: @lives.total_count }
   end
 
   def scheduled
-    @lives = @lives.not_ended
+    @lives = @lives.scheduled
                    .order(start_at: :asc)
-                   .start_after(Time.now)
                    .all
     render json: { lives: @lives.map(&method(:transform)),
                    total: @lives.total_count }
