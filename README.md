@@ -1,5 +1,9 @@
 # Non-stop-story
 
+[日本語](docs/README.ja.md)
+
+[中文](docs/README.zh_CN.md)
+
 TODO
 
 This README would normally document whatever steps are necessary to get the
