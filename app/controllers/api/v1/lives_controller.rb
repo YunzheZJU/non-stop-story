@@ -103,7 +103,7 @@ class Api::V1::LivesController < ApplicationController
   def pagination
     pagination_params = params.permit :page, :limit
     @lives = @lives.page(pagination_params.fetch(:page, 1))
-                   .per(pagination_params.fetch(:limit, 30))
+                   .per(pagination_params.fetch(:limit, 30).to_i.clamp(0, 100))
   end
 
   def transform(live)
