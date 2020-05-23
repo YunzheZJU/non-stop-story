@@ -15,9 +15,7 @@ class LivesDetectJob < ApplicationJob
       end
     end
 
-    LivesDetectJob
-      .set(wait: (Rails.env.test? ? 5 : 60).seconds)
-      .perform_later
+    LivesDetectJob.set(wait: 60.seconds).perform_later
   end
 
   class << self
