@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class NonStopStorySchema < GraphQL::Schema
-  mutation(Types::MutationType)
+  # mutation(Types::MutationType)
   query(Types::QueryType)
 
   # Opt in to the new runtime (default in future graphql-ruby versions)
