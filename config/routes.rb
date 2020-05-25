@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
-  post "/graphql", to: "graphql#execute"
-  mount GraphiQL::Rails::Engine, at: "/graphql", graphql_path: "/graphql"
+  post '/graphql', to: 'graphql#execute'
+  mount GraphiQL::Rails::Engine, at: '/graphql', graphql_path: '/graphql'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
