@@ -10,7 +10,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
   include ActiveJob::TestHelper
 
   test 'live detecting job scheduling' do
-    LivesDetectJob.perform_now
+    LivesDetectJob.set(wait: 5.seconds).perform_later
     assert_enqueued_with(job: LivesDetectJob)
     assert_enqueued_jobs(1)
   end
