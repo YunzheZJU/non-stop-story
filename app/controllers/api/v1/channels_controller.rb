@@ -8,12 +8,12 @@ class Api::V1::ChannelsController < ApplicationController
 
   before_action :authenticate, except: %i[index show]
   before_action :set_channel, only: %i[show update destroy]
+  before_action :filter, only: :index
+  before_action :pagination, only: :index
 
   # GET /api/v1/channels
   def index
-    @channels = Channel.all
-
-    render json: @channels
+    render json: { channels: @channels.all, total: @channels.total_count }
   end
 
   # GET /api/v1/channels/1
@@ -60,6 +60,17 @@ class Api::V1::ChannelsController < ApplicationController
     format params.require(:channel).permit(
       :channel, :platform, :member, :editor
     )
+  end
+
+  def filter
+    @channels = Channel.includes(:platform, :member)
+                       .of_platforms(params[:platforms])
+                       .of_members(params[:members])
+  end
+
+  def pagination
+    @channels = @channels.page(params.fetch(:page, 1))
+                         .per(params.fetch(:limit, 30).to_i.clamp(0, 100))
   end
 
   def format(channel_params)

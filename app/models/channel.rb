@@ -7,8 +7,15 @@ class Channel < ApplicationRecord
   belongs_to :editor, optional: true
   validate :validate_channel_format
 
+  # Deprecated in favor of :of_platforms
   scope :youtube, lambda {
     joins(:platform).where(platforms: { platform: 'youtube' })
+  }
+  scope :of_platforms, lambda { |platforms|
+    where(platform: platforms) if platforms.present?
+  }
+  scope :of_members, lambda { |members|
+    where(member: members) if members.present?
   }
 
   def validate_channel_format

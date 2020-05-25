@@ -12,6 +12,46 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should get index filter platforms' do
+    get api_v1_channels_url, params: {
+      platforms: platforms(:youtube)[:id]
+    }
+    data = JSON.parse(@response.body)
+    assert_response :success
+    assert_equal 3, data['total']
+  end
+
+  test 'should get index filter members' do
+    get api_v1_channels_url, params: {
+      members: [members(:test_1)[:id], members(:test_2)[:id]]
+    }
+    data = JSON.parse(@response.body)
+    assert_response :success
+    assert_equal 4, data['total']
+  end
+
+  test 'should get index pagination' do
+    get api_v1_channels_url, params: {
+      page: 2,
+      limit: 2
+    }
+    data = JSON.parse(@response.body)
+    assert_equal 2, data['channels'].size
+    assert_equal 4, data['total']
+  end
+
+  test 'should get index filter pagination' do
+    get api_v1_channels_url, params: {
+      platforms: platforms(:youtube)[:id],
+      members: members(:test_2)[:id],
+      page: 2,
+      limit: 1
+    }
+    data = JSON.parse(@response.body)
+    assert_equal 1, data['channels'].size
+    assert_equal 2, data['total']
+  end
+
   test 'should create channel' do
     assert_difference('Channel.count') do
       post api_v1_channels_url,

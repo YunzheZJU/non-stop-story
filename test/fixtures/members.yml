@@ -2,3 +2,6 @@
 
 test_1:
   name: TestMember1
+
+test_2:
+  name: TestMember2
