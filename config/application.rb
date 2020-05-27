@@ -52,12 +52,19 @@ module NonStopStory
     config.active_job.queue_name_delimiter = '.'
 
     config.worker = config_for(:worker)
-
+    config.email = config_for(:email)
     config.after_initialize do
       # Ugly fix for duplicated jobs when multiple workers are running
       # Leave exactly ONE worker executing jobs and pass ENV['disable-job'] = 'true' to the others
       unless ENV['DISABLE_JOB'] == 'true'
         LivesDetectJob.set(wait: 5.seconds).perform_later
+
+        if Rails.env.production?
+          DailySummaryJob.set(wait_until: Time.now.midnight + 8.hours)
+                         .perform_later
+        else
+          DailySummaryJob.set(wait: 5.seconds).perform_later
+        end
       end
     end
   end

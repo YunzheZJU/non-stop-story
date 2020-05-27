@@ -1,0 +1,13 @@
+default: &default
+  daily_summary:
+    from: admin@example.com
+    to: user@example.com
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
