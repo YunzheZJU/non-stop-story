@@ -1,6 +1,6 @@
 Daily Summary for <%= Date.today - 1.day %>
 ===============================================
-Time Period: <%= @start.strftime("%Y-%m-%d %H:%M:%S") %> - <%= @end.strftime("%Y-%m-%d %H:%M:%S") %>
+Time Period: <%= @start.to_s %> - <%= @end.to_s %>
 Lives created today: <%= @count %>
 Duration in total: <%= "%d Hours %d Minutes %d Seconds" % [@duration / 3600, @duration / 60 % 60, @duration % 60] %>
 

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Daily Summary for <%= Date.today - 1.day %></h1>
-<p>Time Period: <%= @start.strftime("%Y-%m-%d %H:%M:%S") %> - <%= @end.strftime("%Y-%m-%d %H:%M:%S") %></p>
+<p>Time Period: <%= @start.to_s %> - <%= @end.to_s %></p>
 <p>Lives created today: <%= @count %></p>
 <p>Duration in total: <%= "%d Hours %d Minutes %d Seconds" % [@duration / 3600, @duration / 60 % 60, @duration % 60] %></p>
 <p>Have a great day!</p>
