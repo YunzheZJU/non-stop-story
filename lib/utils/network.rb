@@ -14,7 +14,7 @@ class Network
 
         JSON.parse(res.body)
       rescue StandardError => e
-        puts e.message
+        Rails.logger.error e.message
         retry if (retry_count += 1) <= 1
         {}
       end
