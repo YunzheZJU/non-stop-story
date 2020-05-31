@@ -7,25 +7,31 @@ class LivesDetectJob < ApplicationJob
   queue_as :default
 
   def perform(*_args)
-    LivesDetectJob.channels_by_worker.each do |worker, channels|
+    %w[youtube bilibili].each do |platform_val|
+      request_and_sync Platform.find_by_platform(platform_val)
+    end
+
+    LivesDetectJob.set(wait: 60.seconds).perform_later
+  end
+
+  def request_and_sync(platform)
+    LivesDetectJob.channels_by_worker(platform).each do |worker, channels|
       response = Network.get_videos(worker, channels)
 
       Channel.where(channel: response.keys).find_each do |channel|
         LivesDetectJob.sync_live_rooms channel, response[channel.channel]
       end
     end
-
-    LivesDetectJob.set(wait: 60.seconds).perform_later
   end
 
   class << self
-    def channels_by_worker
-      # youtube_workers = %w[w1 w2 w3]
-      youtube_workers = Rails.configuration.worker['youtube']
-      # youtube_channels = %w[c1 c2 c3 c4 c5 c6 c7]
-      youtube_channels = Channel.youtube.pluck(:channel)
+    def channels_by_worker(platform)
+      # workers = %w[w1 w2 w3]
+      workers = Rails.configuration.worker[platform.platform]
+      # channels = %w[c1 c2 c3 c4 c5 c6 c7]
+      channels = Channel.of_platforms(platform).pluck(:channel)
       # { 'w1' => %w[c1 c4 c7], 'w2' => %w[c2 c5], 'w3' => %w[c3 c6] }
-      Transform.allocate(youtube_workers, youtube_channels)
+      Transform.allocate(workers, channels)
     end
 
     def sync_live_rooms(channel, live_infos)
