@@ -19,7 +19,7 @@
 
 ## <a id="introduction"></a>Introduction
 
-Non-stop-story is a public API server project for VTuber live streams, which offers a stabled and reliable data source. 
+Non-stop-story is a public API server project for VTuber live streams, which offers a stable and reliable data source. 
 
 It gathers various live infos from 'worker's and manages the interaction with a persistent database for developers.
 
@@ -54,7 +54,7 @@ There also exist workers for the same platform but are using different methods i
 
 A Non-stop-story server/instance may combine different kinds of workers together to best fit its needs.
 
-*TODO*
+[Here](https://github.com/YunzheZJU/holo-schedule-workers) is a collection of sample workers.
 
 ## Ruby version
 
@@ -77,6 +77,8 @@ PRODUCTION
 * `config/database.yml` stores database connection preferences.
 
 * `config/worker.yml` stores the various workers' addresses you use.
+
+* `config/email.yml` stores email configurations used in daily summary emails.
 
 * `config/credentials.yml.enc` stores encoded sensitive data such as admin username and password.
 [Rails guides on credentials](https://guides.rubyonrails.org/security.html#custom-credentials).
