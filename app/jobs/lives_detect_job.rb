@@ -39,7 +39,8 @@ class LivesDetectJob < ApplicationJob
       open_room_vals = Room.open(channel).pluck(:room)
 
       close_or_delete_lives open_room_vals - room_vals
-      create_lives select(live_infos, room_vals - open_room_vals), channel
+      extend_or_create_lives select(live_infos, room_vals - open_room_vals),
+                             channel
       update_lives select(live_infos, room_vals & open_room_vals)
     end
 
@@ -57,12 +58,15 @@ class LivesDetectJob < ApplicationJob
       end
     end
 
-    def create_lives(live_infos, channel)
-      live_infos.to_a.each do |room_val, live_info|
-        room = Room.find_or_create_by!(
-          room: room_val,
-          platform: channel.platform
-        )
+    def extend_or_create_lives(live_infos, channel)
+      live_infos.each_pair do |room_val, live_info|
+        room = Room.find_by_room_and_platform_id(room_val, channel.platform)
+
+        next if extend_lives_of_room(room)
+
+        room = Room.find_or_create_by!(room: room_val,
+                                       platform: channel.platform)
+
         Live.create!(title: live_info['title'],
                      start_at: Time.at(live_info['startAt'] || Time.now.to_i),
                      channel: channel,
@@ -88,6 +92,19 @@ class LivesDetectJob < ApplicationJob
 
     def select(live_infos, room_vals)
       live_infos.select { |room_val| room_vals.include? room_val }
+    end
+
+    def extend_lives_of_room(room)
+      success = false
+
+      Live.where(room: room).find_each do |live|
+        if Time.now - (live.start_at + live.duration) < 5.minutes
+          live.update! duration: nil
+          success = true
+        end
+      end
+
+      success
     end
   end
 end

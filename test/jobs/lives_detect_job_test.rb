@@ -34,6 +34,33 @@ class LivesDetectJobTest < ActiveJob::TestCase
     assert_raise(StandardError) { rooms(:test_6) }
   end
 
+  test 'should extend lives' do
+    channel = channels(:test_1)
+    live_infos = {
+      'TestRoom2' => { 'title' => 'Create a new live' },
+      # Note: Extending a live will not update the title immediately
+      'TestRoom3' => { 'title' => 'Extend an existing live' }
+    }
+
+    room_vals = live_infos.to_a.map { |room, _live_info| room }
+    open_room_vals = Room.open(channel).pluck('room')
+
+    travel_to Time.new(2020, 3, 27, 8, 31, 0) do
+      assert_difference('Room.open(channel).count', 2) do
+        LivesDetectJob.extend_or_create_lives(
+          live_infos.select do |room|
+            (room_vals - open_room_vals).include? room
+          end,
+          channel
+        )
+      end
+    end
+
+    assert_not_nil Live.find_by_title('Create a new live')
+    assert_not_nil lives(:test_2).duration
+    assert_nil lives(:test_3).duration
+  end
+
   test 'should create lives' do # rubocop:todo Metrics/BlockLength
     channel = channels(:test_1)
     live_infos = {
@@ -48,7 +75,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
     open_room_vals = Room.open(channel).pluck('room')
 
     assert_difference('Room.open(channel).count', 2) do
-      LivesDetectJob.create_lives(
+      LivesDetectJob.extend_or_create_lives(
         live_infos.select { |room| (room_vals - open_room_vals).include? room },
         channel
       )
