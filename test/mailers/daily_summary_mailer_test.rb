@@ -11,6 +11,7 @@ class DailySummaryMailerTest < ActionMailer::TestCase
     end
     assert_equal [config[:from]], email.from
     assert_equal [config[:to]], email.to
-    assert_equal "[Non Stop Story/Daily Summary] #{Date.today - 1.day}", email.subject
+    assert_equal "[Non Stop Story/Daily Summary] #{Date.today - 1.day}",
+                 email.subject
   end
 end
