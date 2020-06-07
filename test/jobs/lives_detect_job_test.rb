@@ -22,11 +22,9 @@ class LivesDetectJobTest < ActiveJob::TestCase
     room_vals = live_infos.to_a.map { |room, _live_info| room }
     open_room_vals = Room.open(channel).pluck('room')
 
-    assert_equal 4, open_room_vals.size
-
-    LivesDetectJob.close_or_delete_lives open_room_vals - room_vals
-
-    assert_equal 0, Room.open(channel).reload.size
+    assert_difference('Room.open(channel).count', -4) do
+      LivesDetectJob.close_or_delete_lives open_room_vals - room_vals
+    end
 
     assert_not_nil lives(:test_1).duration
     assert_not_nil lives(:test_4).duration
@@ -49,14 +47,12 @@ class LivesDetectJobTest < ActiveJob::TestCase
     room_vals = live_infos.to_a.map { |room, _live_info| room }
     open_room_vals = Room.open(channel).pluck('room')
 
-    assert_equal 4, open_room_vals.size
-
-    LivesDetectJob.create_lives(
-      live_infos.select { |room| (room_vals - open_room_vals).include? room },
-      channel
-    )
-
-    assert_equal 6, Room.open(channel).reload.size
+    assert_difference('Room.open(channel).count', 2) do
+      LivesDetectJob.create_lives(
+        live_infos.select { |room| (room_vals - open_room_vals).include? room },
+        channel
+      )
+    end
 
     assert_not_nil Room.find_by_room('NewRoom')
     assert_not_nil Live.find_by_title('NewLiveTitle1')
@@ -88,13 +84,12 @@ class LivesDetectJobTest < ActiveJob::TestCase
     room_vals = live_infos.to_a.map { |room, _live_info| room }
     open_room_vals = Room.open(channel).pluck('room')
 
-    assert_equal 4, Room.open(channel).size
+    assert_difference('Room.open(channel).count', 0) do
+      LivesDetectJob.update_lives(
+        live_infos.select { |room| (open_room_vals & room_vals).include? room }
+      )
+    end
 
-    LivesDetectJob.update_lives(
-      live_infos.select { |room| (open_room_vals & room_vals).include? room }
-    )
-
-    assert_equal 4, Room.open(channel).reload.size
     assert_nil lives(:test_4).duration
     assert_equal 'UpdatedLiveTitle1', lives(:test_4).title
     assert_nil lives(:test_5).duration
@@ -121,11 +116,10 @@ class LivesDetectJobTest < ActiveJob::TestCase
       }
     }
 
-    assert_equal 4, Room.open(channel).size
+    assert_difference('Room.open(channel).count', 1) do
+      LivesDetectJob.sync_live_rooms channel, live_infos
+    end
 
-    LivesDetectJob.sync_live_rooms channel, live_infos
-
-    assert_equal 5, Room.open(channel).reload.size
     assert_not_nil lives(:test_1).duration
     assert_nil lives(:test_4).duration
     assert_equal 'UpdatedLiveTitle1', lives(:test_4).title
