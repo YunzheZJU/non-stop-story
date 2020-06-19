@@ -108,6 +108,7 @@ class Api::V1::LivesController < ApplicationController
       title: live.title,
       duration: live.duration,
       start_at: live.start_at,
+      channel_id: live.channel_id,
       room: live.room.room,
       platform: live.room.platform.platform,
       channel: live.channel.channel,
