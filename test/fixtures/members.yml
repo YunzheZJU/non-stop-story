@@ -2,6 +2,12 @@
 
 test_1:
   name: TestMember1
+  avatar: TestAvatar1
+  color_main: '#000000'
+  color_sub: '#ffffff'
 
 test_2:
   name: TestMember2
+  avatar: TestAvatar1
+  color_main: '#000000'
+  color_sub: '#ffffff'

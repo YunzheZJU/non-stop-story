@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_20_091938) do
+ActiveRecord::Schema.define(version: 2020_06_20_123550) do
 
   create_table "arranges", force: :cascade do |t|
     t.integer "video_id"
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 2020_06_20_091938) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar", default: "", null: false
+    t.string "color_main"
+    t.string "color_sub"
     t.index ["name"], name: "index_members_on_name"
   end
 
