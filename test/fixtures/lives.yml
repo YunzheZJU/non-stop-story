@@ -30,6 +30,7 @@ test_4:
 test_5:
   title: TestLive5
   start_at: 2120-03-27 00:00:00
+  cover: TestCover5
   channel: test_1
   room: test_5
 

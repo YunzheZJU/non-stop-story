@@ -64,7 +64,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
   test 'should create lives' do # rubocop:todo Metrics/BlockLength
     channel = channels(:test_1)
     live_infos = {
-      'NewRoom' => { 'title' => 'NewLiveTitle1' },
+      'NewRoom' => { 'title' => 'NewLiveTitle1', 'cover' => 'NewCover1' },
       'ScheduledRoom' => {
         'title' => 'NewLiveTitle2',
         'startAt' => (Time.now + 1.day).to_i
@@ -83,6 +83,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
 
     assert_not_nil Room.find_by_room('NewRoom')
     assert_not_nil Live.find_by_title('NewLiveTitle1')
+    assert_not_nil Live.find_by_cover('NewCover1')
     assert_in_delta(
       Time.now,
       Live.find_by_title('NewLiveTitle1').start_at,
@@ -97,10 +98,10 @@ class LivesDetectJobTest < ActiveJob::TestCase
     )
   end
 
-  test 'should update lives' do
+  test 'should update lives' do # rubocop:todo Metrics/BlockLength
     channel = channels(:test_1)
     live_infos = {
-      'TestRoom4' => { 'title' => 'UpdatedLiveTitle1' },
+      'TestRoom4' => { 'title' => 'UpdatedLiveTitle1', 'cover' => 'NewCover1' },
       'TestRoom5' => {
         'title' => 'UpdatedLiveTitle2',
         'startAt' => (Time.now + 1.day).to_i
@@ -119,9 +120,11 @@ class LivesDetectJobTest < ActiveJob::TestCase
 
     assert_nil lives(:test_4).duration
     assert_equal 'UpdatedLiveTitle1', lives(:test_4).title
+    assert_equal 'NewCover1', lives(:test_4).cover
     assert_nil lives(:test_5).duration
     assert_equal 'UpdatedLiveTitle2', lives(:test_5).title
     assert_in_delta (Time.now + 1.day), lives(:test_5).start_at, 2
+    assert_nil lives(:test_5).cover
     assert_nil lives(:test_6).duration
     assert_equal 'StartedScheduledTitle', lives(:test_6).title
     assert_in_delta Time.now, lives(:test_6).start_at, 2

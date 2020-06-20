@@ -58,7 +58,7 @@ class LivesDetectJob < ApplicationJob
       end
     end
 
-    def extend_or_create_lives(live_infos, channel)
+    def extend_or_create_lives(live_infos, channel) # rubocop:todo Metrics/MethodLength
       live_infos.each_pair do |room_val, live_info|
         room = Room.find_by_room_and_platform_id(room_val, channel.platform)
 
@@ -69,6 +69,7 @@ class LivesDetectJob < ApplicationJob
 
         Live.create!(title: live_info['title'],
                      start_at: Time.at(live_info['startAt'] || Time.now.to_i),
+                     cover: live_info['cover'],
                      channel: channel,
                      room: room)
       end
@@ -76,14 +77,14 @@ class LivesDetectJob < ApplicationJob
 
     def update_lives(live_infos)
       Live.includes(:room, :channel)
-          .where(lives: { duration: nil },
-                 rooms: { room: live_infos.keys }).find_each do |live|
+          .where(lives: { duration: nil }, rooms: { room: live_infos.keys })
+          .find_each do |live|
         live_info = live_infos[live.room.room]
-        start_at = live_info['startAt']
 
         live.update!(
           title: live_info['title'],
-          start_at: start_at ? Time.at(start_at) : [live.start_at, Time.now].min
+          cover: live_info['cover'],
+          start_at: cal_start_at(live_info['startAt'], live.start_at)
         )
       end
     end
@@ -105,6 +106,10 @@ class LivesDetectJob < ApplicationJob
       end
 
       success
+    end
+
+    def cal_start_at(new_val, old_val)
+      new_val ? Time.at(new_val) : [old_val, Time.now].min
     end
   end
 end
