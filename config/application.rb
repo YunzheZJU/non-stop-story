@@ -60,7 +60,7 @@ module NonStopStory
         LivesDetectJob.set(wait: 5.seconds).perform_later
 
         if Rails.env.production?
-          DailySummaryJob.set(wait_until: Time.now.midnight + 8.hours)
+          DailySummaryJob.set(wait_until: Time.current.midnight)
                          .perform_later
         else
           DailySummaryJob.set(wait: 5.seconds).perform_later

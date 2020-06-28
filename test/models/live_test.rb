@@ -6,7 +6,7 @@ class LiveTest < ActiveSupport::TestCase
   test 'should succeed to save' do
     live = Live.new(
       title: 'NewLive',
-      start_at: Time.now,
+      start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500,
@@ -20,14 +20,14 @@ class LiveTest < ActiveSupport::TestCase
   test 'should succeed to save optional duration and video' do
     optional_duration = Live.new(
       title: 'NewLive',
-      start_at: Time.now,
+      start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       video: videos(:test_1)
     )
     optional_video = Live.new(
       title: 'NewLive',
-      start_at: Time.now,
+      start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500
@@ -41,7 +41,7 @@ class LiveTest < ActiveSupport::TestCase
 
   test 'should fail to save absent field' do
     absent_title = Live.new(
-      start_at: Time.now,
+      start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500,
@@ -49,7 +49,7 @@ class LiveTest < ActiveSupport::TestCase
     )
     absent_channel = Live.new(
       title: 'サクラカゼ',
-      start_at: Time.now,
+      start_at: Time.current,
       room: rooms(:test_1),
       duration: 500,
       video: videos(:test_1)
@@ -64,7 +64,7 @@ class LiveTest < ActiveSupport::TestCase
   test 'should fail to save negative duration' do
     zero_duration = Live.new(
       title: 'サクラカゼ',
-      start_at: Time.now,
+      start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 0,
@@ -72,7 +72,7 @@ class LiveTest < ActiveSupport::TestCase
     )
     negative_duration = Live.new(
       title: 'サクラカゼ',
-      start_at: Time.now,
+      start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: -1,

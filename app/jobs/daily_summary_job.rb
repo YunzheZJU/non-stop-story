@@ -8,7 +8,7 @@ class DailySummaryJob < ApplicationJob
   rescue StandardError => e
     logger.error e.message
   ensure
-    DailySummaryJob.set(wait_until: Time.now.midnight + 1.day + 8.hours)
+    DailySummaryJob.set(wait_until: Time.current.tomorrow.midnight)
                    .perform_later
   end
 end

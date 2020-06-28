@@ -49,8 +49,8 @@ class LivesDetectJob < ApplicationJob
         room = Room.find_by_room(room_val)
         live = Live.find_by_room_id_and_duration(room, nil)
 
-        if live.start_at <= Time.now
-          live.update! duration: (Time.now - live.start_at).to_i
+        if live.start_at <= Time.current
+          live.update! duration: (Time.current - live.start_at).to_i
         else
           live.destroy!
           room.destroy! if room.lives.empty?
@@ -68,7 +68,8 @@ class LivesDetectJob < ApplicationJob
                                        platform: channel.platform)
 
         Live.create!(title: live_info['title'],
-                     start_at: Time.at(live_info['startAt'] || Time.now.to_i),
+                     start_at: Time.at(live_info['startAt'] ||
+                                         Time.current.to_i),
                      cover: live_info['cover'],
                      channel: channel,
                      room: room)
@@ -99,7 +100,7 @@ class LivesDetectJob < ApplicationJob
       success = false
 
       Live.where(room: room).find_each do |live|
-        if Time.now - (live.start_at + live.duration) < 5.minutes
+        if Time.current - (live.start_at + live.duration) < 5.minutes
           live.update! duration: nil
           success = true
         end
@@ -109,7 +110,7 @@ class LivesDetectJob < ApplicationJob
     end
 
     def cal_start_at(new_val, old_val)
-      new_val ? Time.at(new_val) : [old_val, Time.now].min
+      new_val ? Time.at(new_val) : [old_val, Time.current].min
     end
   end
 end

@@ -67,7 +67,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
       'NewRoom' => { 'title' => 'NewLiveTitle1', 'cover' => 'NewCover1' },
       'ScheduledRoom' => {
         'title' => 'NewLiveTitle2',
-        'startAt' => (Time.now + 1.day).to_i
+        'startAt' => 1.day.from_now.to_i
       }
     }
 
@@ -85,14 +85,14 @@ class LivesDetectJobTest < ActiveJob::TestCase
     assert_not_nil Live.find_by_title('NewLiveTitle1')
     assert_not_nil Live.find_by_cover('NewCover1')
     assert_in_delta(
-      Time.now,
+      Time.current,
       Live.find_by_title('NewLiveTitle1').start_at,
       2
     )
     assert_not_nil Room.find_by_room('ScheduledRoom')
     assert_not_nil Live.find_by_title('NewLiveTitle2')
     assert_in_delta(
-      Time.now + 1.day,
+      1.day.from_now,
       Live.find_by_title('NewLiveTitle2').start_at,
       2
     )
@@ -104,7 +104,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
       'TestRoom4' => { 'title' => 'UpdatedLiveTitle1', 'cover' => 'NewCover1' },
       'TestRoom5' => {
         'title' => 'UpdatedLiveTitle2',
-        'startAt' => (Time.now + 1.day).to_i
+        'startAt' => 1.day.from_now.to_i
       },
       'TestRoom6' => { 'title' => 'StartedScheduledTitle' }
     }
@@ -123,11 +123,11 @@ class LivesDetectJobTest < ActiveJob::TestCase
     assert_equal 'NewCover1', lives(:test_4).cover
     assert_nil lives(:test_5).duration
     assert_equal 'UpdatedLiveTitle2', lives(:test_5).title
-    assert_in_delta (Time.now + 1.day), lives(:test_5).start_at, 2
+    assert_in_delta 1.day.from_now, lives(:test_5).start_at, 2
     assert_nil lives(:test_5).cover
     assert_nil lives(:test_6).duration
     assert_equal 'StartedScheduledTitle', lives(:test_6).title
-    assert_in_delta Time.now, lives(:test_6).start_at, 2
+    assert_in_delta Time.current, lives(:test_6).start_at, 2
   end
 
   test 'should sync lives' do # rubocop:todo Metrics/BlockLength
@@ -136,13 +136,13 @@ class LivesDetectJobTest < ActiveJob::TestCase
       'TestRoom4' => { 'title' => 'UpdatedLiveTitle1' },
       'TestRoom5' => {
         'title' => 'UpdatedLiveTitle2',
-        'startAt' => (Time.now + 1.day).to_i
+        'startAt' => 1.day.from_now.to_i
       },
       'TestRoom6' => { 'title' => 'StartedScheduledTitle' },
       'NewRoom' => { 'title' => 'NewLiveTitle1' },
       'ScheduledRoom' => {
         'title' => 'NewLiveTitle2',
-        'startAt' => (Time.now + 1.day).to_i
+        'startAt' => 1.day.from_now.to_i
       }
     }
 
@@ -156,21 +156,21 @@ class LivesDetectJobTest < ActiveJob::TestCase
     assert_in_delta Time.zone.parse('2020-03-27 0:00:00'), lives(:test_4).start_at, 2
     assert_nil lives(:test_5).duration
     assert_equal 'UpdatedLiveTitle2', lives(:test_5).title
-    assert_in_delta (Time.now + 1.day), lives(:test_5).start_at, 2
+    assert_in_delta 1.day.from_now, lives(:test_5).start_at, 2
     assert_nil lives(:test_6).duration
     assert_equal 'StartedScheduledTitle', lives(:test_6).title
-    assert_in_delta Time.now, lives(:test_6).start_at, 2
+    assert_in_delta Time.current, lives(:test_6).start_at, 2
     assert_not_nil Room.find_by_room('NewRoom')
     assert_not_nil Live.find_by_title('NewLiveTitle1')
     assert_in_delta(
-      Time.now,
+      Time.current,
       Live.find_by_title('NewLiveTitle1').start_at,
       2
     )
     assert_not_nil Room.find_by_room('ScheduledRoom')
     assert_not_nil Live.find_by_title('NewLiveTitle2')
     assert_in_delta(
-      Time.now + 1.day,
+      1.day.from_now,
       Live.find_by_title('NewLiveTitle2').start_at,
       2
     )

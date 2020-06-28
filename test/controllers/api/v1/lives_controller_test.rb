@@ -20,7 +20,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
   test 'should update' do
     patch api_v1_live_url(lives(:test_1)), params: {
       live: { title: 'NewLiveTitle',
-              start_at: Time.now.iso8601,
+              start_at: Time.current.iso8601,
               room: rooms(:test_2)[:id],
               ignored_param: 'any' }
     }
@@ -31,7 +31,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     assert_equal channels(:test_1), lives(:test_1).channel
     assert_nil lives(:test_1).duration
     assert_nil lives(:test_1).video
-    assert_in_delta Time.now, lives(:test_1).start_at, 2
+    assert_in_delta Time.current, lives(:test_1).start_at, 2
 
     assert_raise(StandardError) do
       patch api_v1_live_url(lives(:test_1)),
@@ -49,7 +49,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
   test 'should create' do
     post api_v1_lives_url, params: {
       live: { title: 'NewLive',
-              start_at: Time.now.iso8601,
+              start_at: Time.current.iso8601,
               channel: channels(:test_1)[:id],
               room: rooms(:test_1)[:id],
               duration: 500,
@@ -112,7 +112,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended filter start_after' do
     get '/api/v1/lives/ended', params: {
-      start_after: Time.parse('2020-03-27 0:03:00 UTC').to_i
+      start_after: Time.zone.parse('2020-03-27 0:03:00').to_i
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
@@ -121,7 +121,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended filter start_before' do
     get '/api/v1/lives/ended', params: {
-      start_before: Time.parse('2020-03-27 0:03:00 UTC').to_i
+      start_before: Time.zone.parse('2020-03-27 0:03:00').to_i
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
@@ -190,7 +190,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get scheduled filter start_before' do
     get '/api/v1/lives/scheduled', params: {
-      start_before: (Time.now + 7.days).to_i
+      start_before: 7.days.from_now.to_i
     }
     assert_response :success
     assert_equal 0, JSON.parse(@response.body)['lives'].size

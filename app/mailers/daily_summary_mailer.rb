@@ -13,7 +13,7 @@ class DailySummaryMailer < ApplicationMailer
   private
 
   def data
-    @end = Time.now.midnight + 8.hours
+    @end = Time.current.midnight
     @start = @end - 1.day
     lives = Live.where(start_at: @start..@end)
     @count = lives.count
