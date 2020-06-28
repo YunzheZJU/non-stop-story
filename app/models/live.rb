@@ -16,10 +16,10 @@ class Live < ApplicationRecord
     where(channel: channels) if channels.present?
   }
   scope :start_after, lambda { |time|
-    where('start_at > ?', time) if time.present?
+    where('start_at >= ?', time) if time.present?
   }
   scope :start_before, lambda { |time|
-    where('start_at <= ?', time) if time.present?
+    where('start_at < ?', time) if time.present?
   }
   scope :ended, -> { where.not(duration: nil) }
   scope :not_ended, -> { where(duration: nil) }

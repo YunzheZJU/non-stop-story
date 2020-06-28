@@ -96,6 +96,10 @@ class Api::V1::LivesController < ApplicationController
   def filter
     @lives = Live.includes(:channel, :video, room: :platform)
                  .of_channels(params[:channels])
+    %i[start_before start_after].each do |key|
+      param = params[key]
+      @lives = @lives.send(key, Time.at(param.to_i)) if param
+    end
   end
 
   def pagination
