@@ -1,0 +1,302 @@
+platforms:
+  - youtube
+  - bilibili
+members:
+  tokinosora:
+    name: ときのそら
+    avatar: https://yt3.ggpht.com/a/AGF-l79dHleIBmBtLP2TfcmFpIJjmH7fa8tfG1qTKg=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#4075ff'
+    color_sub: '#fc01b3'
+    youtube:
+      - UCp6993wxpyDPHUpavwDFqgg
+    bilibili:
+      - 8899503
+  azki:
+    name: AZKi
+    avatar: https://yt3.ggpht.com/a/AATXAJwDg8CoHtj7qnk1aj5h75lIWOaH-__JNzqNGA=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f9002f'
+    color_sub: '#58e1f1'
+    youtube:
+      - UC0TXe_LYZ4scaW2XMyi5_kw
+    bilibili:
+      - 21267062
+  robocosan:
+    name: ロボ子さん
+    avatar: https://yt3.ggpht.com/a/AATXAJzPUElg3_AunkFVflcyLEGybFmP3Txpg1c-AQ=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#d252ff'
+    color_sub: '#fca5cf'
+    youtube:
+      - UCDqI2jOz0weumE8s7paEk6g
+    bilibili:
+      - 4664126
+  sakuramiko:
+    name: さくらみこ
+    avatar: https://yt3.ggpht.com/a/AATXAJztlxp1NvyEG3ULspVuGLwdoweCnhDsZDzgqA=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ffa4cf'
+    color_sub: '#f50f3e'
+    youtube:
+      - UC-hM6YJuNYVAmUWxeIr9FeA
+    bilibili:
+      - 21144047
+  shirakamifubuki:
+    name: 白上フブキ
+    avatar: https://yt3.ggpht.com/a/AGF-l7-oeSvjxgdwMoDyT1LMH8nyqkWJCZH8MAOjzg=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#48e6ff'
+    color_sub: '#ffffff'
+    youtube:
+      - UCdn5BQ06XqgXoAxIhbqw5Rg
+    bilibili:
+      - 11588230
+  natsuiromatsuri:
+    name: 夏色まつり
+    avatar: https://yt3.ggpht.com/a/AGF-l7_MTJEH9Kn-cVznPJPBt4v0BOkmd5btoSdz6Q=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ff7709'
+    color_sub: '#3be898'
+    youtube:
+      - UCQ0UDLQCjY0rmuxCDE38FGg
+    bilibili:
+      - 13946381
+  yozoramel:
+    name: 夜空メル
+    avatar: https://yt3.ggpht.com/a/AATXAJw__74rAt8SKtuBzHDGXg7AlSXGjJ0aO1giMw=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ffd200'
+    color_sub: '#fd760a'
+    youtube:
+      - UCD8HOxPs4Xvsm8H0ZxXGiBw
+    bilibili:
+      - 21131813
+  akaihaato:
+    name: 赤井はあと
+    avatar: https://yt3.ggpht.com/a/AGF-l7-ULNK73gTCGtPrM6elTCL-ValOSptM0YTXkQ=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f7002f'
+    color_sub: '#fe00ae'
+    youtube:
+      - UC1CfXB_kRs3C-zaeTG3oGyg
+    bilibili:
+      - 14275133
+  akirosenthal:
+    name: アキ・ローゼンタール
+    avatar: https://yt3.ggpht.com/a/AGF-l7-MKGs8oe830HpPIlyQ3pNAVqUgqiMdSg8TwQ=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#8045ff'
+    color_sub: '#ffa3cf'
+    youtube:
+      - UCFTLzh12_nrtzqBPsTCqenA
+    bilibili:
+      - 21219990
+  minatoaqua:
+    name: 湊あくあ
+    avatar: https://yt3.ggpht.com/a/AATXAJwHPp_TkvcWJyblt9XVYDjNSjrj6KdpQSCQNQ=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#d252ff'
+    color_sub: '#63e5ff'
+    youtube:
+      - UC1opHUrw8rvnsadT-iGp7Cg
+    bilibili:
+      - 14917277
+  yuzukichoco:
+    name: 癒月ちょこ
+    avatar: https://yt3.ggpht.com/a/AGF-l79rj4svlTtPimVkcxdUJS8VGt01u_mqZWZIbA=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#fb1fb7'
+    color_sub: '#f9a8c9'
+    youtube:
+      - UC1suqwovbL1kzsoaZgFZLKg
+      - UCp3tgHXw_HI0QMk1K8qh3gQ
+    bilibili:
+      - 21107534
+  nakiriayame:
+    name: 百鬼あやめ
+    avatar: https://yt3.ggpht.com/a/AATXAJyDhi8y6CDBgpb-yV0T-aiZc8oXwMG7NacqOg=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f7002f'
+    color_sub: '#ffffff'
+    youtube:
+      - UC7fk0CB07ly8oSl0aqKkqFg
+    bilibili:
+      - 21130785
+  murasakishion:
+    name: 紫咲シオン
+    avatar: https://yt3.ggpht.com/a/AGF-l79Wv6njnWc-lQDwczBQVLgBIRMD8PJ72ZIPLg=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#d252ff'
+    color_sub: '#ffd246'
+    youtube:
+      - UCXTpFs_3PqI41qX2d9tL2Rw
+    bilibili:
+      - 21132965
+  oozorasubaru:
+    name: 大空スバル
+    avatar: https://yt3.ggpht.com/a/AATXAJw9_oqF22fvOEqGj2rHC12PadwHN-NlFL4DeA=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ffd52d'
+    color_sub: '#58eaa3'
+    youtube:
+      - UCvzGlP9oQwU--Y0r9id_jnA
+    bilibili:
+      - 21129632
+  ookamimio:
+    name: 大神ミオ
+    avatar: https://yt3.ggpht.com/a/AATXAJzFpyPB7LFGFq5DIX2x7pvIblA9Ksz99TrDYvOa5w=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#3be898'
+    color_sub: '#f7002f'
+    youtube:
+      - UCp-5t9SrOQwXMU7iIjQfARg
+    bilibili:
+      - 21133979
+  mekomataokayu:
+    name: 猫又おかゆ
+    avatar: https://yt3.ggpht.com/a/AATXAJxiB3oU3X4_wTHHAay43njgJgzw-2qKPeYIjDH2=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#d252ff'
+    color_sub: '#4374ff'
+    youtube:
+      - UCvaTdHTWBGv3MKj3KVqJVCw
+    bilibili:
+      - 21420932
+  inugamikorone:
+    name: 戌神ころね
+    avatar: https://yt3.ggpht.com/a/AATXAJyL8gbKgJBHALWhWp56B6QTdNUPb03zwvT1uw=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ffd200'
+    color_sub: '#4de4ff'
+    youtube:
+      - UChAnqc_AY5_I3Px5dig3X1Q
+    bilibili:
+      - 21421141
+  shiranuiflare:
+    name: 不知火フレア
+    avatar: https://yt3.ggpht.com/a/AATXAJwGmRMcFMvE1JW3v152HnrXfMQxbI_Dw92KH0-CpA=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#fc8328'
+    color_sub: '#ffffff'
+    youtube:
+      - UCvInZx9h3jC2JzsIzoOebWg
+    bilibili:
+      - 21572617
+  shiroganenoel:
+    name: 白銀ノエル
+    avatar: https://yt3.ggpht.com/a/AATXAJwBxPdKpbHq1LKbJb_HIj691WraJza8FWnYZw=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ffffff'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCdyqAaZDKHXg4Ahi7VENThQ
+    bilibili:
+      - 21583736
+  houshoumarine:
+    name: 宝鐘マリン
+    avatar: https://yt3.ggpht.com/a/AATXAJxeNWA_oVxR5sKIs9hQotV_M9zS3NtgqB3tcw=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f7002f'
+    color_sub: '#ff811d'
+    youtube:
+      - UCCzUftO8KOVkV4wQG1vkUvg
+    bilibili:
+      - 21584153
+  usadapekora:
+    name: 兎田ぺこら
+    avatar: https://yt3.ggpht.com/a/AATXAJyMxAFFr0_eQYgUQWkV6CWlx_t1NETncJygQA=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#4de4ff'
+    color_sub: '#ff7f34'
+    youtube:
+      - UC1DCedRgGHBdm81E1llLhOQ
+    bilibili:
+      - 21560356
+  uruharushia:
+    name: 潤羽るしあ
+    avatar: https://yt3.ggpht.com/a/AATXAJxpi3N0NvZfBKKkEPPXx2U5xmQPNUT8AVOj1g=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#8045ff'
+    color_sub: '#92f43f'
+    youtube:
+      - UCl_gCybOJRIgOXw6Qb4qJzQ
+    bilibili:
+      - 21545232
+  hoshimatisuisei:
+    name: 星街すいせい
+    avatar: https://yt3.ggpht.com/a/AATXAJwKuNhye0SEMSrtM5HUe5aVtKyxAvmdDlSpWw=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#4074ff'
+    color_sub: '#4de4ff'
+    youtube:
+      - UC5CwaMl1eIgY8h02uZw7u8A
+    bilibili:
+      - 190577
+  amanekanata:
+    name: 天音かなた
+    avatar: https://yt3.ggpht.com/a/AGF-l7_OdjohiBOVMZd0dHxZ1Jh1S1kJKGS0nYfNVg=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#509bea'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCZlDXzGoo7d44bwdNObFacg
+    bilibili:
+      - 21752681
+  kiryucoco:
+    name: 桐生ココ
+    avatar: https://yt3.ggpht.com/a/AGF-l7-UWVGytfW-cAiCvg8r2C_6Gk2SnqSkJP9Cqg=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f38514'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCS9uQI-jC3DE0L4IpXyvr6w
+    bilibili:
+      - 21752686
+  tsunomakiwatame:
+    name: 角巻わため
+    avatar: https://yt3.ggpht.com/a/AGF-l78pYNGWXckjVjmMsSz4iPeCzmWB2DHFW3lLdQ=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f9afb2'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCqm3BQLlJfvkTsX_hvm0UmA
+    bilibili:
+      - 21752694
+  tokoyamitowa:
+    name: 常闇トワ
+    avatar: https://yt3.ggpht.com/a/AGF-l7_MD5OqIfTp-JG-F5QSAiIIsprC8TrQpVhdvA=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ba92ca'
+    color_sub: '#4de4ff'
+    youtube:
+      - UC1uv2Oq6kNxgATlCiez59hw
+    bilibili:
+      - 21752710
+  himemoriluna:
+    name: 姫森ルーナ
+    avatar: https://yt3.ggpht.com/a/AGF-l7-xWfYjQX1VHU2i1BuIap0Ba3tR3T6w4dcCkA=s88-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f7abd5'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCa9Y57gfeY0Zro_noHRVrnw
+    bilibili:
+      - 21752719
+  yukihanalamy:
+    name: 雪花ラミィ
+    avatar: https://yt3.ggpht.com/a/AATXAJzN5Oo_0gI5qPUclliWy8EzU9x5z4oIYliAB3bf=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#68cdf7'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCFKOVgVbGmX65RxO3EtH3iw
+    bilibili:
+      - 22349508
+  momosuzunene:
+    name: 桃鈴ねね
+    avatar: https://yt3.ggpht.com/a/AATXAJyy0MDi5ux-dNieMyjSCs4xBUQWHOfkPfsz5Xrw=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#ffb65d'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCAWSyEs_Io8MtpY3m-zqILA
+    bilibili:
+      - 22349492
+  shishirobotan:
+    name: 獅白ぼたん
+    avatar: https://yt3.ggpht.com/a/AATXAJzO_bOBHuKPycvddNd88hozl2OjaNC-uR7lOAXa=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#a4e5cf'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCUKD-uaobj9jiqB-VXt71mA
+    bilibili:
+      - 22349494
+  manoaloe:
+    name: 魔乃アロエ
+    avatar: https://yt3.ggpht.com/a/AATXAJyYCsfSn428TJHQl090qek59epckWGsjto9ZOad=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#f38cc4'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCgZuwn-O7Szh9cAgHqJ6vjw
+    bilibili:
+      - 22349497
+  omarupolka:
+    name: 尾丸ポルカ
+    avatar: https://yt3.ggpht.com/a/AATXAJzMPMCRzpyIsPyp8cOdA2FUwkBotqe6Dh0CmKgA=s100-c-k-c0xffffffff-no-rj-mo
+    color_main: '#cf2830'
+    color_sub: '#4de4ff'
+    youtube:
+      - UCK9V2B22uJYu3N7eR_BT9QA
+    bilibili:
+      - 22349506
