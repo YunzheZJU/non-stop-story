@@ -36,8 +36,6 @@ module NonStopStory
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    # config.log_level = :warn if Rails.env.production?
-
     config.action_dispatch.default_headers = {
       'X-Frame-Options' => 'SAMEORIGIN',
       'X-XSS-Protection' => '1; mode=block',
