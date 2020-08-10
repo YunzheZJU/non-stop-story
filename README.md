@@ -1,5 +1,7 @@
 # Non-stop-story
 
+![Test status](https://github.com/YunzheZJU/non-stop-story/workflows/Test/badge.svg)
+
 [日本語](docs/README.ja.md) [中文](docs/README.zh_CN.md)
 
 **v1.0 KARKINOS**
