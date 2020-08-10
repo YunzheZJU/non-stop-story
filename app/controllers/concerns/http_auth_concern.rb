@@ -3,7 +3,7 @@
 module HttpAuthConcern
   extend ActiveSupport::Concern
 
-  Rails.application.credentials.http_basic! unless Rails.env.production?
+  Rails.application.credentials.http_basic! if Rails.env.production?
 
   def authenticate
     return true unless Rails.env.production?
