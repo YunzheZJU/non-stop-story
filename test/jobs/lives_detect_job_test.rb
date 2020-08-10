@@ -45,7 +45,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
     room_vals = live_infos.to_a.map { |room, _live_info| room }
     open_room_vals = Room.open(channel).pluck('room')
 
-    travel_to Time.new(2020, 3, 27, 8, 31, 0) do
+    travel_to Time.zone.parse('2020-03-27 0:31:00') do
       assert_difference('Room.open(channel).count', 2) do
         LivesDetectJob.extend_or_create_lives(
           live_infos.select do |room|
@@ -153,7 +153,7 @@ class LivesDetectJobTest < ActiveJob::TestCase
     assert_not_nil lives(:test_1).duration
     assert_nil lives(:test_4).duration
     assert_equal 'UpdatedLiveTitle1', lives(:test_4).title
-    assert_in_delta Time.mktime(2020, 3, 27, 8), lives(:test_4).start_at, 2
+    assert_in_delta Time.zone.parse('2020-03-27 0:00:00'), lives(:test_4).start_at, 2
     assert_nil lives(:test_5).duration
     assert_equal 'UpdatedLiveTitle2', lives(:test_5).title
     assert_in_delta (Time.now + 1.day), lives(:test_5).start_at, 2
