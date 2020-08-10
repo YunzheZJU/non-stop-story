@@ -82,6 +82,7 @@ PRODUCTION
 
 * `config/credentials.yml.enc` stores encoded sensitive data such as admin username and password.
 [Rails guides on credentials](https://guides.rubyonrails.org/security.html#custom-credentials).
+**You must provide `username` and `password` under key `http_basic` before you deploy.**
 
 ## Database initialization
 
