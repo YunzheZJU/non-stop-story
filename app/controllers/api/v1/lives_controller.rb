@@ -78,7 +78,8 @@ class Api::V1::LivesController < ApplicationController
     )
   end
 
-  def format(live_params) # rubocop:todo Metrics/MethodLength
+  # rubocop:todo Metrics/MethodLength
+  def format(live_params)
     live_params.to_h.each_with_object({}) do |(key, value), hash|
       hash[key] = case key
                   when 'start_at'
@@ -92,6 +93,8 @@ class Api::V1::LivesController < ApplicationController
                   end
     end
   end
+
+  # rubocop:enable Metrics/MethodLength
 
   def filter
     @lives = Live.includes(:channel, :video, room: :platform)
@@ -108,15 +111,11 @@ class Api::V1::LivesController < ApplicationController
   end
 
   def transform(live)
-    { id: live.id,
-      title: live.title,
-      duration: live.duration,
-      start_at: live.start_at,
-      channel_id: live.channel_id,
-      cover: live.cover,
-      room: live.room.room,
-      platform: live.room.platform.platform,
-      channel: live.channel.channel,
-      video: live.video&.video }
+    keys_to_select = %i[id title duration start_at channel_id cover created_at]
+    live.as_json(only: keys_to_select)
+        .merge(room: live.room.room,
+               platform: live.room.platform.platform,
+               channel: live.channel.channel,
+               video: live.video&.video)
   end
 end
