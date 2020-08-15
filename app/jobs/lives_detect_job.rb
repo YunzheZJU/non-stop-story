@@ -7,7 +7,8 @@ class LivesDetectJob < ApplicationJob
   queue_as :default
 
   def perform(*_args)
-    LivesDetectJob.set(wait: 60.seconds).perform_later
+    LivesDetectJob.set(wait: Rails.configuration.job[:interval].seconds)
+                  .perform_later
 
     %w[youtube bilibili].each do |platform_val|
       request_and_sync Platform.find_by_platform(platform_val)
@@ -27,7 +28,7 @@ class LivesDetectJob < ApplicationJob
   class << self
     def channels_by_worker(platform)
       # workers = %w[w1 w2 w3]
-      workers = Rails.configuration.worker[platform.platform]
+      workers = Rails.configuration.worker[platform.platform.to_sym]
       # channels = %w[c1 c2 c3 c4 c5 c6 c7]
       channels = Channel.of_platforms(platform).pluck(:channel)
       # { 'w1' => %w[c1 c4 c7], 'w2' => %w[c2 c5], 'w3' => %w[c3 c6] }
@@ -58,7 +59,8 @@ class LivesDetectJob < ApplicationJob
       end
     end
 
-    def extend_or_create_lives(live_infos, channel) # rubocop:todo Metrics/MethodLength
+    def extend_or_create_lives(live_infos, channel)
+      # rubocop:todo Metrics/MethodLength
       live_infos.each_pair do |room_val, live_info|
         room = Room.find_by_room_and_platform_id(room_val, channel.platform)
 

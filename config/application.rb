@@ -51,6 +51,7 @@ module NonStopStory
 
     config.worker = config_for(:worker)
     config.email = config_for(:email)
+    config.job = config_for(:job)
     config.after_initialize do
       # Ugly fix for duplicated jobs when multiple workers are running
       # Leave exactly ONE worker executing jobs and pass ENV['disable-job'] = 'true' to the others

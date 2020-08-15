@@ -1,0 +1,11 @@
+default: &default
+  interval: 60
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
