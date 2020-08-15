@@ -8,7 +8,7 @@ class Network
     def get_videos(worker, channels)
       retry_count = 0
       begin
-        res = request(encode_worker_uri(worker, channels))
+        res = request(*encode_worker_uri(worker, channels))
 
         raise "Network error: #{res.code}" unless res.is_a? Net::HTTPSuccess
 
@@ -23,14 +23,23 @@ class Network
     private
 
     def encode_worker_uri(worker, channels)
-      uri = URI(worker)
+      is_plain_worker = worker.instance_of? String
+
+      uri = URI(is_plain_worker ? worker : worker[:worker])
       uri.query = URI.encode_www_form(channels: channels)
-      uri
+
+      proxy = begin
+                URI(worker[:proxy])
+              rescue StandardError
+                nil
+              end
+
+      [uri, proxy]
     end
 
-    def request(uri)
+    def request(uri, proxy)
       Net::HTTP.start(
-        uri.host, uri.port,
+        uri.host, uri.port, proxy&.host, proxy&.port,
         open_timeout: 5, read_timeout: 5,
         use_ssl: uri.scheme == 'https', max_retries: 3
       ) do |http|
