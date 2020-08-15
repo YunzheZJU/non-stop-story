@@ -59,8 +59,8 @@ class LivesDetectJob < ApplicationJob
       end
     end
 
+    # rubocop:todo Metrics/MethodLength
     def extend_or_create_lives(live_infos, channel)
-      # rubocop:todo Metrics/MethodLength
       live_infos.each_pair do |room_val, live_info|
         room = Room.find_by_room_and_platform_id(room_val, channel.platform)
 
@@ -77,6 +77,8 @@ class LivesDetectJob < ApplicationJob
                      room: room)
       end
     end
+
+    # rubocop:enable Metrics/MethodLength
 
     def update_lives(live_infos)
       Live.includes(:room, :channel)

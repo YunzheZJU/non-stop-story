@@ -153,7 +153,9 @@ class LivesDetectJobTest < ActiveJob::TestCase
     assert_not_nil lives(:test_1).duration
     assert_nil lives(:test_4).duration
     assert_equal 'UpdatedLiveTitle1', lives(:test_4).title
-    assert_in_delta Time.zone.parse('2020-03-27 0:00:00'), lives(:test_4).start_at, 2
+    assert_in_delta Time.zone.parse('2020-03-27 0:00:00'),
+                    lives(:test_4).start_at,
+                    2
     assert_nil lives(:test_5).duration
     assert_equal 'UpdatedLiveTitle2', lives(:test_5).title
     assert_in_delta 1.day.from_now, lives(:test_5).start_at, 2
