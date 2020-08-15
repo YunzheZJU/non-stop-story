@@ -8,21 +8,21 @@
 name: Test
 
 on:
-  push:
-    branches: [ '**' ]
+  push
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-    - name: Install dependencies
-      run: bundle install
-    - name: Init database
-      run: RAILS_ENV=test bundle exec rails db:migrate
-    - name: Run tests
-      run: bundle exec rake
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+      - name: Install dependencies
+        run: bundle install
+      - name: Init database
+        run: RAILS_ENV=test bundle exec rails db:migrate
+      - name: Lint files
+        run: bundle exec rubocop
+      - name: Run tests
+        run: bundle exec rake
