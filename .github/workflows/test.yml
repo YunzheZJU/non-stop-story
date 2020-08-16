@@ -8,7 +8,8 @@
 name: Test
 
 on:
-  push
+  - push
+  - pull_request
 
 jobs:
   test:
