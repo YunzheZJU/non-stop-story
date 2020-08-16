@@ -4,7 +4,7 @@
 
 [日本語](docs/README.ja.md) [中文](docs/README.zh_CN.md)
 
-**v1.1 KARKINOS**
+**v1.2 KARKINOS**
 
 ### Table of contents
 
