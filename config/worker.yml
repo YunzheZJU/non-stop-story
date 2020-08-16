@@ -1,6 +1,8 @@
 default: &default
   youtube:
     - https://workername.username.workers.dev
+  bilibili:
+    - https://anotherworker.username.workers.dev
 
 development:
   <<: *default
