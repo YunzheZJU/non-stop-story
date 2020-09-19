@@ -19,3 +19,8 @@ test_4:
   channel: TestChannel4
   platform: bilibili
   member: test_2
+
+test_5:
+  channel: TestChannel5
+  platform: youtube
+  member: test_3

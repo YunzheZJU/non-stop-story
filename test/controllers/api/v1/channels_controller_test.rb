@@ -18,7 +18,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
     }
     data = JSON.parse(@response.body)
     assert_response :success
-    assert_equal 3, data['total']
+    assert_equal 4, data['total']
   end
 
   test 'should get index filter members' do
@@ -37,7 +37,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
     }
     data = JSON.parse(@response.body)
     assert_equal 2, data['channels'].size
-    assert_equal 4, data['total']
+    assert_equal Channel.count, data['total']
   end
 
   test 'should get index filter pagination' do

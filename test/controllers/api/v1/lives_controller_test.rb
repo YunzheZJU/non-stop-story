@@ -63,13 +63,9 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
   test 'should get ended' do
     get '/api/v1/lives/ended'
     assert_response :success
-    assert_equal 2, JSON.parse(@response.body)['lives'].size
-    assert_includes(
-      %w[TestLive2 TestLive3], JSON.parse(@response.body)['lives'][0]['title']
-    )
-    assert_includes(
-      %w[TestLive2 TestLive3], JSON.parse(@response.body)['lives'][1]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive2 TestLive3 TestLive7], live['title']
+    end
   end
 
   test 'should get ended pagination' do
@@ -78,18 +74,20 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
-    assert_equal 2, JSON.parse(@response.body)['total']
+    assert_equal 3, JSON.parse(@response.body)['total']
     assert_includes(
-      %w[TestLive2 TestLive3], JSON.parse(@response.body)['lives'][0]['title']
+      %w[TestLive2 TestLive3 TestLive7],
+      JSON.parse(@response.body)['lives'][0]['title']
     )
     get '/api/v1/lives/ended', params: {
       page: 2, limit: 1
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
-    assert_equal 2, JSON.parse(@response.body)['total']
+    assert_equal 3, JSON.parse(@response.body)['total']
     assert_includes(
-      %w[TestLive2 TestLive3], JSON.parse(@response.body)['lives'][0]['title']
+      %w[TestLive2 TestLive3 TestLive7],
+      JSON.parse(@response.body)['lives'][0]['title']
     )
   end
 
@@ -98,13 +96,10 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
       channels: channels(:test_1)[:id]
     }
     assert_response :success
-    assert_equal 2, JSON.parse(@response.body)['lives'].size
-    assert_includes(
-      %w[TestLive2 TestLive3], JSON.parse(@response.body)['lives'][0]['title']
-    )
-    assert_includes(
-      %w[TestLive2 TestLive3], JSON.parse(@response.body)['lives'][1]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive2 TestLive3], live['title']
+    end
+
     get '/api/v1/lives/ended?channels=1'
     assert_response :success
     assert_equal 0, JSON.parse(@response.body)['lives'].size
@@ -115,8 +110,9 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
       start_after: Time.zone.parse('2020-03-27 0:03:00').to_i
     }
     assert_response :success
-    assert_equal 1, JSON.parse(@response.body)['lives'].size
-    assert_equal 'TestLive3', JSON.parse(@response.body)['lives'][0]['title']
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive3 TestLive7], live['title']
+    end
   end
 
   test 'should get ended filter start_before' do
@@ -124,20 +120,17 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
       start_before: Time.zone.parse('2020-03-27 0:03:00').to_i
     }
     assert_response :success
-    assert_equal 1, JSON.parse(@response.body)['lives'].size
-    assert_equal 'TestLive2', JSON.parse(@response.body)['lives'][0]['title']
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive2], live['title']
+    end
   end
 
   test 'should get current' do
     get '/api/v1/lives/current'
     assert_response :success
-    assert_equal 2, JSON.parse(@response.body)['lives'].size
-    assert_includes(
-      %w[TestLive1 TestLive4], JSON.parse(@response.body)['lives'][0]['title']
-    )
-    assert_includes(
-      %w[TestLive1 TestLive4], JSON.parse(@response.body)['lives'][1]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive1 TestLive4], live['title']
+    end
   end
 
   test 'should get current should filter channel' do
@@ -145,13 +138,10 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
       channels: channels(:test_1)[:id]
     }
     assert_response :success
-    assert_equal 2, JSON.parse(@response.body)['lives'].size
-    assert_includes(
-      %w[TestLive1 TestLive4], JSON.parse(@response.body)['lives'][0]['title']
-    )
-    assert_includes(
-      %w[TestLive1 TestLive4], JSON.parse(@response.body)['lives'][1]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive1 TestLive4], live['title']
+    end
+
     get '/api/v1/lives/current?channels=1'
     assert_response :success
     assert_equal 0, JSON.parse(@response.body)['lives'].size
@@ -160,13 +150,9 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
   test 'should get scheduled' do
     get '/api/v1/lives/scheduled'
     assert_response :success
-    assert_equal 2, JSON.parse(@response.body)['lives'].size
-    assert_includes(
-      %w[TestLive5 TestLive6], JSON.parse(@response.body)['lives'][0]['title']
-    )
-    assert_includes(
-      %w[TestLive5 TestLive6], JSON.parse(@response.body)['lives'][1]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive5 TestLive6], live['title']
+    end
   end
 
   test 'should get scheduled filter channels' do
@@ -174,13 +160,10 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
       channels: channels(:test_1)[:id]
     }
     assert_response :success
-    assert_equal 2, JSON.parse(@response.body)['lives'].size
-    assert_includes(
-      %w[TestLive5 TestLive6], JSON.parse(@response.body)['lives'][0]['title']
-    )
-    assert_includes(
-      %w[TestLive5 TestLive6], JSON.parse(@response.body)['lives'][1]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive5 TestLive6], live['title']
+    end
+
     get '/api/v1/lives/scheduled', params: {
       channels: 100
     }
@@ -196,4 +179,5 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 0, JSON.parse(@response.body)['lives'].size
   end
 end
+
 # rubocop:enable Metrics/ClassLength

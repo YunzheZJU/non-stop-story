@@ -5,7 +5,7 @@ test_1:
   avatar: TestAvatar1
   color_main: '#000000'
   color_sub: '#ffffff'
-  graduated: true
+  graduated: false
 
 test_2:
   name: TestMember2
@@ -15,8 +15,8 @@ test_2:
   graduated: false
 
 test_3:
-  name: TestMember2
+  name: TestMember3
   avatar: TestAvatar1
   color_main: '#000000'
   color_sub: '#ffffff'
-  graduated: false
+  graduated: true

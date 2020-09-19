@@ -23,3 +23,11 @@ test_5:
 test_6:
   room: TestRoom6
   platform: youtube
+
+test_7:
+  room: TestRoom7
+  platform: youtube
+
+test_8:
+  room: TestRoom8
+  platform: youtube

@@ -72,7 +72,8 @@ class MemberTest < ActiveSupport::TestCase
   test 'should scope active' do
     member = Member.active
 
-    assert_equal 2, member.size
-    assert_not_includes member, members(:test_1)
+    assert_includes member, members(:test_1)
+    assert_includes member, members(:test_2)
+    assert_not_includes member, members(:test_3)
   end
 end

@@ -56,7 +56,7 @@ class ChannelTest < ActiveSupport::TestCase
   test 'should scope of_platforms' do
     channels = Channel.of_platforms(platforms(:youtube))
 
-    assert_equal 3, channels.size
+    assert_equal 4, channels.size
     assert_not_includes channels, channels(:test_4)
   end
 
