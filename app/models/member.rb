@@ -9,4 +9,6 @@ class Member < ApplicationRecord
 
     record.errors.add(attr, "only allows hex colors start with '#'")
   end
+
+  scope :active, -> { where(graduated: false) }
 end
