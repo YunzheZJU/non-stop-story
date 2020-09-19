@@ -11,12 +11,13 @@ class LivesDetectJob < ApplicationJob
                   .perform_later
 
     %w[youtube bilibili].each do |platform_val|
-      request_and_sync Platform.find_by_platform(platform_val)
+      request_and_sync Platform.find_by_platform(platform_val), Member.active
     end
   end
 
-  def request_and_sync(platform)
-    LivesDetectJob.channels_by_worker(platform).each do |worker, channels|
+  def request_and_sync(platform, member)
+    LivesDetectJob.channels_by_worker(platform, member)
+                  .each do |worker, channels|
       response = Network.get_videos(worker, channels)
 
       Channel.where(channel: response.keys).find_each do |channel|
@@ -26,11 +27,13 @@ class LivesDetectJob < ApplicationJob
   end
 
   class << self
-    def channels_by_worker(platform)
+    def channels_by_worker(platform, member)
       # workers = %w[w1 w2 w3]
       workers = Rails.configuration.worker[platform.platform.to_sym]
       # channels = %w[c1 c2 c3 c4 c5 c6 c7]
-      channels = Channel.of_platforms(platform).pluck(:channel)
+      channels = Channel.of_platforms(platform)
+                        .of_members(member)
+                        .pluck(:channel)
       # { 'w1' => %w[c1 c4 c7], 'w2' => %w[c2 c5], 'w3' => %w[c3 c6] }
       Transform.allocate(workers, channels)
     end
