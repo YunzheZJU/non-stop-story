@@ -75,20 +75,19 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
     assert_equal 3, JSON.parse(@response.body)['total']
-    assert_includes(
-      %w[TestLive2 TestLive3 TestLive7],
-      JSON.parse(@response.body)['lives'][0]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive2 TestLive3 TestLive7], live['title']
+    end
+
     get '/api/v1/lives/ended', params: {
       page: 2, limit: 1
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
     assert_equal 3, JSON.parse(@response.body)['total']
-    assert_includes(
-      %w[TestLive2 TestLive3 TestLive7],
-      JSON.parse(@response.body)['lives'][0]['title']
-    )
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive2 TestLive3 TestLive7], live['title']
+    end
   end
 
   test 'should get ended filter channel' do
