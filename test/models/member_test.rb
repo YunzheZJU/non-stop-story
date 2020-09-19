@@ -3,28 +3,27 @@
 require 'test_helper'
 
 class MemberTest < ActiveSupport::TestCase
+  setup do
+    @member = {
+      name: 'NewMember',
+      avatar: 'https://example.com',
+      color_main: '#000000',
+      color_sub: '#ffffff',
+      graduated: false
+    }
+  end
+
   test 'should succeed to save' do
-    member = Member.new name: 'NewMember',
-                        avatar: 'https://example.com',
-                        color_main: '#000000',
-                        color_sub: '#ffffff'
+    member = Member.new @member
 
     assert member.valid?
     assert member.save
   end
 
   test 'should fail to save nil name' do
-    absent_name = Member.new avatar: 'https://example.com',
-                             color_main: '#000000',
-                             color_sub: '#ffffff'
-    nil_name = Member.new name: nil,
-                          avatar: 'https://example.com',
-                          color_main: '#000000',
-                          color_sub: '#ffffff'
-    empty_name = Member.new name: '',
-                            avatar: 'https://example.com',
-                            color_main: '#000000',
-                            color_sub: '#ffffff'
+    absent_name = Member.new @member.except(:name)
+    nil_name = Member.new @member.merge(name: nil)
+    empty_name = Member.new @member.merge(name: '')
 
     assert_not absent_name.valid?
     assert_not absent_name.save
@@ -35,20 +34,24 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   test 'should succeed to save nil avatar' do
-    absent_avatar = Member.new name: 'TestMember',
-                               color_main: '#000000',
-                               color_sub: '#ffffff'
+    absent_avatar = Member.new @member.except(:avatar)
 
     assert absent_avatar.valid?
     assert absent_avatar.save
     assert_equal '', absent_avatar.avatar
   end
 
+  test 'should succeed to save nil graduated' do
+    absent_graduated = Member.new @member.except(:graduated)
+
+    assert absent_graduated.valid?
+    assert absent_graduated.save
+    assert_equal false, absent_graduated.graduated
+  end
+
   test 'should succeed to save nil color' do
-    absent_main_color = Member.new name: 'TestMember',
-                                   color_main: '#000000'
-    absent_sub_color = Member.new name: 'TestMember',
-                                  color_sub: '#ffffff'
+    absent_main_color = Member.new @member.except(:color_sub)
+    absent_sub_color = Member.new @member.except(:color_main)
 
     assert absent_main_color.valid?
     assert absent_main_color.save
@@ -57,10 +60,8 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   test 'should fail to save invalid color' do
-    invalid_main_color = Member.new name: 'TestMember',
-                                    color_main: 'invalid'
-    invalid_sub_color = Member.new name: 'TestMember',
-                                   color_sub: 'invalid'
+    invalid_main_color = Member.new @member.merge(color_main: 'invalid')
+    invalid_sub_color = Member.new @member.merge(color_sub: 'invalid')
 
     assert_not invalid_main_color.valid?
     assert_not invalid_main_color.save

@@ -16,9 +16,9 @@ seeds['platforms'].each do |platform|
 end
 
 seeds['members'].each_pair do |_, info|
-  member = Member.find_or_create_by!(name: info['name'])
+  member = Member.find_or_create_by!(info.extract!('name'))
 
-  member.update!(avatar: info['avatar'], color_main: info['color_main'], color_sub: info['color_sub'])
+  member.update!(info.extract!('avatar', 'color_main', 'color_sub', 'graduated'))
 
   seeds['platforms'].each do |platform|
     info[platform].each do |channel|

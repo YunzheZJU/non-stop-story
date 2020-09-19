@@ -94,7 +94,7 @@ You can manually setup the database:
 # Create database if it does not exist
 bundle exec rails db:create
 # Run migrations
-bundle exec rails db:create
+bundle exec rails db:migrate
 # Seed your database
 bundle exec rails db:seed
 ```
