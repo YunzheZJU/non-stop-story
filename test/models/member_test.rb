@@ -68,4 +68,11 @@ class MemberTest < ActiveSupport::TestCase
     assert_not invalid_sub_color.valid?
     assert_not invalid_sub_color.save
   end
+
+  test 'should scope active' do
+    member = Member.active
+
+    assert_equal 2, member.size
+    assert_not_includes member, members(:test_1)
+  end
 end
