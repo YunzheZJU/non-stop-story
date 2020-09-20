@@ -3,35 +3,27 @@
 require 'test_helper'
 
 class LiveTest < ActiveSupport::TestCase
-  test 'should succeed to save' do
-    live = Live.new(
+  setup do
+    @live = {
       title: 'NewLive',
       start_at: Time.current,
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500,
       video: videos(:test_1)
-    )
+    }
+  end
+
+  test 'should succeed to save' do
+    live = Live.new @live
 
     assert live.valid?
     assert live.save
   end
 
   test 'should succeed to save optional duration and video' do
-    optional_duration = Live.new(
-      title: 'NewLive',
-      start_at: Time.current,
-      channel: channels(:test_1),
-      room: rooms(:test_1),
-      video: videos(:test_1)
-    )
-    optional_video = Live.new(
-      title: 'NewLive',
-      start_at: Time.current,
-      channel: channels(:test_1),
-      room: rooms(:test_1),
-      duration: 500
-    )
+    optional_duration = Live.new @live.except(:duration)
+    optional_video = Live.new @live.except(:video)
 
     assert optional_duration.valid?
     assert optional_video.valid?
@@ -40,20 +32,8 @@ class LiveTest < ActiveSupport::TestCase
   end
 
   test 'should fail to save absent field' do
-    absent_title = Live.new(
-      start_at: Time.current,
-      channel: channels(:test_1),
-      room: rooms(:test_1),
-      duration: 500,
-      video: videos(:test_1)
-    )
-    absent_channel = Live.new(
-      title: 'サクラカゼ',
-      start_at: Time.current,
-      room: rooms(:test_1),
-      duration: 500,
-      video: videos(:test_1)
-    )
+    absent_title = Live.new @live.except(:title)
+    absent_channel = Live.new @live.except(:channel)
 
     assert_not absent_title.valid?
     assert_not absent_title.save
@@ -62,26 +42,86 @@ class LiveTest < ActiveSupport::TestCase
   end
 
   test 'should fail to save negative duration' do
-    zero_duration = Live.new(
-      title: 'サクラカゼ',
-      start_at: Time.current,
-      channel: channels(:test_1),
-      room: rooms(:test_1),
-      duration: 0,
-      video: videos(:test_1)
-    )
-    negative_duration = Live.new(
-      title: 'サクラカゼ',
-      start_at: Time.current,
-      channel: channels(:test_1),
-      room: rooms(:test_1),
-      duration: -1,
-      video: videos(:test_1)
-    )
+    zero_duration = Live.new @live.merge(duration: 0)
+    negative_duration = Live.new @live.merge(duration: -1)
 
     assert_not zero_duration.valid?
     assert_not zero_duration.save
     assert_not negative_duration.valid?
     assert_not negative_duration.save
+  end
+
+  test 'should scope of_channels' do
+    lives_from_channel_one = Live.of_channels channels(:test_1)
+    lives_from_channel_two = Live.of_channels channels(:test_2)
+
+    assert_equal 6, lives_from_channel_one.size
+    assert_equal 0, lives_from_channel_two.size
+  end
+
+  test 'should scope start_after' do
+    lives = Live.start_after Time.current
+
+    assert_not_includes lives, lives(:test_1)
+    assert_not_includes lives, lives(:test_2)
+    assert_not_includes lives, lives(:test_3)
+    assert_not_includes lives, lives(:test_4)
+    assert_includes lives, lives(:test_5)
+    assert_includes lives, lives(:test_6)
+  end
+
+  test 'should scope start_before' do
+    lives = Live.start_before Time.current
+
+    assert_includes lives, lives(:test_1)
+    assert_includes lives, lives(:test_2)
+    assert_includes lives, lives(:test_3)
+    assert_includes lives, lives(:test_4)
+    assert_not_includes lives, lives(:test_5)
+    assert_not_includes lives, lives(:test_6)
+  end
+
+  test 'should scope ended' do
+    lives = Live.ended
+
+    assert_not_includes lives, lives(:test_1)
+    assert_includes lives, lives(:test_2)
+    assert_includes lives, lives(:test_3)
+    assert_not_includes lives, lives(:test_4)
+    assert_not_includes lives, lives(:test_5)
+    assert_not_includes lives, lives(:test_6)
+  end
+
+  test 'should scope not_ended' do
+    lives = Live.not_ended
+
+    assert_includes lives, lives(:test_1)
+    assert_not_includes lives, lives(:test_2)
+    assert_not_includes lives, lives(:test_3)
+    assert_includes lives, lives(:test_4)
+    assert_includes lives, lives(:test_5)
+    assert_includes lives, lives(:test_6)
+  end
+
+  test 'should scope current' do
+    lives = Live.current
+
+    assert_includes lives, lives(:test_1)
+    assert_not_includes lives, lives(:test_2)
+    assert_not_includes lives, lives(:test_3)
+    assert_includes lives, lives(:test_4)
+    assert_not_includes lives, lives(:test_5)
+    assert_not_includes lives, lives(:test_6)
+  end
+
+  test 'should scope scheduled' do
+    lives = Live.scheduled
+
+    assert_not_includes lives, lives(:test_1)
+    assert_not_includes lives, lives(:test_2)
+    assert_not_includes lives, lives(:test_3)
+    assert_not_includes lives, lives(:test_4)
+    assert_includes lives, lives(:test_5)
+    assert_includes lives, lives(:test_6)
   end
 end

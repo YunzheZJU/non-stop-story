@@ -39,3 +39,10 @@ test_6:
   start_at: 2120-03-27 00:00:00
   channel: test_1
   room: test_6
+
+test_7:
+  title: TestLive7
+  start_at: 2020-03-27 00:05:00
+  channel: test_5
+  room: test_8
+  duration: 1500
