@@ -5,7 +5,7 @@ members:
   tokinosora:
     name: ときのそら
     avatar: https://yt3.ggpht.com/a/AGF-l79dHleIBmBtLP2TfcmFpIJjmH7fa8tfG1qTKg=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#4075ff'
+    color_main: '#4a86e8'
     color_sub: '#fc01b3'
     graduated: false
     youtube:
@@ -15,7 +15,7 @@ members:
   azki:
     name: AZKi
     avatar: https://yt3.ggpht.com/a/AATXAJwDg8CoHtj7qnk1aj5h75lIWOaH-__JNzqNGA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f9002f'
+    color_main: '#fe0002'
     color_sub: '#58e1f1'
     graduated: false
     youtube:
@@ -25,7 +25,7 @@ members:
   robocosan:
     name: ロボ子さん
     avatar: https://yt3.ggpht.com/a/AATXAJzPUElg3_AunkFVflcyLEGybFmP3Txpg1c-AQ=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#d252ff'
+    color_main: '#ea00eb'
     color_sub: '#fca5cf'
     graduated: false
     youtube:
@@ -35,7 +35,7 @@ members:
   sakuramiko:
     name: さくらみこ
     avatar: https://yt3.ggpht.com/a/AATXAJztlxp1NvyEG3ULspVuGLwdoweCnhDsZDzgqA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#ffa4cf'
+    color_main: '#f69bde'
     color_sub: '#f50f3e'
     graduated: false
     youtube:
@@ -45,7 +45,7 @@ members:
   shirakamifubuki:
     name: 白上フブキ
     avatar: https://yt3.ggpht.com/a/AGF-l7-oeSvjxgdwMoDyT1LMH8nyqkWJCZH8MAOjzg=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#48e6ff'
+    color_main: '#16fefe'
     color_sub: '#ffffff'
     graduated: false
     youtube:
@@ -55,7 +55,7 @@ members:
   natsuiromatsuri:
     name: 夏色まつり
     avatar: https://yt3.ggpht.com/a/AGF-l7_MTJEH9Kn-cVznPJPBt4v0BOkmd5btoSdz6Q=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#ff7709'
+    color_main: '#fe9901'
     color_sub: '#3be898'
     graduated: false
     youtube:
@@ -65,7 +65,7 @@ members:
   yozoramel:
     name: 夜空メル
     avatar: https://yt3.ggpht.com/a/AATXAJw__74rAt8SKtuBzHDGXg7AlSXGjJ0aO1giMw=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#ffd200'
+    color_main: '#ffff01'
     color_sub: '#fd760a'
     graduated: false
     youtube:
@@ -75,7 +75,7 @@ members:
   akaihaato:
     name: 赤井はあと
     avatar: https://yt3.ggpht.com/a/AGF-l7-ULNK73gTCGtPrM6elTCL-ValOSptM0YTXkQ=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f7002f'
+    color_main: '#fe0002'
     color_sub: '#fe00ae'
     graduated: false
     youtube:
@@ -85,7 +85,7 @@ members:
   akirosenthal:
     name: アキ・ローゼンタール
     avatar: https://yt3.ggpht.com/a/AGF-l7-MKGs8oe830HpPIlyQ3pNAVqUgqiMdSg8TwQ=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#8045ff'
+    color_main: '#34a857'
     color_sub: '#ffa3cf'
     graduated: false
     youtube:
@@ -95,7 +95,7 @@ members:
   minatoaqua:
     name: 湊あくあ
     avatar: https://yt3.ggpht.com/a/AATXAJwHPp_TkvcWJyblt9XVYDjNSjrj6KdpQSCQNQ=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#d252ff'
+    color_main: '#f69bde'
     color_sub: '#63e5ff'
     graduated: false
     youtube:
@@ -105,7 +105,7 @@ members:
   yuzukichoco:
     name: 癒月ちょこ
     avatar: https://yt3.ggpht.com/a/AGF-l79rj4svlTtPimVkcxdUJS8VGt01u_mqZWZIbA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#fb1fb7'
+    color_main: '#ff01ff'
     color_sub: '#f9a8c9'
     graduated: false
     youtube:
@@ -116,7 +116,7 @@ members:
   nakiriayame:
     name: 百鬼あやめ
     avatar: https://yt3.ggpht.com/a/AATXAJyDhi8y6CDBgpb-yV0T-aiZc8oXwMG7NacqOg=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f7002f'
+    color_main: '#fe0002'
     color_sub: '#ffffff'
     graduated: false
     youtube:
@@ -126,7 +126,7 @@ members:
   murasakishion:
     name: 紫咲シオン
     avatar: https://yt3.ggpht.com/a/AGF-l79Wv6njnWc-lQDwczBQVLgBIRMD8PJ72ZIPLg=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#d252ff'
+    color_main: '#9a00ff'
     color_sub: '#ffd246'
     graduated: false
     youtube:
@@ -136,7 +136,7 @@ members:
   oozorasubaru:
     name: 大空スバル
     avatar: https://yt3.ggpht.com/a/AATXAJw9_oqF22fvOEqGj2rHC12PadwHN-NlFL4DeA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#ffd52d'
+    color_main: '#ffff01'
     color_sub: '#58eaa3'
     graduated: false
     youtube:
@@ -146,7 +146,7 @@ members:
   ookamimio:
     name: 大神ミオ
     avatar: https://yt3.ggpht.com/a/AATXAJzFpyPB7LFGFq5DIX2x7pvIblA9Ksz99TrDYvOa5w=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#3be898'
+    color_main: '#34a951'
     color_sub: '#f7002f'
     graduated: false
     youtube:
@@ -156,7 +156,7 @@ members:
   mekomataokayu:
     name: 猫又おかゆ
     avatar: https://yt3.ggpht.com/a/AATXAJxiB3oU3X4_wTHHAay43njgJgzw-2qKPeYIjDH2=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#d252ff'
+    color_main: '#9a00ff'
     color_sub: '#4374ff'
     graduated: false
     youtube:
@@ -166,7 +166,7 @@ members:
   inugamikorone:
     name: 戌神ころね
     avatar: https://yt3.ggpht.com/a/AATXAJyL8gbKgJBHALWhWp56B6QTdNUPb03zwvT1uw=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#ffd200'
+    color_main: '#feff01'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
@@ -176,7 +176,7 @@ members:
   shiranuiflare:
     name: 不知火フレア
     avatar: https://yt3.ggpht.com/a/AATXAJwGmRMcFMvE1JW3v152HnrXfMQxbI_Dw92KH0-CpA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#fc8328'
+    color_main: '#fe9901'
     color_sub: '#ffffff'
     graduated: false
     youtube:
@@ -196,7 +196,7 @@ members:
   houshoumarine:
     name: 宝鐘マリン
     avatar: https://yt3.ggpht.com/a/AATXAJxeNWA_oVxR5sKIs9hQotV_M9zS3NtgqB3tcw=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f7002f'
+    color_main: '#fe0002'
     color_sub: '#ff811d'
     graduated: false
     youtube:
@@ -206,7 +206,7 @@ members:
   usadapekora:
     name: 兎田ぺこら
     avatar: https://yt3.ggpht.com/a/AATXAJyMxAFFr0_eQYgUQWkV6CWlx_t1NETncJygQA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#4de4ff'
+    color_main: '#16fefe'
     color_sub: '#ff7f34'
     graduated: false
     youtube:
@@ -216,7 +216,7 @@ members:
   uruharushia:
     name: 潤羽るしあ
     avatar: https://yt3.ggpht.com/a/AATXAJxpi3N0NvZfBKKkEPPXx2U5xmQPNUT8AVOj1g=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#8045ff'
+    color_main: '#b650e4'
     color_sub: '#92f43f'
     graduated: false
     youtube:
@@ -226,7 +226,7 @@ members:
   hoshimatisuisei:
     name: 星街すいせい
     avatar: https://yt3.ggpht.com/a/AATXAJwKuNhye0SEMSrtM5HUe5aVtKyxAvmdDlSpWw=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#4074ff'
+    color_main: '#4a86e8'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
@@ -236,7 +236,7 @@ members:
   amanekanata:
     name: 天音かなた
     avatar: https://yt3.ggpht.com/a/AGF-l7_OdjohiBOVMZd0dHxZ1Jh1S1kJKGS0nYfNVg=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#509bea'
+    color_main: '#16fefe'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
@@ -246,7 +246,7 @@ members:
   kiryucoco:
     name: 桐生ココ
     avatar: https://yt3.ggpht.com/a/AGF-l7-UWVGytfW-cAiCvg8r2C_6Gk2SnqSkJP9Cqg=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f38514'
+    color_main: '#fe9901'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
@@ -256,7 +256,7 @@ members:
   tsunomakiwatame:
     name: 角巻わため
     avatar: https://yt3.ggpht.com/a/AGF-l78pYNGWXckjVjmMsSz4iPeCzmWB2DHFW3lLdQ=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f9afb2'
+    color_main: '#ffff01'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
@@ -266,7 +266,7 @@ members:
   tokoyamitowa:
     name: 常闇トワ
     avatar: https://yt3.ggpht.com/a/AGF-l7_MD5OqIfTp-JG-F5QSAiIIsprC8TrQpVhdvA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#ba92ca'
+    color_main: '#b650e4'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
@@ -276,7 +276,7 @@ members:
   himemoriluna:
     name: 姫森ルーナ
     avatar: https://yt3.ggpht.com/a/AGF-l7-xWfYjQX1VHU2i1BuIap0Ba3tR3T6w4dcCkA=s96-c-k-c0xffffffff-no-rj-mo
-    color_main: '#f7abd5'
+    color_main: '#ff01ff'
     color_sub: '#4de4ff'
     graduated: false
     youtube:
