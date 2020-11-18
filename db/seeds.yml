@@ -451,7 +451,7 @@ members:
     avatar: https://i0.hdslb.com/bfs/face/c9f78a8befcf08e32bfbc741ee8d2eac5d7ff550.jpg_96x96.jpg
     color_main: '#5370c3'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCgNVXGlZIFK96XdEY20sVjg
     bilibili:
