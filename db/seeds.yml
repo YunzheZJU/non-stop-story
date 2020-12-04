@@ -479,7 +479,7 @@ members:
     avatar: https://i1.hdslb.com/bfs/face/c8b9d1cb642b0f3223e9d211212543f6b4a00824.jpg_96x96.jpg
     color_main: '#6b506f'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube: [ ]
     bilibili:
       - 21908196
