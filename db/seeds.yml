@@ -569,3 +569,30 @@ members:
       - UCyl1z3jo3XHR1riLFKG5UAg
     bilibili:
       - 22503378
+  kureijiollie:
+    name: Kureiji Ollie
+    avatar: https://yt3.ggpht.com/ytc/AAUvwnitFviHjDNyLPjA95sz4Supbhvm8Ea3dKrRAKk=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#c81650'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UCYz_5n-uDuChHtLo7My1HnQ
+    bilibili: [ ]
+  anyamelfissa:
+    name: Anya Melfissa
+    avatar: https://yt3.ggpht.com/ytc/AAUvwnie9uw8oBbjgTKmoLPSo9b_K0AbNPRbD2rjCApl=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#eac35c'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UC727SQYUvx5pDDGQpTICNWg
+    bilibili: [ ]
+  pavoliareine:
+    name: Pavolia Reine
+    avatar: https://yt3.ggpht.com/ytc/AAUvwnjXvzYgBg5mJv8RZLZhgn0-Zb_4zzE1zhCHrJ2w=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#1c50a3'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UChgTyjG-pdNvxxhdsXfHQ5Q
+    bilibili: [ ]
