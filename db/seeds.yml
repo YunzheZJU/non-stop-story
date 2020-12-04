@@ -358,7 +358,7 @@ members:
     avatar: https://yt3.ggpht.com/a/AATXAJzr9QwLFAq9sDSM8lnYIqUloCKjJucw2AmXY35O=s96-c-k-c0xffffffff-no-rj-mo
     color_main: '#96efe6'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCEzsociuFqVwgZuMaZqaCsg
     bilibili: [ ]
@@ -451,7 +451,7 @@ members:
     avatar: https://i0.hdslb.com/bfs/face/c9f78a8befcf08e32bfbc741ee8d2eac5d7ff550.jpg_96x96.jpg
     color_main: '#5370c3'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCgNVXGlZIFK96XdEY20sVjg
     bilibili:
@@ -461,7 +461,7 @@ members:
     avatar: https://i2.hdslb.com/bfs/face/b5e82aca42450be98952a72681eccb3a5c7b096b.jpg_96x96.jpg
     color_main: '#dcadca'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube: [ ]
     bilibili:
       - 21641569
@@ -479,7 +479,7 @@ members:
     avatar: https://i1.hdslb.com/bfs/face/c8b9d1cb642b0f3223e9d211212543f6b4a00824.jpg_96x96.jpg
     color_main: '#6b506f'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube: [ ]
     bilibili:
       - 21908196
