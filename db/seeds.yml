@@ -1,6 +1,7 @@
 platforms:
   - youtube
   - bilibili
+  - twitch
 members:
   tokinosora:
     name: ときのそら
