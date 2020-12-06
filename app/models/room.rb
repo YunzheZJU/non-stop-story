@@ -15,16 +15,12 @@ class Room < ApplicationRecord
   def validate_room_format
     return unless platform.present?
 
-    format = case platform.platform
-             when 'youtube'
-               /^[\w-]+$/
-             when 'bilibili'
-               /^\d+$/
-             when 'twitch'
-               /^[\w_]+$/
-             else
-               /^.*$/
-             end
-    errors.add(:room, "format is invalid #{room}") unless room =~ format
+    format_by_platform = { youtube: /^[\w-]+$/,
+                           bilibili: /^\d+$/,
+                           twitch: /^[\w_]+$/ }
+
+    return if room =~ format_by_platform[platform.platform.to_sym]
+
+    errors.add(:room, "format is invalid #{room}")
   end
 end

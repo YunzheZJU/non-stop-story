@@ -15,16 +15,12 @@ class Video < ApplicationRecord
   def validate_video_format
     return unless platform.present?
 
-    format = case platform.platform
-             when 'youtube'
-               /^\w+$/
-             when 'bilibili'
-               /^(av\d+|bv\w+)$/i
-             when 'twitch'
-               /^\d+$/
-             else
-               /^.*$/
-             end
-    errors.add(:video, 'format is invalid') unless video =~ format
+    format_by_platform = { youtube: /^\w+$/,
+                           bilibili: /^(av\d+|bv\w+)$/i,
+                           twitch: /^\d+$/ }
+
+    return if video =~ format_by_platform[platform.platform.to_sym]
+
+    errors.add(:video, "format is invalid #{video}")
   end
 end
