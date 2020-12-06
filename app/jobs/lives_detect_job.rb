@@ -10,7 +10,7 @@ class LivesDetectJob < ApplicationJob
     LivesDetectJob.set(wait: Rails.configuration.job[:interval].seconds)
                   .perform_later
 
-    %w[youtube bilibili].each do |platform_val|
+    %w[youtube bilibili twitch].each do |platform_val|
       request_and_sync Platform.find_by_platform(platform_val), Member.active
     end
   end

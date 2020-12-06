@@ -17,10 +17,16 @@ class Channel < ApplicationRecord
   def validate_channel_format
     return unless platform.present?
 
-    format = platform.platform == 'youtube' ? /^UC[\w-]+$/ : /^\d+$/
-
-    return if channel =~ format
-
-    errors.add(:channel, "format is invalid #{channel}")
+    format = case platform.platform
+             when 'youtube'
+               /^UC[\w-]+$/
+             when 'bilibili'
+               /^\d+$/
+             when 'twitch'
+               /^[\w_]+$/
+             else
+               /^.*$/
+             end
+    errors.add(:room, "format is invalid #{channel}") unless channel =~ format
   end
 end
