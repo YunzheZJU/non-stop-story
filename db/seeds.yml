@@ -1,6 +1,7 @@
 platforms:
   - youtube
   - bilibili
+  - twitch
 members:
   tokinosora:
     name: ときのそら
@@ -42,6 +43,8 @@ members:
       - UC-hM6YJuNYVAmUWxeIr9FeA
     bilibili:
       - 21144047
+    twitch:
+      - sakuramiko_hololive
   shirakamifubuki:
     name: 白上フブキ
     avatar: https://yt3.ggpht.com/a/AGF-l7-oeSvjxgdwMoDyT1LMH8nyqkWJCZH8MAOjzg=s96-c-k-c0xffffffff-no-rj-mo
