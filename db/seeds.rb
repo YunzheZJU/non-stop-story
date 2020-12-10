@@ -21,7 +21,7 @@ seeds['members'].each_pair do |_, info|
   member.update!(info.extract!('avatar', 'color_main', 'color_sub', 'graduated'))
 
   seeds['platforms'].each do |platform|
-    return unless info[platform]
+    next unless info[platform]
 
     info[platform].each do |channel|
       Channel.find_or_create_by!(channel: channel, platform: Platform.find_by_platform(platform), member: member)
