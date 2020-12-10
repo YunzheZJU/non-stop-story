@@ -16,6 +16,8 @@ class LivesDetectJob < ApplicationJob
   end
 
   def request_and_sync(platform, member)
+    return unless platform
+
     LivesDetectJob.channels_by_worker(platform, member)
                   .each do |worker, channels|
       response = Network.get_videos(worker, channels)
