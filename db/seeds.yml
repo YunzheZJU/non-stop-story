@@ -364,7 +364,6 @@ members:
     graduated: true
     youtube:
       - UCEzsociuFqVwgZuMaZqaCsg
-    bilibili: [ ]
   arurandeisu:
     name: アルランディス
     avatar: https://yt3.ggpht.com/a/AATXAJztxlOTq8L18iF3ZAEjKtmi6QidpScnKRRYtBHL=s96-c-k-c0xffffffff-no-rj-mo
@@ -413,15 +412,12 @@ members:
     graduated: false
     youtube:
       - UCANDOlYTJT7N5jlRC3zfzVA
-    bilibili: [ ]
   tsukishitakaoru:
     name: 月下カオル
     avatar: https://yt3.ggpht.com/a/AATXAJzXhF7TW0jDCHcJ1DqeajdhS6IV77FLVfQej1Qq=s96-c-k-c0xffffffff-no-rj-mo
     color_main: '#f36e68'
     color_sub: '#4de4ff'
     graduated: true
-    youtube: [ ]
-    bilibili: [ ]
   kageyamashien:
     name: 影山シエン
     avatar: https://yt3.ggpht.com/a/AATXAJyUvNr6KLbI-LIfXzutjY6Z6eWwEH-Kwi4rLbWk=s96-c-k-c0xffffffff-no-rj-mo
@@ -430,7 +426,6 @@ members:
     graduated: false
     youtube:
       - UChSvpZYRPh0FvG4SJGSga3g
-    bilibili: [ ]
   aragamioga:
     name: 荒咬オウガ
     avatar: https://yt3.ggpht.com/a/AATXAJxHDvBIDa7-BqA8KnWhyS45S6k1-yHe8syfeEri=s96-c-k-c0xffffffff-no-rj-mo
@@ -439,14 +434,12 @@ members:
     graduated: false
     youtube:
       - UCwL7dgTxKo8Y4RFIKWaf8gA
-    bilibili: [ ]
   yogiri:
     name: 夜霧
     avatar: https://i1.hdslb.com/bfs/face/0d86c9462ccaab2a5ca416138c092df729c82012.jpg_96x96.jpg
     color_main: '#eb9ba9'
     color_sub: '#4de4ff'
     graduated: false
-    youtube: [ ]
     bilibili:
       - 21618129
   civia:
@@ -465,7 +458,6 @@ members:
     color_main: '#dcadca'
     color_sub: '#4de4ff'
     graduated: true
-    youtube: [ ]
     bilibili:
       - 21641569
   doris:
@@ -474,7 +466,6 @@ members:
     color_main: '#47a3d5'
     color_sub: '#4de4ff'
     graduated: false
-    youtube: [ ]
     bilibili:
       - 21908209
   artia:
@@ -483,7 +474,6 @@ members:
     color_main: '#6b506f'
     color_sub: '#4de4ff'
     graduated: true
-    youtube: [ ]
     bilibili:
       - 21908196
   rosalyn:
@@ -492,7 +482,6 @@ members:
     color_main: '#313b7b'
     color_sub: '#4de4ff'
     graduated: false
-    youtube: [ ]
     bilibili:
       - 21908222
   ayundarisu:
@@ -503,7 +492,6 @@ members:
     graduated: false
     youtube:
       - UCOyYb1c43VlX9rc_lT6NKQw
-    bilibili: [ ]
   moonahoshinova:
     name: Moona Hoshinova
     avatar: https://yt3.ggpht.com/a/AATXAJz0VbMygCxDQdJwB5LNRSdcXgyGegDBA6pyxs3EJQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -512,7 +500,6 @@ members:
     graduated: false
     youtube:
       - UCP0BspO_AMEe3aQqqpo89Dg
-    bilibili: [ ]
   airaniiofifteen:
     name: Airani Iofifteen
     avatar: https://yt3.ggpht.com/a/AATXAJx28lrJ1bpfUSNv3cakn59hdqx7YOGpnvJJ9Tof=s96-c-k-c0xffffffff-no-rj-mo
@@ -521,7 +508,6 @@ members:
     graduated: false
     youtube:
       - UCAoy6rzhSf4ydcYjJw3WoVg
-    bilibili: [ ]
   moricalliope:
     name: Mori Calliope
     avatar: https://yt3.ggpht.com/a/AATXAJwBT0RCEyLDyqdqy4m-Ig5U7axjMnl6neaWHhFa=s96-c-k-c0xffffffff-no-rj-mo
@@ -580,7 +566,6 @@ members:
     graduated: false
     youtube:
       - UCYz_5n-uDuChHtLo7My1HnQ
-    bilibili: [ ]
   anyamelfissa:
     name: Anya Melfissa
     avatar: https://yt3.ggpht.com/ytc/AAUvwnie9uw8oBbjgTKmoLPSo9b_K0AbNPRbD2rjCApl=s96-c-k-c0x00ffffff-no-rj
@@ -589,7 +574,6 @@ members:
     graduated: false
     youtube:
       - UC727SQYUvx5pDDGQpTICNWg
-    bilibili: [ ]
   pavoliareine:
     name: Pavolia Reine
     avatar: https://yt3.ggpht.com/ytc/AAUvwnjXvzYgBg5mJv8RZLZhgn0-Zb_4zzE1zhCHrJ2w=s96-c-k-c0x00ffffff-no-rj
@@ -598,4 +582,11 @@ members:
     graduated: false
     youtube:
       - UChgTyjG-pdNvxxhdsXfHQ5Q
-    bilibili: [ ]
+  hololive:
+    name: ホロライブ
+    avatar: https://yt3.ggpht.com/ytc/AAUvwngST9tdspZgipxxe6KUzq_t-CkbVhCjkmnWxb1uZw=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#64e8cb'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UCJFZiqLMntJufDCHc6bQixg
