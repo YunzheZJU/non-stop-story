@@ -70,7 +70,7 @@ DEVELOPMENT:
 
 PRODUCTION
 * Bundler
-* MySQL/PostgreSQL, or any database that rails supports. Modify Gemfile if you are not using MySQL
+* MySQL/PostgreSQL, or any database that rails supports. Modify Gemfile if you are not using PostgreSQL
 * Unicorn/Puma, acts as a web server
 * NginX, recommended as a reverse proxy server
 
@@ -81,6 +81,8 @@ PRODUCTION
 * `config/worker.yml` stores the various workers' addresses you use.
 
 * `config/email.yml` stores email configurations used in daily summary emails.
+
+* `config/job.yml` stores the frequency of live detection.
 
 * `config/credentials.yml.enc` stores encoded sensitive data such as admin username and password.
 [Rails guides on credentials](https://guides.rubyonrails.org/security.html#custom-credentials).
