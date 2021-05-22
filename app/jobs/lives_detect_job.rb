@@ -19,7 +19,7 @@ class LivesDetectJob < ApplicationJob
     return unless platform
 
     LivesDetectJob.channels_by_worker(platform, member)
-                  .each do |worker, channels|
+                  .each do |(worker, _index), channels|
       response = Network.get_videos(worker, channels)
 
       Channel.where(channel: response.keys).find_each do |channel|

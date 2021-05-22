@@ -5,7 +5,7 @@ class Transform
     def allocate(workers, channels)
       array = workers.map.with_index do |worker, index|
         [
-          worker,
+          [worker, index],
           channels.values_at(*index.step(channels.size - 1, workers.size).to_a)
         ]
       end
