@@ -43,7 +43,7 @@ class Network
         open_timeout: 5, read_timeout: 5,
         use_ssl: uri.scheme == 'https', max_retries: 3
       ) do |http|
-        http.request Net::HTTP::Get.new(uri)
+        http.request Net::HTTP::Get.new(uri, yunzhes: 'PrivateHeader')
       end
     end
   end
