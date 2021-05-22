@@ -18,11 +18,13 @@ class TransformTest < ActionView::TestCase
     )
     assert_equal({ ['w1', 0] => %w[c1] }, Transform.allocate(w3, c1))
     assert_equal(
-      { ['w1', 0] => %w[c1 c4], ['w2', 1] => %w[c2 c5], ['w3', 2] => %w[c3 c6] },
+      { ['w1', 0] => %w[c1 c4], ['w2', 1] => %w[c2 c5],
+        ['w3', 2] => %w[c3 c6] },
       Transform.allocate(w3, c6)
     )
     assert_equal(
-      { ['w1', 0] => %w[c1 c4 c7], ['w2', 1] => %w[c2 c5], ['w3', 2] => %w[c3 c6] },
+      { ['w1', 0] => %w[c1 c4 c7], ['w2', 1] => %w[c2 c5],
+        ['w3', 2] => %w[c3 c6] },
       Transform.allocate(w3, c7)
     )
   end
