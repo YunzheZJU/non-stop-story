@@ -590,3 +590,27 @@ members:
     graduated: false
     youtube:
       - UCJFZiqLMntJufDCHc6bQixg
+  holostars:
+    name: ホロスターズ
+    avatar: https://yt3.ggpht.com/ytc/AAUvwnjwFEptYg7ed7Ze1nWT7Bj4bbXiOoNwzeM9-4g=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#742aff'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UCWsfcksUUpoEvhia0_ut0bA
+  hololiveindonesia:
+    name: Hololive Indonesia
+    avatar: https://yt3.ggpht.com/ytc/AAUvwnh523hdzQe8vPD2Du77mqxianT1HHR1McSLHXK4=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#fc7c4d'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UCfrWoRGlawPQDQxxeIDRP0Q
+  hololiveenglish:
+    name: Hololive English
+    avatar: https://yt3.ggpht.com/ytc/AAUvwnieM4gqtwmRtapt0va5VTi7BiKHhsYMxOu9qYRR=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#ff4747'
+    color_sub: '#4de4ff'
+    graduated: false
+    youtube:
+      - UCotXwY6s8pWmuWd_snKYjhg
