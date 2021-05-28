@@ -1,5 +1,8 @@
 default: &default
-  interval: 60
+  lives_detect:
+    interval: 60
+  lives_check:
+    interval: 60
 
 development:
   <<: *default

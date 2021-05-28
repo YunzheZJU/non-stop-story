@@ -45,4 +45,10 @@ class RoomTest < ActiveSupport::TestCase
     assert_equal 4, rooms.size
     assert_not_includes rooms, rooms(:test_2), rooms(:test_3)
   end
+
+  test 'should scope of_platform' do
+    rooms = Room.of_platform platforms(:youtube)
+
+    assert_equal 8, rooms.size
+  end
 end

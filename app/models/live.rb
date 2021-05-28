@@ -25,4 +25,7 @@ class Live < ApplicationRecord
   scope :not_ended, -> { where(duration: nil) }
   scope :current, -> { not_ended.start_before(Time.current) }
   scope :scheduled, -> { not_ended.start_after(Time.current) }
+  scope :active, lambda {
+    not_ended.or(ended.where('updated_at >= ?', 5.minutes.ago))
+  }
 end

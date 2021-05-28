@@ -7,10 +7,10 @@ class LivesDetectJob < ApplicationJob
   queue_as :default
 
   def perform(*_args)
-    LivesDetectJob.set(wait: Rails.configuration.job[:interval].seconds)
-                  .perform_later
+    interval = Rails.configuration.job[:lives_detect][:interval].seconds
+    LivesDetectJob.set(wait: interval).perform_later
 
-    %w[youtube bilibili twitch].each do |platform_val|
+    Rails.configuration.worker[:lives_detect].keys.each do |platform_val|
       request_and_sync Platform.find_by_platform(platform_val), Member.active
     end
   end
@@ -30,13 +30,11 @@ class LivesDetectJob < ApplicationJob
 
   class << self
     def channels_by_worker(platform, member)
-      # workers = %w[w1 w2 w3]
-      workers = Rails.configuration.worker[platform.platform.to_sym]
-      # channels = %w[c1 c2 c3 c4 c5 c6 c7]
+      workers = Rails.configuration
+                     .worker[:lives_detect][platform.platform.to_sym]
       channels = Channel.of_platforms(platform)
                         .of_members(member)
                         .pluck(:channel)
-      # { 'w1' => %w[c1 c4 c7], 'w2' => %w[c2 c5], 'w3' => %w[c3 c6] }
       Transform.allocate(workers, channels)
     end
 
@@ -44,58 +42,20 @@ class LivesDetectJob < ApplicationJob
       room_vals = live_infos.keys
       open_room_vals = Room.open(channel).pluck(:room)
 
-      close_or_delete_lives open_room_vals - room_vals
-      extend_or_create_lives select(live_infos, room_vals - open_room_vals),
-                             channel
-      update_lives select(live_infos, room_vals & open_room_vals)
+      create_new_lives select(live_infos, room_vals - open_room_vals), channel
     end
 
-    def close_or_delete_lives(room_vals)
-      room_vals.each do |room_val|
-        room = Room.find_by_room(room_val)
-        live = Live.find_by_room_id_and_duration(room, nil)
-
-        if live.start_at <= Time.current
-          live.update! duration: (Time.current - live.start_at).to_i
-        else
-          live.destroy!
-          room.destroy! if room.lives.empty?
-        end
-      end
-    end
-
-    # rubocop:todo Metrics/MethodLength
-    def extend_or_create_lives(live_infos, channel)
+    def create_new_lives(live_infos, channel)
       live_infos.each_pair do |room_val, live_info|
-        room = Room.find_by_room_and_platform_id(room_val, channel.platform)
-
-        next if extend_lives_of_room(room)
-
         room = Room.find_or_create_by!(room: room_val,
                                        platform: channel.platform)
+
+        next if room.lives.active.take
 
         Live.create!(title: live_info['title'],
                      start_at: Time.at(live_info['startAt'] ||
                                          Time.current.to_i),
-                     cover: live_info['cover'],
-                     channel: channel,
-                     room: room)
-      end
-    end
-
-    # rubocop:enable Metrics/MethodLength
-
-    def update_lives(live_infos)
-      Live.includes(:room, :channel)
-          .where(lives: { duration: nil }, rooms: { room: live_infos.keys })
-          .find_each do |live|
-        live_info = live_infos[live.room.room]
-
-        live.update!(
-          title: live_info['title'],
-          cover: live_info['cover'],
-          start_at: cal_start_at(live_info['startAt'], live.start_at)
-        )
+                     cover: live_info['cover'], channel: channel, room: room)
       end
     end
 
@@ -103,23 +63,6 @@ class LivesDetectJob < ApplicationJob
 
     def select(live_infos, room_vals)
       live_infos.select { |room_val| room_vals.include? room_val }
-    end
-
-    def extend_lives_of_room(room)
-      success = false
-
-      Live.where(room: room).find_each do |live|
-        if Time.current - (live.start_at + live.duration) < 5.minutes
-          live.update! duration: nil
-          success = true
-        end
-      end
-
-      success
-    end
-
-    def cal_start_at(new_val, old_val)
-      new_val ? Time.at(new_val) : [old_val, Time.current].min
     end
   end
 end

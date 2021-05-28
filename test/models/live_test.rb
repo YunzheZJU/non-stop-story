@@ -2,6 +2,7 @@
 
 require 'test_helper'
 
+# rubocop:todo Metrics/ClassLength
 class LiveTest < ActiveSupport::TestCase
   setup do
     @live = {
@@ -124,4 +125,17 @@ class LiveTest < ActiveSupport::TestCase
     assert_includes lives, lives(:test_5)
     assert_includes lives, lives(:test_6)
   end
+
+  test 'should scope active' do
+    travel_to 1.hour.from_now do
+      lives(:test_3).update!(cover: 'NewCover')
+
+      lives = Live.active
+
+      assert_equal 5, lives.size
+      assert_not_includes lives, lives(:test_2), lives(:test_7)
+    end
+  end
 end
+
+# rubocop:enable Metrics/ClassLength
