@@ -56,8 +56,12 @@ module NonStopStory
       # Ugly fix for duplicated jobs when multiple workers are running
       # Leave exactly ONE worker executing jobs and pass ENV['disable-job'] = 'true' to the others
       unless ENV['DISABLE_JOB'] == 'true' || Rails.env.test?
-        LivesDetectJob.set(wait: 5.seconds).perform_later
-        LivesCheckJob.set(wait: 10.seconds).perform_later
+        LivesDetectJob.set(
+          wait: Rails.configuration.job[:lives_detect][:delay].seconds
+        ).perform_later
+        LivesCheckJob.set(
+          wait: Rails.configuration.job[:lives_check][:delay].seconds
+        ).perform_later
 
         if Rails.env.production?
           DailySummaryJob.set(wait_until: Time.current.midnight)

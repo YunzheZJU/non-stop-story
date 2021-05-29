@@ -7,8 +7,9 @@ class LivesCheckJob < ApplicationJob
   queue_as :default
 
   def perform(*_args)
-    interval = Rails.configuration.job[:lives_check][:interval].seconds
-    LivesCheckJob.set(wait: interval).perform_later
+    LivesCheckJob.set(
+      wait: Rails.configuration.job[:lives_check][:interval].seconds
+    ).perform_later
 
     Rails.configuration.worker[:lives_check].keys.each do |platform_val|
       request_and_sync Platform.find_by_platform(platform_val)
