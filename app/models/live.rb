@@ -16,16 +16,16 @@ class Live < ApplicationRecord
     where(channel: channels) if channels.present?
   }
   scope :start_after, lambda { |time|
-    where('start_at >= ?', time) if time.present?
+    where('lives.start_at >= ?', time) if time.present?
   }
   scope :start_before, lambda { |time|
-    where('start_at < ?', time) if time.present?
+    where('lives.start_at < ?', time) if time.present?
   }
   scope :ended, -> { where.not(duration: nil) }
   scope :not_ended, -> { where(duration: nil) }
   scope :current, -> { not_ended.start_before(Time.current) }
   scope :scheduled, -> { not_ended.start_after(Time.current) }
   scope :active, lambda {
-    not_ended.or(ended.where('updated_at >= ?', 5.minutes.ago))
+    not_ended.or(ended.where('lives.updated_at >= ?', 5.minutes.ago))
   }
 end

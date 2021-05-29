@@ -23,7 +23,8 @@ class LivesCheckJob < ApplicationJob
                  .each do |(worker, _index), rooms|
       response = Network.get_videos(worker, rooms)
 
-      Room.where(room: response.keys).lives.active.find_each do |live|
+      Live.active.joins(:room).merge(Room.where(room: response.keys))
+          .find_each do |live|
         LivesCheckJob.sync_live live, response[live.room.room]
       end
     end
@@ -33,7 +34,8 @@ class LivesCheckJob < ApplicationJob
     def rooms_by_worker(platform)
       workers = Rails.configuration
                      .worker[:lives_check][platform.platform.to_sym]
-      rooms = Live.active.select('room').of_platform(platform)
+      rooms = Room.of_platform(platform).joins(:lives).merge(Live.active)
+                  .pluck('room')
       Transform.allocate(workers, rooms)
     end
 
