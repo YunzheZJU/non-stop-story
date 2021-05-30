@@ -56,7 +56,7 @@ class LivesCheckJob < ApplicationJob
     end
 
     def update_live(live, live_info)
-      return unless live_info['watching'] && live_info['like']
+      return unless live_info['watching'] || live_info['like']
 
       live.update!(duration: nil, start_at: [Time.current, live.start_at].min)
       # TODO: Insert into LiveStatus

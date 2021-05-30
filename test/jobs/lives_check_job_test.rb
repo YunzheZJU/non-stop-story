@@ -23,12 +23,13 @@ class LivesCheckJobTest < ActiveJob::TestCase
     live_one = lives(:test_1)
     live_two = lives(:test_2)
     live_five = lives(:test_5)
-    # TODO: Test Partial live_info
-    live_info = { 'watching' => 1000, 'like' => 2000 }
+    live_info_one = { 'watching' => 1000, 'like' => 2000 }
+    live_info_two = { 'watching' => 1000 }
+    live_info_five = { 'like' => 2000 }
 
-    LivesCheckJob.update_live live_one, live_info
-    LivesCheckJob.update_live live_two, live_info
-    LivesCheckJob.update_live live_five, live_info
+    LivesCheckJob.update_live live_one, live_info_one
+    LivesCheckJob.update_live live_two, live_info_two
+    LivesCheckJob.update_live live_five, live_info_five
 
     assert_nil lives(:test_1).duration
     assert_in_delta Time.zone.parse('2020-03-27 0:00:00'),
