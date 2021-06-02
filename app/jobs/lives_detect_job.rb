@@ -44,6 +44,7 @@ class LivesDetectJob < ApplicationJob
       open_room_vals = Room.open(channel).pluck(:room)
 
       create_new_lives select(live_infos, room_vals - open_room_vals), channel
+      update_lives select(live_infos, room_vals & open_room_vals)
     end
 
     def create_new_lives(live_infos, channel)
@@ -60,10 +61,27 @@ class LivesDetectJob < ApplicationJob
       end
     end
 
+    def update_lives(live_infos)
+      Live.not_ended.joins(:room).merge(Room.where(room: live_infos.keys))
+          .find_each do |live|
+        live_info = live_infos[live.room.room]
+
+        live.update!(
+          title: live_info['title'],
+          cover: live_info['cover'],
+          start_at: cal_start_at(live_info['startAt'], live.start_at)
+        )
+      end
+    end
+
     private
 
     def select(live_infos, room_vals)
       live_infos.select { |room_val| room_vals.include? room_val }
+    end
+
+    def cal_start_at(new_val, old_val)
+      new_val ? Time.at(new_val) : [old_val, Time.current].min
     end
   end
 end

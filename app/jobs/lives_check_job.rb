@@ -40,38 +40,21 @@ class LivesCheckJob < ApplicationJob
     end
 
     def sync_live(live, live_info)
-      live.update!(title: live_info['title'] || live.title,
-                   cover: live_info['cover'] || live.cover)
-
-      schedule_live live, live_info
       update_live live, live_info
       close_live live, live_info
-      abort_live live, live_info
-    end
-
-    def schedule_live(live, live_info)
-      return unless live_info['startAt']
-
-      live.update!(duration: nil, start_at: Time.at(live_info['startAt']))
     end
 
     def update_live(live, live_info)
-      return unless live_info['watching'] || live_info['like']
+      return unless live_info['status'] == 'living'
 
-      live.update!(duration: nil, start_at: [Time.current, live.start_at].min)
+      live.update!(duration: nil)
       # TODO: Insert into LiveStatus
       # LiveStatus.create!(watching: live_info['watching'], live: live,
       #                    like: live_info['like'], timestamp: Time.current)
     end
 
     def close_live(live, live_info)
-      return unless live_info['duration']
-
-      live.update!(duration: live_info['duration'])
-    end
-
-    def abort_live(live, live_info)
-      return unless live_info['err']
+      return unless %w[error ended].include? live_info['status']
 
       if live.start_at <= Time.current
         return if live.duration
