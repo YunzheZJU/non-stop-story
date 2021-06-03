@@ -62,8 +62,8 @@ class LivesDetectJob < ApplicationJob
     end
 
     def update_lives(live_infos)
-      Live.not_ended.joins(:room).merge(Room.where(room: live_infos.keys))
-          .find_each do |live|
+      Live.not_ended.joins(:room).includes(:room)
+          .merge(Room.where(room: live_infos.keys)).find_each do |live|
         live_info = live_infos[live.room.room]
 
         live.update!(

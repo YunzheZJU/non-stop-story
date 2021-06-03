@@ -23,8 +23,8 @@ class LivesCheckJob < ApplicationJob
                  .each do |(worker, _index), rooms|
       response = Network.get_videos(worker, rooms)
 
-      Live.active.joins(:room).merge(Room.where(room: response.keys))
-          .find_each do |live|
+      Live.active.joins(:room).includes(:room)
+          .merge(Room.where(room: response.keys)).find_each do |live|
         LivesCheckJob.sync_live live, response[live.room.room]
       end
     end
@@ -57,9 +57,9 @@ class LivesCheckJob < ApplicationJob
       return unless %w[error ended].include? live_info['status']
 
       if live.start_at <= Time.current
-        return if live.duration
-
-        return live.update!(duration: (Time.current - live.start_at).to_i)
+        return live.update!(
+          duration: live.duration || (Time.current - live.start_at).to_i
+        )
       end
 
       room = live.room
