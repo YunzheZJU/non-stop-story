@@ -23,7 +23,7 @@ class LivesCheckJob < ApplicationJob
                  .each do |(worker, _index), rooms|
       response = Network.get_videos(worker, rooms)
 
-      Live.active.joins(:room).includes(:room)
+      Live.active.joins(:room).includes(:room, :channel)
           .merge(Room.where(room: response.keys)).find_each do |live|
         LivesCheckJob.sync_live live, response[live.room.room]
       end
