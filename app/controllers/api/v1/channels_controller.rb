@@ -63,7 +63,7 @@ class Api::V1::ChannelsController < ApplicationController
   end
 
   def filter
-    @channels = Channel.includes(:platform, :member)
+    @channels = Channel.eager_load(:platform, :member)
                        .of_platforms(params[:platforms])
                        .of_members(params[:members])
   end
