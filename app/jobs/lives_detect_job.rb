@@ -11,7 +11,7 @@ class LivesDetectJob < ApplicationJob
       wait: Rails.configuration.job[:lives_detect][:interval].seconds
     ).perform_later
 
-    Rails.configuration.worker[:lives_detect].keys.each do |platform_val|
+    Rails.configuration.worker[:lives_detect].each_key do |platform_val|
       request_and_sync Platform.find_by_platform(platform_val), Member.active
     end
   end
@@ -64,14 +64,16 @@ class LivesDetectJob < ApplicationJob
     def update_lives(live_infos)
       Live.not_ended.joins(:room).includes(:room, :channel)
           .merge(Room.where(room: live_infos.keys)).find_each do |live|
-        live_info = live_infos[live.room.room]
-
-        live.update!(
-          title: live_info['title'],
-          cover: live_info['cover'],
-          start_at: cal_start_at(live_info['startAt'], live.start_at)
-        )
+        update_live(live, live_infos[live.room.room])
       end
+    end
+
+    def update_live(live, live_info)
+      live.update!(
+        title: live_info['title'],
+        cover: live_info['cover'],
+        start_at: cal_start_at(live_info['startAt'], live.start_at)
+      )
     end
 
     private

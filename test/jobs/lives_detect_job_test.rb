@@ -5,6 +5,7 @@ require 'test_helper'
 require 'utils/network'
 require 'utils/transform'
 
+# rubocop:todo Metrics/ClassLength
 class LivesDetectJobTest < ActiveJob::TestCase
   include ActiveJob::TestHelper
 
@@ -128,3 +129,5 @@ class LivesDetectJobTest < ActiveJob::TestCase
   end
   # rubocop:enable Metrics/BlockLength
 end
+
+# rubocop:enable Metrics/ClassLength

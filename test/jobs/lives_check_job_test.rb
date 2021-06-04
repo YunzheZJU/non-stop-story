@@ -40,14 +40,13 @@ class LivesCheckJobTest < ActiveJob::TestCase
     live_four = lives(:test_4)
     live_five = lives(:test_5)
     live_six = lives(:test_6)
-    live_info = { 'status' => 'ended' }
     assert_difference('Room.open(channels(:test_1)).count', -4) do
-      LivesCheckJob.close_live live_one, live_info
-      LivesCheckJob.close_live live_two, live_info
-      LivesCheckJob.close_live live_three, live_info
-      LivesCheckJob.close_live live_four, live_info
-      LivesCheckJob.close_live live_five, live_info
-      LivesCheckJob.close_live live_six, live_info
+      LivesCheckJob.close_live live_one
+      LivesCheckJob.close_live live_two
+      LivesCheckJob.close_live live_three
+      LivesCheckJob.close_live live_four
+      LivesCheckJob.close_live live_five
+      LivesCheckJob.close_live live_six
     end
 
     assert_not_nil lives(:test_1).duration
