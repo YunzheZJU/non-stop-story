@@ -1,5 +1,10 @@
 default: &default
-  interval: 60
+  lives_detect:
+    delay: 5
+    interval: 60
+  lives_check:
+    delay: 10
+    interval: 60
 
 development:
   <<: *default

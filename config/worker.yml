@@ -1,8 +1,13 @@
 default: &default
-  youtube:
-    - https://workername.username.workers.dev
-  bilibili:
-    - https://anotherworker.username.workers.dev
+  lives_detect:
+    youtube:
+      - https://workername.username.workers.dev
+    twitch:
+      - worker: https://anotherworker.username.workers.dev
+        proxy: http://example.com:1234
+  lives_check:
+    youtube:
+      - https://youtube-live-check.yunzhe35p.workers.dev
 
 development:
   <<: *default
