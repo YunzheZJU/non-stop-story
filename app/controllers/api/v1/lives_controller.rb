@@ -97,7 +97,7 @@ class Api::V1::LivesController < ApplicationController
   # rubocop:enable Metrics/MethodLength
 
   def filter
-    @lives = Live.includes(:channel, :video, room: :platform)
+    @lives = Live.eager_load(:channel, :video, room: :platform)
                  .of_channels(params[:channels])
     %i[start_before start_after].each do |key|
       param = params[key]

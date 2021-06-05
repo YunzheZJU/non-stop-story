@@ -10,9 +10,7 @@ class Room < ApplicationRecord
     where(platform: platform) if platform.present?
   }
   scope :open, lambda { |channel|
-    joins(:platform, :lives)
-      .where(lives: { duration: nil, channel: channel },
-             platform: channel.platform)
+    joins(:lives).merge(Live.not_ended.of_channels(channel))
   }
 
   def validate_room_format
