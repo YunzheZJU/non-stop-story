@@ -8,7 +8,7 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get api_v1_hotnesses_url, as: :json
+    get api_v1_hotnesses_url
     assert_response :success
     assert_not_nil JSON.parse(@response.body)['total']
   end
@@ -26,7 +26,7 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show hotness' do
-    get api_v1_hotness_url(@hotness), as: :json
+    get api_v1_hotness_url(@hotness)
     assert_response :success
   end
 
@@ -40,7 +40,7 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy hotness' do
-    delete api_v1_hotness_url(@hotness), as: :json
+    delete api_v1_hotness_url(@hotness)
     assert_response :success
   end
 end
