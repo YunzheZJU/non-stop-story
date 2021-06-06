@@ -12,25 +12,29 @@ class LivesCheckJobTest < ActiveJob::TestCase
   test 'should update live' do
     live_one = lives(:test_1)
     live_two = lives(:test_2)
+    live_three = lives(:test_3)
     live_five = lives(:test_5)
     live_info_one = { 'status' => 'living', 'watching' => 1000, 'like' => 2000 }
     live_info_two = { 'status' => 'living', 'watching' => 1000 }
-    live_info_five = { 'status' => 'living', 'like' => 2000 }
+    live_info_three = { 'status' => 'living', 'like' => 2000 }
+    live_info_five = { 'status' => 'living' }
 
-    LivesCheckJob.update_live live_one, live_info_one
-    LivesCheckJob.update_live live_two, live_info_two
-    LivesCheckJob.update_live live_five, live_info_five
+    assert_difference('Hotness.count', 3) do
+      LivesCheckJob.update_live live_one, live_info_one
+      LivesCheckJob.update_live live_two, live_info_two
+      LivesCheckJob.update_live live_three, live_info_three
+      LivesCheckJob.update_live live_five, live_info_five
+    end
 
-    assert_nil lives(:test_1).duration
+    assert(%i[test_1 test_2 test_3 test_5].all? { |label| lives(label).duration.nil? })
     assert_in_delta Time.zone.parse('2020-03-27 0:00:00'),
                     lives(:test_1).start_at, 2
-    assert_nil lives(:test_2).duration
     assert_in_delta Time.zone.parse('2020-03-27 0:00:00'),
                     lives(:test_2).start_at, 2
-    assert_nil lives(:test_5).duration
+    assert_in_delta Time.zone.parse('2020-03-27 0:05:00'),
+                    lives(:test_3).start_at, 2
     assert_in_delta Time.zone.parse('2120-03-27 0:00:00'),
                     lives(:test_5).start_at, 2
-    # TODO: Test LiveStatus
   end
 
   test 'should close live' do
