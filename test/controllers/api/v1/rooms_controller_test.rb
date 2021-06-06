@@ -10,6 +10,7 @@ class Api::V1::RoomsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get api_v1_rooms_url, as: :json
     assert_response :success
+    assert_not_nil JSON.parse(@response.body)['total']
   end
 
   test 'should create room' do
