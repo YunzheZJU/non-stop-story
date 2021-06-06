@@ -18,7 +18,7 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
       post api_v1_hotnesses_url,
            params: { hotness: { watching: 100,
                                 like: 200,
-                                live: lives(:test_1)[:id], } },
+                                live: lives(:test_1).id, } },
            as: :json
     end
 
@@ -34,7 +34,7 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
     patch api_v1_hotness_url(@hotness),
           params: { hotness: { watching: 100,
                                like: nil,
-                               live: lives(:test_2)[:id], } },
+                               live: lives(:test_2).id, } },
           as: :json
     assert_response 200
   end

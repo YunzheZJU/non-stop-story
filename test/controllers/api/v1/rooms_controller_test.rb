@@ -17,7 +17,7 @@ class Api::V1::RoomsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Room.count') do
       post api_v1_rooms_url,
            params: { room: { room: 'NewRoom',
-                             platform: platforms(:youtube)[:id], } },
+                             platform: platforms(:youtube).id, } },
            as: :json
     end
 
@@ -32,7 +32,7 @@ class Api::V1::RoomsControllerTest < ActionDispatch::IntegrationTest
   test 'should update room' do
     patch api_v1_room_url(@room),
           params: { room: { room: 'NewRoom',
-                            platform: platforms(:youtube)[:id], } },
+                            platform: platforms(:youtube).id, } },
           as: :json
     assert_response 200
   end
