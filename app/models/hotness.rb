@@ -13,4 +13,5 @@ class Hotness < ApplicationRecord
   }
 
   default_scope { order(:created_at) }
+  scope :of_lives, ->(lives) { where(live: lives) if lives.present? }
 end

@@ -58,4 +58,17 @@ class HotnessTest < ActiveSupport::TestCase
       prev
     end
   end
+
+  test 'should scope of_lives' do
+    hotnesses_one = Hotness.of_lives([lives(:test_1), lives(:test_2)])
+    hotnesses_two = Hotness.of_lives(lives(:test_2))
+    hotnesses_three = Hotness.of_lives(lives(:test_3))
+    hotnesses_four = Hotness.of_lives(nil)
+
+    assert_equal 4, hotnesses_one.size
+    assert_not_includes hotnesses_two, hotnesses(:test_1)
+    assert_equal 3, hotnesses_two.size
+    assert_equal 0, hotnesses_three.size
+    assert_equal 4, hotnesses_four.size
+  end
 end
