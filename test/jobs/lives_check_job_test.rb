@@ -53,9 +53,9 @@ class LivesCheckJobTest < ActiveJob::TestCase
     assert_equal 1500, lives(:test_2).duration
     assert_equal 1500, lives(:test_3).duration
     assert_not_nil lives(:test_4).duration
-    assert lives(:test_5).frozen?
+    assert_raise(StandardError) { lives(:test_5).reload }
     assert_raise(StandardError) { rooms(:test_5) }
-    assert lives(:test_6).frozen?
+    assert_raise(StandardError) { lives(:test_6).reload }
     assert_raise(StandardError) { rooms(:test_6) }
   end
 
