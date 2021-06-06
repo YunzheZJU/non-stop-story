@@ -8,21 +8,20 @@ class Api::V1::PlatformsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get api_v1_platforms_url, as: :json
+    get api_v1_platforms_url
     assert_response :success
   end
 
   test 'should create platform' do
     assert_difference('Platform.count') do
-      post api_v1_platforms_url,
-           params: { platform: { platform: 'bilibili' } }, as: :json
+      post api_v1_platforms_url, params: { platform: { platform: 'bilibili' } }, as: :json
     end
 
     assert_response 201
   end
 
   test 'should show platform' do
-    get api_v1_platform_url(@platform), as: :json
+    get api_v1_platform_url(@platform)
     assert_response :success
   end
 
@@ -34,7 +33,7 @@ class Api::V1::PlatformsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy platform' do
     assert_raise(StandardError) do
-      delete api_v1_platform_url(@platform), as: :json
+      delete api_v1_platform_url(@platform)
     end
   end
 end

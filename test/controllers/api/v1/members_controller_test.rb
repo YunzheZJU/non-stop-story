@@ -8,7 +8,7 @@ class Api::V1::MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get api_v1_members_url, as: :json
+    get api_v1_members_url
     assert_response :success
   end
 
@@ -23,7 +23,7 @@ class Api::V1::MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show member' do
-    get api_v1_member_url(@member), as: :json
+    get api_v1_member_url(@member)
     assert_response :success
   end
 
@@ -36,7 +36,7 @@ class Api::V1::MembersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy member' do
     assert_raise(StandardError) do
-      delete api_v1_member_url(@member), as: :json
+      delete api_v1_member_url(@member)
     end
   end
 end

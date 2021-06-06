@@ -8,7 +8,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get api_v1_channels_url, as: :json
+    get api_v1_channels_url
     assert_response :success
   end
 
@@ -65,7 +65,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show channel' do
-    get api_v1_channel_url(@channel), as: :json
+    get api_v1_channel_url(@channel)
     assert_response :success
   end
 
@@ -79,7 +79,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy channel' do
     assert_raise(StandardError) do
-      delete api_v1_channel_url(@channel), as: :json
+      delete api_v1_channel_url(@channel)
     end
   end
 end
