@@ -7,12 +7,12 @@ class ChannelTest < ActiveSupport::TestCase
     @channel_youtube = {
       channel: 'UC123456',
       platform: platforms(:youtube),
-      member: members(:test_1)
+      member: members(:test_1),
     }
     @channel_bilibili = {
       channel: '123456',
       platform: platforms(:bilibili),
-      member: members(:test_1)
+      member: members(:test_1),
     }
   end
 

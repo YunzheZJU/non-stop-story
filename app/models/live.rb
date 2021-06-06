@@ -9,7 +9,7 @@ class Live < ApplicationRecord
   validates :start_at, presence: true
   validates :duration, if: :duration, numericality: {
     only_integer: true,
-    greater_than: 0
+    greater_than: 0,
   }
 
   scope :of_channels, lambda { |channels|

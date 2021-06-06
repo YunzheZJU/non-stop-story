@@ -47,7 +47,7 @@ class Api::V1::LivesController < ApplicationController
                    .order(start_at: :desc)
                    .all
     render json: { lives: @lives.map(&method(:transform)),
-                   total: @lives.total_count }
+                   total: @lives.total_count, }
   end
 
   def current
@@ -55,7 +55,7 @@ class Api::V1::LivesController < ApplicationController
                    .order(start_at: :asc)
                    .all
     render json: { lives: @lives.map(&method(:transform)),
-                   total: @lives.total_count }
+                   total: @lives.total_count, }
   end
 
   def scheduled
@@ -63,7 +63,7 @@ class Api::V1::LivesController < ApplicationController
                    .order(start_at: :asc)
                    .all
     render json: { lives: @lives.map(&method(:transform)),
-                   total: @lives.total_count }
+                   total: @lives.total_count, }
   end
 
   private

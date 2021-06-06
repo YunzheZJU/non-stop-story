@@ -19,7 +19,7 @@ class Channel < ApplicationRecord
 
     format_by_platform = { youtube: /^UC[\w-]+$/,
                            bilibili: /^\d+$/,
-                           twitch: /^[\w_]+$/ }
+                           twitch: /^[\w_]+$/, }
 
     return if channel =~ format_by_platform[platform.platform.to_sym]
 

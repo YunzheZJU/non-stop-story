@@ -5,10 +5,10 @@ require 'test_helper'
 class RoomTest < ActiveSupport::TestCase
   setup do
     @room_youtube = {
-      room: 'abcdef', platform: platforms(:youtube)
+      room: 'abcdef', platform: platforms(:youtube),
     }
     @room_bilibili = {
-      room: '123456', platform: platforms(:bilibili)
+      room: '123456', platform: platforms(:bilibili),
     }
   end
 

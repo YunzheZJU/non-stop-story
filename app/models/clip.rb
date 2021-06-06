@@ -5,11 +5,11 @@ class Clip < ApplicationRecord
   has_and_belongs_to_many :arranges
   validates :in_time, presence: true, numericality: {
     only_integer: true,
-    greater_than_or_equal_to: 0
+    greater_than_or_equal_to: 0,
   }
   validates :out_time, presence: true, numericality: {
     only_integer: true,
-    greater_than: 0
+    greater_than: 0,
   }
   validate :in_time_is_less_than_out_time
   validate :out_time_is_less_than_duration
@@ -19,9 +19,7 @@ class Clip < ApplicationRecord
   end
 
   def out_time_is_less_than_duration
-    unless defined? live.video.duration
-      return errors.add(:live, 'should have duration')
-    end
+    return errors.add(:live, 'should have duration') unless defined? live.video.duration
 
     return if out_time <= live.video.duration
 

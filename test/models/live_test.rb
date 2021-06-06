@@ -11,7 +11,7 @@ class LiveTest < ActiveSupport::TestCase
       channel: channels(:test_1),
       room: rooms(:test_1),
       duration: 500,
-      video: videos(:test_1)
+      video: videos(:test_1),
     }
   end
 
