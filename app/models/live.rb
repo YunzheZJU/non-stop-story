@@ -4,6 +4,7 @@ class Live < ApplicationRecord
   belongs_to :channel
   belongs_to :room
   has_many :clip
+  has_many :hotnesses
   belongs_to :video, optional: true
   validates :title, presence: true
   validates :start_at, presence: true
