@@ -22,7 +22,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
       live: { title: 'NewLiveTitle',
               start_at: Time.current.iso8601,
               room: rooms(:test_2)[:id],
-              ignored_param: 'any' }
+              ignored_param: 'any', },
     }
     lives(:test_1).reload
     assert_response :success
@@ -54,7 +54,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
               room: rooms(:test_1)[:id],
               duration: 500,
               video: videos(:test_1)[:id],
-              ignored_param: 'any' }
+              ignored_param: 'any', },
     }
     assert_response :success
     assert_not_nil Live.find_by_title 'NewLive'
@@ -70,7 +70,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended pagination' do
     get '/api/v1/lives/ended', params: {
-      page: 1, limit: 1
+      page: 1, limit: 1,
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
@@ -80,7 +80,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     end
 
     get '/api/v1/lives/ended', params: {
-      page: 2, limit: 1
+      page: 2, limit: 1,
     }
     assert_response :success
     assert_equal 1, JSON.parse(@response.body)['lives'].size
@@ -92,7 +92,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended filter channel' do
     get '/api/v1/lives/ended', params: {
-      channels: channels(:test_1)[:id]
+      channels: channels(:test_1)[:id],
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -106,7 +106,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended filter start_after' do
     get '/api/v1/lives/ended', params: {
-      start_after: Time.zone.parse('2020-03-27 0:03:00').to_i
+      start_after: Time.zone.parse('2020-03-27 0:03:00').to_i,
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -116,7 +116,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended filter start_before' do
     get '/api/v1/lives/ended', params: {
-      start_before: Time.zone.parse('2020-03-27 0:03:00').to_i
+      start_before: Time.zone.parse('2020-03-27 0:03:00').to_i,
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -134,7 +134,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get current should filter channel' do
     get '/api/v1/lives/current', params: {
-      channels: channels(:test_1)[:id]
+      channels: channels(:test_1)[:id],
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -156,7 +156,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get scheduled filter channels' do
     get '/api/v1/lives/scheduled', params: {
-      channels: channels(:test_1)[:id]
+      channels: channels(:test_1)[:id],
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -164,7 +164,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     end
 
     get '/api/v1/lives/scheduled', params: {
-      channels: 100
+      channels: 100,
     }
     assert_response :success
     assert_equal 0, JSON.parse(@response.body)['lives'].size
@@ -172,7 +172,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get scheduled filter start_before' do
     get '/api/v1/lives/scheduled', params: {
-      start_before: 7.days.from_now.to_i
+      start_before: 7.days.from_now.to_i,
     }
     assert_response :success
     assert_equal 0, JSON.parse(@response.body)['lives'].size

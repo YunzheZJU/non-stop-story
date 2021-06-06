@@ -14,7 +14,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get index filter platforms' do
     get api_v1_channels_url, params: {
-      platforms: platforms(:youtube)[:id]
+      platforms: platforms(:youtube)[:id],
     }
     data = JSON.parse(@response.body)
     assert_response :success
@@ -23,7 +23,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get index filter members' do
     get api_v1_channels_url, params: {
-      members: [members(:test_1)[:id], members(:test_2)[:id]]
+      members: [members(:test_1)[:id], members(:test_2)[:id]],
     }
     data = JSON.parse(@response.body)
     assert_response :success
@@ -33,7 +33,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index pagination' do
     get api_v1_channels_url, params: {
       page: 2,
-      limit: 2
+      limit: 2,
     }
     data = JSON.parse(@response.body)
     assert_equal 2, data['channels'].size
@@ -45,7 +45,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
       platforms: platforms(:youtube)[:id],
       members: members(:test_2)[:id],
       page: 2,
-      limit: 1
+      limit: 1,
     }
     data = JSON.parse(@response.body)
     assert_equal 1, data['channels'].size
@@ -57,7 +57,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
       post api_v1_channels_url,
            params: { channel: { channel: 'UC123456',
                                 platform: platforms(:youtube)[:id],
-                                member: members(:test_1)[:id] } },
+                                member: members(:test_1)[:id], } },
            as: :json
     end
 
@@ -72,7 +72,7 @@ class Api::V1::ChannelsControllerTest < ActionDispatch::IntegrationTest
   test 'should update channel' do
     patch api_v1_channel_url(@channel),
           params: { channel: { channel: '123456',
-                               platform: platforms(:bilibili)[:id] } },
+                               platform: platforms(:bilibili)[:id], } },
           as: :json
     assert_response 200
   end

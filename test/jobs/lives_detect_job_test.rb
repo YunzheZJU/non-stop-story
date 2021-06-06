@@ -17,8 +17,8 @@ class LivesDetectJobTest < ActiveJob::TestCase
       'NewRoom' => { 'title' => 'NewLiveTitle1', 'cover' => 'NewCover1' },
       'ScheduledRoom' => {
         'title' => 'NewLiveTitle2',
-        'startAt' => 1.day.from_now.to_i
-      }
+        'startAt' => 1.day.from_now.to_i,
+      },
     }
 
     room_vals = live_infos.keys
@@ -54,9 +54,9 @@ class LivesDetectJobTest < ActiveJob::TestCase
       'TestRoom4' => { 'title' => 'UpdatedLiveTitle1', 'cover' => 'NewCover1' },
       'TestRoom5' => {
         'title' => 'UpdatedLiveTitle2',
-        'startAt' => 1.day.from_now.to_i
+        'startAt' => 1.day.from_now.to_i,
       },
-      'TestRoom6' => { 'title' => 'StartedScheduledTitle' }
+      'TestRoom6' => { 'title' => 'StartedScheduledTitle' },
     }
 
     room_vals = live_infos.to_a.map { |room, _live_info| room }
@@ -86,14 +86,14 @@ class LivesDetectJobTest < ActiveJob::TestCase
       'TestRoom4' => { 'title' => 'UpdatedLiveTitle1' },
       'TestRoom5' => {
         'title' => 'UpdatedLiveTitle2',
-        'startAt' => 1.day.from_now.to_i
+        'startAt' => 1.day.from_now.to_i,
       },
       'TestRoom6' => { 'title' => 'StartedScheduledTitle' },
       'NewRoom' => { 'title' => 'NewLiveTitle1' },
       'ScheduledRoom' => {
         'title' => 'NewLiveTitle2',
-        'startAt' => 1.day.from_now.to_i
-      }
+        'startAt' => 1.day.from_now.to_i,
+      },
     }
 
     assert_difference('Room.open(channel).count', 2) do

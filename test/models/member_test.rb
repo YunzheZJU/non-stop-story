@@ -9,7 +9,7 @@ class MemberTest < ActiveSupport::TestCase
       avatar: 'https://example.com',
       color_main: '#000000',
       color_sub: '#ffffff',
-      graduated: false
+      graduated: false,
     }
   end
 

@@ -63,7 +63,7 @@ class LivesCheckJobTest < ActiveJob::TestCase
     live = lives(:test_5)
     live_info = { 'status' => 'living',
                   'title' => 'NewTitle', 'cover' => 'NewCover',
-                  'watching' => 1000, 'like' => 2000 }
+                  'watching' => 1000, 'like' => 2000, }
     travel_to Time.zone.parse('2120-03-27 0:00:05') do
       LivesCheckJob.sync_live live, live_info
     end
@@ -78,7 +78,7 @@ class LivesCheckJobTest < ActiveJob::TestCase
   test 'should handle overslept schedule' do
     live = lives(:test_1)
     live_info = { 'title' => 'TestLive1', 'cover' => 'TestCover1',
-                  'status' => 'scheduled' }
+                  'status' => 'scheduled', }
 
     LivesCheckJob.sync_live live, live_info
 
@@ -103,7 +103,7 @@ class LivesCheckJobTest < ActiveJob::TestCase
   test 'should handle sudden end' do
     live = lives(:test_1)
     live_info = { 'title' => 'TestLive1', 'cover' => 'TestCover1',
-                  'status' => 'ended' }
+                  'status' => 'ended', }
 
     LivesCheckJob.sync_live live, live_info
 
@@ -118,7 +118,7 @@ class LivesCheckJobTest < ActiveJob::TestCase
     live = lives(:test_2)
     live_info = { 'status' => 'living',
                   'title' => 'NewTitle', 'cover' => 'NewCover',
-                  'watching' => 1000, 'like' => 2000 }
+                  'watching' => 1000, 'like' => 2000, }
 
     LivesCheckJob.sync_live live, live_info
 

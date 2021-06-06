@@ -50,6 +50,6 @@ class GraphqlController < ApplicationController
     logger.error err.backtrace.join("\n")
 
     render json: { errors: [{ message: err.message, backtrace: err.backtrace }],
-                   data: {} }, status: 500
+                   data: {}, }, status: 500
   end
 end

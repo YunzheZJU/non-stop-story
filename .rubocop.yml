@@ -1,5 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.6
+  NewCops: enable
   Exclude:
     - 'Gemfile'
     - 'Rakefile'
@@ -8,7 +9,15 @@ AllCops:
     - 'config/**/*'
 Layout/EndOfLine:
   EnforcedStyle: lf
+Layout/RescueEnsureAlignment:
+  Enabled: false
+Layout/BeginEndAlignment:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
