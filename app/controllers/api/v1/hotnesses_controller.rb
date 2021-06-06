@@ -8,6 +8,7 @@ class Api::V1::HotnessesController < ApplicationController
 
   before_action :authenticate, except: %i[show]
   before_action :set_hotness, only: %i[show update destroy]
+  before_action :filter, only: %i[index]
   before_action :pagination, only: %i[index]
 
   # GET /api/v1/hotnesses
@@ -59,9 +60,13 @@ class Api::V1::HotnessesController < ApplicationController
     format params.require(:hotness).permit(:watching, :like, :live)
   end
 
+  def filter
+    @hotnesses = Hotness.of_lives(params[:lives])
+  end
+
   def pagination
-    @hotnesses = Hotness.page(params.fetch(:page, 1))
-                        .per(params.fetch(:limit, 30).to_i.clamp(0, 100))
+    @hotnesses = @hotnesses.page(params.fetch(:page, 1))
+                           .per(params.fetch(:limit, 30).to_i.clamp(0, 100))
   end
 
   def format(hotness_params)

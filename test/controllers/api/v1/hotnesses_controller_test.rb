@@ -13,6 +13,20 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
     assert_not_nil JSON.parse(@response.body)['total']
   end
 
+  test 'should get index filter' do
+    get api_v1_hotnesses_url, params: { lives: [] }
+    assert_response :success
+    assert_equal 0, JSON.parse(@response.body)['total']
+
+    get api_v1_hotnesses_url, params: { lives: [lives(:test_2).id] }
+    assert_response :success
+    assert_equal 3, JSON.parse(@response.body)['total']
+
+    get api_v1_hotnesses_url, params: { lives: [lives(:test_1).id, lives(:test_2).id] }
+    assert_response :success
+    assert_equal 4, JSON.parse(@response.body)['total']
+  end
+
   test 'should create hotness' do
     assert_difference('Hotness.count') do
       post api_v1_hotnesses_url,
