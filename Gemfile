@@ -53,4 +53,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Use Rubocop to lint files during developing but it is not required in production
-gem "rubocop", "~> 0.78.0", require: false
+gem "rubocop", "~> 1.16.0", require: false
