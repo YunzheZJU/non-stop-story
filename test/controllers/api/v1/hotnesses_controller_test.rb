@@ -16,15 +16,15 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
   test 'should get index filter' do
     get api_v1_hotnesses_url, params: { lives: [] }
     assert_response :success
-    assert_equal 0, JSON.parse(@response.body)['total']
+    assert_equal 4, JSON.parse(@response.body)['total']
 
     get api_v1_hotnesses_url, params: { lives: [lives(:test_2).id] }
     assert_response :success
-    assert_equal 3, JSON.parse(@response.body)['total']
+    assert_equal 2, JSON.parse(@response.body)['total']
 
-    get api_v1_hotnesses_url, params: { lives: [lives(:test_1).id, lives(:test_2).id] }
+    get api_v1_hotnesses_url, params: { lives: [lives(:test_1).id, lives(:test_2).id, lives(:test_3).id] }
     assert_response :success
-    assert_equal 4, JSON.parse(@response.body)['total']
+    assert_equal 3, JSON.parse(@response.body)['total']
   end
 
   test 'should create hotness' do
