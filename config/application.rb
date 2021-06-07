@@ -42,7 +42,7 @@ module NonStopStory
       'X-Content-Type-Options' => 'nosniff',
       'X-Download-Options' => 'noopen',
       'X-Permitted-Cross-Domain-Policies' => 'none',
-      'X-Powered-By' => 'Non Stop Story - KARKINOS v1.0',
+      'X-Powered-By' => 'Non Stop Story - KARKINOS v1.3',
       'Referrer-Policy' => 'strict-origin-when-cross-origin'
     }
 
