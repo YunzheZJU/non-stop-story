@@ -12,7 +12,6 @@ class Api::V1::LivesController < ApplicationController
   before_action :pagination, only: %i[index ended current scheduled]
 
   def index
-    @lives = @lives.all
     render json: { lives: @lives.map(&method(:transform)),
                    total: @lives.total_count, }
   end
