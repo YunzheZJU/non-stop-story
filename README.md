@@ -35,6 +35,7 @@ RESTful API is now available at [HOLO.DEV](https://holo.dev/):
 /api/v1/channels
 /api/v1/platforms
 /api/v1/rooms
+/api/v1/hotnesses
 ```
 
 GraphQL API is available at:

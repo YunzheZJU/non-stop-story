@@ -8,6 +8,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     get api_v1_lives_url
 
     assert_response :success
+    assert_not_nil JSON.parse(@response.body)['total']
   end
 
   test 'should show' do
@@ -21,7 +22,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     patch api_v1_live_url(lives(:test_1)), params: {
       live: { title: 'NewLiveTitle',
               start_at: Time.current.iso8601,
-              room: rooms(:test_2)[:id],
+              room: rooms(:test_2).id,
               ignored_param: 'any', },
     }
     lives(:test_1).reload
@@ -40,20 +41,24 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy' do
-    delete api_v1_live_url lives :test_1
+    assert_raise(StandardError) do
+      delete api_v1_live_url(lives(:test_1))
+    end
+
+    delete api_v1_live_url lives :test_4
 
     assert_response :success
-    assert_raise(StandardError) { lives(:test_1).reload }
+    assert_raise(StandardError) { lives(:test_4).reload }
   end
 
   test 'should create' do
     post api_v1_lives_url, params: {
       live: { title: 'NewLive',
               start_at: Time.current.iso8601,
-              channel: channels(:test_1)[:id],
-              room: rooms(:test_1)[:id],
+              channel: channels(:test_1).id,
+              room: rooms(:test_1).id,
               duration: 500,
-              video: videos(:test_1)[:id],
+              video: videos(:test_1).id,
               ignored_param: 'any', },
     }
     assert_response :success
@@ -92,7 +97,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get ended filter channel' do
     get '/api/v1/lives/ended', params: {
-      channels: channels(:test_1)[:id],
+      channels: channels(:test_1).id,
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -134,7 +139,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get current should filter channel' do
     get '/api/v1/lives/current', params: {
-      channels: channels(:test_1)[:id],
+      channels: channels(:test_1).id,
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
@@ -156,7 +161,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get scheduled filter channels' do
     get '/api/v1/lives/scheduled', params: {
-      channels: channels(:test_1)[:id],
+      channels: channels(:test_1).id,
     }
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|

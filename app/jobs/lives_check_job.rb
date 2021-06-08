@@ -48,11 +48,12 @@ class LivesCheckJob < ApplicationJob
       end
     end
 
-    def update_live(live, _live_info)
+    def update_live(live, live_info)
       live.update!(duration: nil)
-      # TODO: Insert into LiveStatus
-      # LiveStatus.create!(watching: live_info['watching'], live: live,
-      #                    like: live_info['like'], timestamp: Time.current)
+
+      return unless live_info['watching'] || live_info['like']
+
+      Hotness.create!(live: live, watching: live_info['watching'], like: live_info['like'])
     end
 
     def close_live(live)

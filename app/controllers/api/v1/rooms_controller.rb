@@ -7,12 +7,11 @@ class Api::V1::RoomsController < ApplicationController
 
   before_action :authenticate, except: %i[show]
   before_action :set_room, only: %i[show update destroy]
+  before_action :pagination, only: %i[index]
 
   # GET /api/v1/rooms
   def index
-    @rooms = Room.all
-
-    render json: @rooms
+    render json: { rooms: @rooms.all, total: @rooms.total_count }
   end
 
   # GET /api/v1/rooms/1
@@ -57,6 +56,11 @@ class Api::V1::RoomsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def room_params
     format params.require(:room).permit(:room, :platform)
+  end
+
+  def pagination
+    @rooms = Room.page(params.fetch(:page, 1))
+                 .per(params.fetch(:limit, 30).to_i.clamp(0, 100))
   end
 
   def format(room_params)

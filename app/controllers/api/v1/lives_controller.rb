@@ -8,12 +8,13 @@ class Api::V1::LivesController < ApplicationController
 
   before_action :authenticate, except: %i[show ended current scheduled]
   before_action :set_live, only: %i[show update destroy]
-  before_action :filter, only: %i[ended current scheduled]
-  before_action :pagination, only: %i[ended current scheduled]
+  before_action :filter, only: %i[index ended current scheduled]
+  before_action :pagination, only: %i[index ended current scheduled]
 
   def index
-    @lives = Live.all
-    render json: @lives
+    @lives = @lives.all
+    render json: { lives: @lives.map(&method(:transform)),
+                   total: @lives.total_count, }
   end
 
   def show

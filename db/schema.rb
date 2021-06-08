@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_132702) do
+ActiveRecord::Schema.define(version: 2021_06_05_141635) do
 
   create_table "arranges", force: :cascade do |t|
     t.integer "video_id"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 2020_09_19_132702) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_editors_on_name"
+  end
+
+  create_table "hotnesses", force: :cascade do |t|
+    t.integer "live_id", null: false
+    t.integer "watching"
+    t.integer "like"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_hotnesses_on_created_at"
+    t.index ["live_id"], name: "index_hotnesses_on_live_id"
   end
 
   create_table "lives", force: :cascade do |t|
@@ -126,6 +136,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_132702) do
   add_foreign_key "channels", "members"
   add_foreign_key "channels", "platforms"
   add_foreign_key "clips", "lives"
+  add_foreign_key "hotnesses", "lives"
   add_foreign_key "lives", "channels"
   add_foreign_key "lives", "rooms"
   add_foreign_key "lives", "videos"

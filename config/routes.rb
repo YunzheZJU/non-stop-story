@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :members
       resources :rooms
       resources :platforms
+      resources :hotnesses
     end
   end
 
