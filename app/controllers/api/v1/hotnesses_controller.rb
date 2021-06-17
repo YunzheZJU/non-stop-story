@@ -6,7 +6,7 @@ require 'utils/transform'
 class Api::V1::HotnessesController < ApplicationController
   include HttpAuthConcern
 
-  before_action :authenticate, except: %i[show]
+  before_action :authenticate, except: %i[index show]
   before_action :set_hotness, only: %i[show update destroy]
   before_action :filter, only: %i[index]
   before_action :pagination, only: %i[index]
@@ -62,7 +62,7 @@ class Api::V1::HotnessesController < ApplicationController
   end
 
   def filter
-    @hotnesses = Hotness.of_lives(params[:lives])
+    @hotnesses = Hotness.of_lives(params.require(:lives))
   end
 
   def pagination
