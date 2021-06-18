@@ -8,15 +8,15 @@ class Api::V1::HotnessesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get api_v1_hotnesses_url
-    assert_response :success
-    assert_not_nil JSON.parse(@response.body)['total']
+    assert_raise(StandardError) do
+      get api_v1_hotnesses_url
+    end
   end
 
   test 'should get index filter' do
     get api_v1_hotnesses_url, params: { lives: [] }
     assert_response :success
-    assert_equal 4, JSON.parse(@response.body)['total']
+    assert_equal 0, JSON.parse(@response.body)['total']
 
     get api_v1_hotnesses_url, params: { lives: [lives(:test_2).id] }
     assert_response :success
