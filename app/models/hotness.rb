@@ -25,6 +25,6 @@ class Hotness < ApplicationRecord
     Live.where(id: lives).map do |live|
       where(live: live).created_after(live.start_at)
                        .created_before(live.duration && (live.start_at + live.duration))
-    end.inject(&:or)
+    end.inject(&:or) || where(live: -1)
   }
 end
