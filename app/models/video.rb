@@ -17,7 +17,8 @@ class Video < ApplicationRecord
 
     format_by_platform = { youtube: /^\w+$/,
                            bilibili: /^(av\d+|bv\w+)$/i,
-                           twitch: /^\d+$/, }
+                           twitch: /^\d+$/,
+                           twitcasting: /^\d+$/, }
 
     return if video =~ format_by_platform[platform.platform.to_sym]
 

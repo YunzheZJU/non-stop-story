@@ -2,6 +2,7 @@ platforms:
   - youtube
   - bilibili
   - twitch
+  - twitcasting
 members:
   tokinosora:
     name: ときのそら
@@ -33,6 +34,8 @@ members:
       - UCDqI2jOz0weumE8s7paEk6g
     bilibili:
       - 4664126
+    twitcasting:
+      - robocosan
   sakuramiko:
     name: さくらみこ
     avatar: https://yt3.ggpht.com/a/AATXAJztlxp1NvyEG3ULspVuGLwdoweCnhDsZDzgqA=s96-c-k-c0xffffffff-no-rj-mo
@@ -55,6 +58,8 @@ members:
       - UCdn5BQ06XqgXoAxIhbqw5Rg
     bilibili:
       - 11588230
+    twitcasting:
+      - shirakamifubuki
   natsuiromatsuri:
     name: 夏色まつり
     avatar: https://yt3.ggpht.com/a/AGF-l7_MTJEH9Kn-cVznPJPBt4v0BOkmd5btoSdz6Q=s96-c-k-c0xffffffff-no-rj-mo
@@ -65,6 +70,8 @@ members:
       - UCQ0UDLQCjY0rmuxCDE38FGg
     bilibili:
       - 13946381
+    twitcasting:
+      - natsuiromatsuri
   yozoramel:
     name: 夜空メル
     avatar: https://yt3.ggpht.com/a/AATXAJw__74rAt8SKtuBzHDGXg7AlSXGjJ0aO1giMw=s96-c-k-c0xffffffff-no-rj-mo
@@ -75,6 +82,8 @@ members:
       - UCD8HOxPs4Xvsm8H0ZxXGiBw
     bilibili:
       - 21131813
+    twitcasting:
+      - yozoramel
   akaihaato:
     name: 赤井はあと
     avatar: https://yt3.ggpht.com/a/AGF-l7-ULNK73gTCGtPrM6elTCL-ValOSptM0YTXkQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -85,6 +94,8 @@ members:
       - UC1CfXB_kRs3C-zaeTG3oGyg
     bilibili:
       - 14275133
+    twitcasting:
+      - akaihaato
   akirosenthal:
     name: アキ・ローゼンタール
     avatar: https://yt3.ggpht.com/a/AGF-l7-MKGs8oe830HpPIlyQ3pNAVqUgqiMdSg8TwQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -95,6 +106,8 @@ members:
       - UCFTLzh12_nrtzqBPsTCqenA
     bilibili:
       - 21219990
+    twitcasting:
+      - akirosenthal
   minatoaqua:
     name: 湊あくあ
     avatar: https://yt3.ggpht.com/a/AATXAJwHPp_TkvcWJyblt9XVYDjNSjrj6KdpQSCQNQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -116,6 +129,8 @@ members:
       - UCp3tgHXw_HI0QMk1K8qh3gQ
     bilibili:
       - 21107534
+    twitcasting:
+      - yuzukichococh
   nakiriayame:
     name: 百鬼あやめ
     avatar: https://yt3.ggpht.com/a/AATXAJyDhi8y6CDBgpb-yV0T-aiZc8oXwMG7NacqOg=s96-c-k-c0xffffffff-no-rj-mo
@@ -126,6 +141,8 @@ members:
       - UC7fk0CB07ly8oSl0aqKkqFg
     bilibili:
       - 21130785
+    twitcasting:
+      - nakiriayame
   murasakishion:
     name: 紫咲シオン
     avatar: https://yt3.ggpht.com/a/AGF-l79Wv6njnWc-lQDwczBQVLgBIRMD8PJ72ZIPLg=s96-c-k-c0xffffffff-no-rj-mo
