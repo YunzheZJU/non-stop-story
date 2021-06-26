@@ -33,6 +33,6 @@ class Live < ApplicationRecord
   def json
     as_json(only: %i[id title duration start_at channel_id cover created_at]).merge!(
       room: room.room, platform: room.platform.platform, channel: channel.channel
-    )
+    ).then { |l| duration.nil? ? l : l.merge!(hotnesses: hotnesses.map(&:json)) }
   end
 end
