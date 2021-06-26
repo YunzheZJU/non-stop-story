@@ -29,4 +29,10 @@ class Live < ApplicationRecord
   scope :active, lambda {
     open.or(ended.where('lives.updated_at >= ?', 5.minutes.ago))
   }
+
+  def json
+    as_json(only: %i[id title duration start_at channel_id cover created_at]).merge!(
+      room: room.room, platform: room.platform.platform, channel: channel.channel, video: video&.video
+    )
+  end
 end
