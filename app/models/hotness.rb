@@ -27,4 +27,8 @@ class Hotness < ApplicationRecord
                        .created_before(live.duration && (live.start_at + live.duration))
     end.inject(&:or) || where(live: -1)
   }
+
+  def json
+    as_json(only: %i[live_id watching like created_at])
+  end
 end

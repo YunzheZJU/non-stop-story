@@ -13,8 +13,7 @@ class Api::V1::HotnessesController < ApplicationController
 
   # GET /api/v1/hotnesses
   def index
-    render json: { hotnesses: @hotnesses.map(&method(:transform)),
-                   total: @hotnesses.total_count, }
+    render json: { hotnesses: @hotnesses.map(&:json), total: @hotnesses.total_count }
   end
 
   # GET /api/v1/hotnesses/1
@@ -81,10 +80,5 @@ class Api::V1::HotnessesController < ApplicationController
                     value
                   end
     end
-  end
-
-  def transform(hotness)
-    keys_to_select = %i[live_id watching like created_at]
-    hotness.as_json(only: keys_to_select)
   end
 end
