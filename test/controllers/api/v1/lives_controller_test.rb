@@ -95,7 +95,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'should get ended filter channel' do
+  test 'should get ended filter channels' do
     get '/api/v1/lives/ended', params: {
       channels: channels(:test_1).id,
     }
@@ -129,6 +129,40 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test 'should get open' do
+    get '/api/v1/lives/open'
+    assert_response :success
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive1 TestLive4 TestLive5 TestLive6], live['title']
+    end
+  end
+
+  test 'should get open filter channels' do
+    get '/api/v1/lives/open', params: {
+      channels: channels(:test_1).id,
+    }
+    assert_response :success
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive1 TestLive4 TestLive5 TestLive6], live['title']
+    end
+
+    get '/api/v1/lives/open', params: {
+      channels: 100,
+    }
+    assert_response :success
+    assert_equal 0, JSON.parse(@response.body)['lives'].size
+  end
+
+  test 'should get open filter start_before' do
+    get '/api/v1/lives/open', params: {
+      start_before: 7.days.from_now.to_i,
+    }
+    assert_response :success
+    JSON.parse(@response.body)['lives'].each do |live|
+      assert_includes %w[TestLive1 TestLive4], live['title']
+    end
+  end
+
   test 'should get current' do
     get '/api/v1/lives/current'
     assert_response :success
@@ -137,7 +171,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'should get current should filter channel' do
+  test 'should get current should filter channels' do
     get '/api/v1/lives/current', params: {
       channels: channels(:test_1).id,
     }
