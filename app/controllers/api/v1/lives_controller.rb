@@ -6,10 +6,10 @@ require 'utils/transform'
 class Api::V1::LivesController < ApplicationController
   include HttpAuthConcern
 
-  before_action :authenticate, except: %i[show ended current scheduled]
+  before_action :authenticate, except: %i[show ended open current scheduled]
   before_action :set_live, only: %i[show update destroy]
-  before_action :filter, only: %i[index ended current scheduled]
-  before_action :pagination, only: %i[index ended current scheduled]
+  before_action :filter, only: %i[index ended open current scheduled]
+  before_action :pagination, only: %i[index ended open current scheduled]
 
   def index
     render json: { lives: @lives.map(&method(:transform)),
@@ -43,25 +43,25 @@ class Api::V1::LivesController < ApplicationController
 
   def ended
     # TODO: Group by channel, Order by
-    @lives = @lives.ended
-                   .order(start_at: :desc)
-                   .all
+    @lives = @lives.ended.order(start_at: :desc).all
+    render json: { lives: @lives.map(&method(:transform)),
+                   total: @lives.total_count, }
+  end
+
+  def open
+    @lives = @lives.open.order(start_at: :asc).all
     render json: { lives: @lives.map(&method(:transform)),
                    total: @lives.total_count, }
   end
 
   def current
-    @lives = @lives.current
-                   .order(start_at: :asc)
-                   .all
+    @lives = @lives.current.order(start_at: :asc).all
     render json: { lives: @lives.map(&method(:transform)),
                    total: @lives.total_count, }
   end
 
   def scheduled
-    @lives = @lives.scheduled
-                   .order(start_at: :asc)
-                   .all
+    @lives = @lives.scheduled.order(start_at: :asc).all
     render json: { lives: @lives.map(&method(:transform)),
                    total: @lives.total_count, }
   end

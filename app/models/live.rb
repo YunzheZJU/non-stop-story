@@ -23,10 +23,10 @@ class Live < ApplicationRecord
     where('lives.start_at < ?', time) if time.present?
   }
   scope :ended, -> { where.not(duration: nil) }
-  scope :not_ended, -> { where(duration: nil) }
-  scope :current, -> { not_ended.start_before(Time.current) }
-  scope :scheduled, -> { not_ended.start_after(Time.current) }
+  scope :open, -> { where(duration: nil) }
+  scope :current, -> { open.start_before(Time.current) }
+  scope :scheduled, -> { open.start_after(Time.current) }
   scope :active, lambda {
-    not_ended.or(ended.where('lives.updated_at >= ?', 5.minutes.ago))
+    open.or(ended.where('lives.updated_at >= ?', 5.minutes.ago))
   }
 end

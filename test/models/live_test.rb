@@ -93,8 +93,8 @@ class LiveTest < ActiveSupport::TestCase
     assert_not_includes lives, lives(:test_6)
   end
 
-  test 'should scope not_ended' do
-    lives = Live.not_ended
+  test 'should scope open' do
+    lives = Live.open
 
     assert_includes lives, lives(:test_1)
     assert_not_includes lives, lives(:test_2)
