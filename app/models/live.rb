@@ -31,7 +31,9 @@ class Live < ApplicationRecord
   }
 
   def cached_hotnesses
-    Rails.cache.fetch(cache_key_with_version, expires_in: 24.hours) { hotnesses.map(&:json) }
+    Rails.cache.fetch(cache_key_with_version, expires_in: 24.hours) do
+      hotnesses.map { |hotness| hotness.as_json(only: %i[watching like created_at]) }
+    end
   end
 
   def json
