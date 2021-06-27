@@ -70,6 +70,7 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     JSON.parse(@response.body)['lives'].each do |live|
       assert_includes %w[TestLive2 TestLive3 TestLive7], live['title']
+      assert_not_nil live['hotnesses']
     end
   end
 

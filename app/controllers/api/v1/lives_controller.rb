@@ -12,8 +12,7 @@ class Api::V1::LivesController < ApplicationController
   before_action :pagination, only: %i[index ended open current scheduled]
 
   def index
-    render json: { lives: @lives.map(&method(:transform)),
-                   total: @lives.total_count, }
+    render json: { lives: @lives.map(&:json), total: @lives.total_count }
   end
 
   def show
@@ -44,25 +43,25 @@ class Api::V1::LivesController < ApplicationController
   def ended
     # TODO: Group by channel, Order by
     @lives = @lives.ended.order(start_at: :desc).all
-    render json: { lives: @lives.map(&method(:transform)),
+    render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
   def open
     @lives = @lives.open.order(start_at: :asc).all
-    render json: { lives: @lives.map(&method(:transform)),
+    render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
   def current
     @lives = @lives.current.order(start_at: :asc).all
-    render json: { lives: @lives.map(&method(:transform)),
+    render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
   def scheduled
     @lives = @lives.scheduled.order(start_at: :asc).all
-    render json: { lives: @lives.map(&method(:transform)),
+    render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
@@ -108,14 +107,5 @@ class Api::V1::LivesController < ApplicationController
   def pagination
     @lives = @lives.page(params.fetch(:page, 1))
                    .per(params.fetch(:limit, 30).to_i.clamp(0, 100))
-  end
-
-  def transform(live)
-    keys_to_select = %i[id title duration start_at channel_id cover created_at]
-    live.as_json(only: keys_to_select)
-        .merge(room: live.room.room,
-               platform: live.room.platform.platform,
-               channel: live.channel.channel,
-               video: live.video&.video)
   end
 end

@@ -29,4 +29,14 @@ class Live < ApplicationRecord
   scope :active, lambda {
     open.or(ended.where('lives.updated_at >= ?', 5.minutes.ago))
   }
+
+  def cached_hotnesses
+    Rails.cache.fetch(cache_key_with_version, expires_in: 24.hours) { hotnesses.map(&:json) }
+  end
+
+  def json
+    as_json(only: %i[id title duration start_at channel_id cover created_at]).merge!(
+      room: room.room, platform: room.platform.platform, channel: channel.channel
+    ).then { |live| duration.nil? ? live : live.merge!(hotnesses: cached_hotnesses) }
+  end
 end
