@@ -28,4 +28,15 @@ class TransformTest < ActionView::TestCase
       Transform.allocate(w_3, c_7)
     )
   end
+
+  test 'solve mask' do
+    assert_nil Transform.solve_mask(nil)
+    assert_equal [], Transform.solve_mask('undefined')
+    assert_equal [], Transform.solve_mask('')
+    assert_equal [1], Transform.solve_mask('1')
+    assert_equal [1, 3], Transform.solve_mask('101')
+    assert_equal [3], Transform.solve_mask('001')
+    assert_equal [3], Transform.solve_mask('00100000')
+    assert_equal [], Transform.solve_mask('00000000')
+  end
 end

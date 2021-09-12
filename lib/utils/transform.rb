@@ -24,5 +24,11 @@ class Transform
     def record!(param, model)
       model.find param
     end
+
+    def solve_mask(mask)
+      return nil unless mask
+
+      mask.chars.each_with_index.map { |char, index| char == '1' ? index + 1 : nil }.compact
+    end
   end
 end

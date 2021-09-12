@@ -60,6 +60,14 @@ class LiveTest < ActiveSupport::TestCase
     assert_equal 0, lives_from_channel_two.size
   end
 
+  test 'should scope of_members' do
+    lives_from_member_one = Live.of_members members(:test_1)
+    lives_from_member_two = Live.of_members members(:test_2)
+
+    assert_equal 6, lives_from_member_one.size
+    assert_equal 0, lives_from_member_two.size
+  end
+
   test 'should scope start_after' do
     lives = Live.start_after Time.current
 

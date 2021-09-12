@@ -97,6 +97,7 @@ class Api::V1::LivesController < ApplicationController
 
   def filter
     @lives = Live.eager_load(:channel, :video, room: :platform)
+                 .of_members(Transform.solve_mask(params[:members_mask]))
                  .of_channels(params[:channels])
     %i[start_before start_after].each do |key|
       param = params[key]
