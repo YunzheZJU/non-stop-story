@@ -16,6 +16,9 @@ class Live < ApplicationRecord
   scope :of_channels, lambda { |channels|
     where(channel: channels) if channels.present?
   }
+  scope :of_members, lambda { |members|
+    joins(:channel).merge(Channel.of_members(members)) if members.present?
+  }
   scope :start_after, lambda { |time|
     where('lives.start_at >= ?', time) if time.present?
   }
