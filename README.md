@@ -30,6 +30,7 @@ RESTful API is now available at [HOLO.DEV](https://holo.dev/):
 /api/v1/lives/current
 /api/v1/lives/scheduled
 /api/v1/lives/ended
+/api/v1/lives/open
 /api/v1/lives/1
 /api/v1/members
 /api/v1/channels
