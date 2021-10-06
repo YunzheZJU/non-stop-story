@@ -18,8 +18,9 @@ class Room < ApplicationRecord
 
     format_by_platform = { youtube: /^[\w-]+$/,
                            bilibili: /^\d+$/,
-                           twitch: /^[\w_]+$/,
-                           twitcasting: /^[\w_]+$/, }
+                           twitch: /^\w+$/,
+                           twitcasting: /^\w+$/,
+                           twitter: /^\w+$/, }
 
     return if room =~ format_by_platform[platform.platform.to_sym]
 
