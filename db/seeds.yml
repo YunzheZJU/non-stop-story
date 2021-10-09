@@ -3,6 +3,7 @@ platforms:
   - bilibili
   - twitch
   - twitcasting
+  - twitter
 members:
   tokinosora:
     name: ときのそら
@@ -14,6 +15,8 @@ members:
       - UCp6993wxpyDPHUpavwDFqgg
     bilibili:
       - 8899503
+    twitter:
+      - 880317891249188864
   azki:
     name: AZKi
     avatar: https://yt3.ggpht.com/a/AATXAJwDg8CoHtj7qnk1aj5h75lIWOaH-__JNzqNGA=s96-c-k-c0xffffffff-no-rj-mo
@@ -24,6 +27,8 @@ members:
       - UC0TXe_LYZ4scaW2XMyi5_kw
     bilibili:
       - 21267062
+    twitter:
+      - 1062499145267605504
   robocosan:
     name: ロボ子さん
     avatar: https://yt3.ggpht.com/a/AATXAJzPUElg3_AunkFVflcyLEGybFmP3Txpg1c-AQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -36,6 +41,8 @@ members:
       - 4664126
     twitcasting:
       - robocosan
+    twitter:
+      - 960340787782299648
   sakuramiko:
     name: さくらみこ
     avatar: https://yt3.ggpht.com/a/AATXAJztlxp1NvyEG3ULspVuGLwdoweCnhDsZDzgqA=s96-c-k-c0xffffffff-no-rj-mo
@@ -50,6 +57,8 @@ members:
       - sakuramiko_hololive
     twitcasting:
       - sakuramiko35
+    twitter:
+      - 979891380616019968
   shirakamifubuki:
     name: 白上フブキ
     avatar: https://yt3.ggpht.com/a/AGF-l7-oeSvjxgdwMoDyT1LMH8nyqkWJCZH8MAOjzg=s96-c-k-c0xffffffff-no-rj-mo
@@ -62,6 +71,8 @@ members:
       - 11588230
     twitcasting:
       - shirakamifubuki
+    twitter:
+      - 997786053124616192
   natsuiromatsuri:
     name: 夏色まつり
     avatar: https://yt3.ggpht.com/a/AGF-l7_MTJEH9Kn-cVznPJPBt4v0BOkmd5btoSdz6Q=s96-c-k-c0xffffffff-no-rj-mo
@@ -74,6 +85,8 @@ members:
       - 13946381
     twitcasting:
       - natsuiromatsuri
+    twitter:
+      - 996645451045617664
   yozoramel:
     name: 夜空メル
     avatar: https://yt3.ggpht.com/a/AATXAJw__74rAt8SKtuBzHDGXg7AlSXGjJ0aO1giMw=s96-c-k-c0xffffffff-no-rj-mo
@@ -86,6 +99,8 @@ members:
       - 21131813
     twitcasting:
       - yozoramel
+    twitter:
+      - 985703615758123008
   akaihaato:
     name: 赤井はあと
     avatar: https://yt3.ggpht.com/a/AGF-l7-ULNK73gTCGtPrM6elTCL-ValOSptM0YTXkQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -98,6 +113,8 @@ members:
       - 14275133
     twitcasting:
       - akaihaato
+    twitter:
+      - 998336069992001537
   akirosenthal:
     name: アキ・ローゼンタール
     avatar: https://yt3.ggpht.com/a/AGF-l7-MKGs8oe830HpPIlyQ3pNAVqUgqiMdSg8TwQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -110,6 +127,8 @@ members:
       - 21219990
     twitcasting:
       - akirosenthal
+    twitter:
+      - 996643748862836736
   minatoaqua:
     name: 湊あくあ
     avatar: https://yt3.ggpht.com/a/AATXAJwHPp_TkvcWJyblt9XVYDjNSjrj6KdpQSCQNQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -122,6 +141,8 @@ members:
       - 14917277
     twitcasting:
       - minatoaqua
+    twitter:
+      - 1024528894940987392
   yuzukichoco:
     name: 癒月ちょこ
     avatar: https://yt3.ggpht.com/a/AGF-l79rj4svlTtPimVkcxdUJS8VGt01u_mqZWZIbA=s96-c-k-c0xffffffff-no-rj-mo
@@ -135,6 +156,8 @@ members:
       - 21107534
     twitcasting:
       - yuzukichococh
+    twitter:
+      - 1024970912859189248
   nakiriayame:
     name: 百鬼あやめ
     avatar: https://yt3.ggpht.com/a/AATXAJyDhi8y6CDBgpb-yV0T-aiZc8oXwMG7NacqOg=s96-c-k-c0xffffffff-no-rj-mo
@@ -147,6 +170,8 @@ members:
       - 21130785
     twitcasting:
       - nakiriayame
+    twitter:
+      - 1024532356554608640
   murasakishion:
     name: 紫咲シオン
     avatar: https://yt3.ggpht.com/a/AGF-l79Wv6njnWc-lQDwczBQVLgBIRMD8PJ72ZIPLg=s96-c-k-c0xffffffff-no-rj-mo
@@ -159,6 +184,8 @@ members:
       - 21132965
     twitcasting:
       - murasakishionch
+    twitter:
+      - 1024533638879166464
   oozorasubaru:
     name: 大空スバル
     avatar: https://yt3.ggpht.com/a/AATXAJw9_oqF22fvOEqGj2rHC12PadwHN-NlFL4DeA=s96-c-k-c0xffffffff-no-rj-mo
@@ -171,6 +198,8 @@ members:
       - 21129632
     twitcasting:
       - oozorasubaru
+    twitter:
+      - 1027853566780698624
   ookamimio:
     name: 大神ミオ
     avatar: https://yt3.ggpht.com/a/AATXAJzFpyPB7LFGFq5DIX2x7pvIblA9Ksz99TrDYvOa5w=s96-c-k-c0xffffffff-no-rj-mo
@@ -183,6 +212,8 @@ members:
       - 21133979
     twitcasting:
       - ookamimio
+    twitter:
+      - 1063337246231687169
   nekomataokayu:
     name: 猫又おかゆ
     avatar: https://yt3.ggpht.com/a/AATXAJxiB3oU3X4_wTHHAay43njgJgzw-2qKPeYIjDH2=s96-c-k-c0xffffffff-no-rj-mo
@@ -195,6 +226,8 @@ members:
       - 21420932
     twitcasting:
       - nekomataokayu
+    twitter:
+      - 1109751762733301760
   inugamikorone:
     name: 戌神ころね
     avatar: https://yt3.ggpht.com/a/AATXAJyL8gbKgJBHALWhWp56B6QTdNUPb03zwvT1uw=s96-c-k-c0xffffffff-no-rj-mo
@@ -207,6 +240,8 @@ members:
       - 21421141
     twitcasting:
       - inugamikorone
+    twitter:
+      - 1109748792721432577
   shiranuiflare:
     name: 不知火フレア
     avatar: https://yt3.ggpht.com/a/AATXAJwGmRMcFMvE1JW3v152HnrXfMQxbI_Dw92KH0-CpA=s96-c-k-c0xffffffff-no-rj-mo
@@ -219,6 +254,8 @@ members:
       - 21572617
     twitcasting:
       - shiranuiflare
+    twitter:
+      - 1154304634569150464
   shiroganenoel:
     name: 白銀ノエル
     avatar: https://yt3.ggpht.com/a/AATXAJwBxPdKpbHq1LKbJb_HIj691WraJza8FWnYZw=s96-c-k-c0xffffffff-no-rj-mo
@@ -231,6 +268,8 @@ members:
       - 21583736
     twitcasting:
       - shiroganenoel
+    twitter:
+      - 1153195295573856256
   houshoumarine:
     name: 宝鐘マリン
     avatar: https://yt3.ggpht.com/a/AATXAJxeNWA_oVxR5sKIs9hQotV_M9zS3NtgqB3tcw=s96-c-k-c0xffffffff-no-rj-mo
@@ -243,6 +282,8 @@ members:
       - 21584153
     twitcasting:
       - houshoumarine
+    twitter:
+      - 1153192638645821440
   usadapekora:
     name: 兎田ぺこら
     avatar: https://yt3.ggpht.com/a/AATXAJyMxAFFr0_eQYgUQWkV6CWlx_t1NETncJygQA=s96-c-k-c0xffffffff-no-rj-mo
@@ -257,6 +298,8 @@ members:
       - usadapekora_hololive
     twitcasting:
       - usadapekora
+    twitter:
+      - 1133215093246664706
   uruharushia:
     name: 潤羽るしあ
     avatar: https://yt3.ggpht.com/a/AATXAJxpi3N0NvZfBKKkEPPXx2U5xmQPNUT8AVOj1g=s96-c-k-c0xffffffff-no-rj-mo
@@ -269,6 +312,8 @@ members:
       - 21545232
     twitcasting:
       - uruharushia
+    twitter:
+      - 1142975277175205888
   hoshimatisuisei:
     name: 星街すいせい
     avatar: https://yt3.ggpht.com/a/AATXAJwKuNhye0SEMSrtM5HUe5aVtKyxAvmdDlSpWw=s96-c-k-c0xffffffff-no-rj-mo
@@ -281,6 +326,8 @@ members:
       - 190577
     twitcasting:
       - suisei_hosimati
+    twitter:
+      - 975275878673408001
   amanekanata:
     name: 天音かなた
     avatar: https://yt3.ggpht.com/a/AGF-l7_OdjohiBOVMZd0dHxZ1Jh1S1kJKGS0nYfNVg=s96-c-k-c0xffffffff-no-rj-mo
@@ -293,6 +340,8 @@ members:
       - 21752681
     twitcasting:
       - amanekanatach
+    twitter:
+      - 1200396304360206337
   kiryucoco:
     name: 桐生ココ
     avatar: https://yt3.ggpht.com/a/AGF-l7-UWVGytfW-cAiCvg8r2C_6Gk2SnqSkJP9Cqg=s96-c-k-c0xffffffff-no-rj-mo
@@ -305,6 +354,8 @@ members:
       - 21752686
     twitcasting:
       - kiryucoco
+    twitter:
+      - 1200397238788247552
   tsunomakiwatame:
     name: 角巻わため
     avatar: https://yt3.ggpht.com/a/AGF-l78pYNGWXckjVjmMsSz4iPeCzmWB2DHFW3lLdQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -317,6 +368,8 @@ members:
       - 21752694
     twitcasting:
       - tsunomakiwatame
+    twitter:
+      - 1200397643479805957
   tokoyamitowa:
     name: 常闇トワ
     avatar: https://yt3.ggpht.com/a/AGF-l7_MD5OqIfTp-JG-F5QSAiIIsprC8TrQpVhdvA=s96-c-k-c0xffffffff-no-rj-mo
@@ -329,6 +382,8 @@ members:
       - 21752710
     twitcasting:
       - tokoyamitowa
+    twitter:
+      - 1200357161747939328
   himemoriluna:
     name: 姫森ルーナ
     avatar: https://yt3.ggpht.com/a/AGF-l7-xWfYjQX1VHU2i1BuIap0Ba3tR3T6w4dcCkA=s96-c-k-c0xffffffff-no-rj-mo
@@ -341,6 +396,8 @@ members:
       - 21752719
     twitcasting:
       - himemoriluna
+    twitter:
+      - 1200396798281445376
   yukihanalamy:
     name: 雪花ラミィ
     avatar: https://yt3.ggpht.com/a/AATXAJzN5Oo_0gI5qPUclliWy8EzU9x5z4oIYliAB3bf=s96-c-k-c0xffffffff-no-rj-mo
@@ -351,6 +408,8 @@ members:
       - UCFKOVgVbGmX65RxO3EtH3iw
     bilibili:
       - 22349508
+    twitter:
+      - 1255013740799356929
   momosuzunene:
     name: 桃鈴ねね
     avatar: https://yt3.ggpht.com/a/AATXAJyy0MDi5ux-dNieMyjSCs4xBUQWHOfkPfsz5Xrw=s96-c-k-c0xffffffff-no-rj-mo
@@ -361,6 +420,8 @@ members:
       - UCAWSyEs_Io8MtpY3m-zqILA
     bilibili:
       - 22349492
+    twitter:
+      - 1255017971363090432
   shishirobotan:
     name: 獅白ぼたん
     avatar: https://yt3.ggpht.com/a/AATXAJzO_bOBHuKPycvddNd88hozl2OjaNC-uR7lOAXa=s96-c-k-c0xffffffff-no-rj-mo
@@ -371,6 +432,8 @@ members:
       - UCUKD-uaobj9jiqB-VXt71mA
     bilibili:
       - 22349494
+    twitter:
+      - 1255015814979186689
   manoaloe:
     name: 魔乃アロエ
     avatar: https://yt3.ggpht.com/a/AATXAJyYCsfSn428TJHQl090qek59epckWGsjto9ZOad=s96-c-k-c0xffffffff-no-rj-mo
@@ -391,6 +454,8 @@ members:
       - UCK9V2B22uJYu3N7eR_BT9QA
     bilibili:
       - 22349506
+    twitter:
+      - 1270551806993547265
   hanasakimiyabi:
     name: 花咲みやび
     avatar: https://yt3.ggpht.com/a/AATXAJxB0OqaMlTW_mviIOFpcA5T7BednuyLzWTqh5DX=s96-c-k-c0xffffffff-no-rj-mo
@@ -403,6 +468,8 @@ members:
       - 22422987
     twitcasting:
       - miyabihanasaki
+    twitter:
+      - 1132832428353966081
   kanadeizuru:
     name: 奏手イヅル
     avatar: https://yt3.ggpht.com/a/AATXAJwOmYURgX4xTy99WZCB2xp1KbZklWcBQuDTcS0t=s96-c-k-c0xffffffff-no-rj-mo
@@ -415,6 +482,8 @@ members:
       - 21749477
     twitcasting:
       - kanadeizuru
+    twitter:
+      - 1132924263441227776
   kagamikira:
     name: 鏡見キラ
     avatar: https://yt3.ggpht.com/a/AATXAJzr9QwLFAq9sDSM8lnYIqUloCKjJucw2AmXY35O=s96-c-k-c0xffffffff-no-rj-mo
@@ -425,6 +494,8 @@ members:
       - UCEzsociuFqVwgZuMaZqaCsg
     twitcasting:
       - kagamikirach
+    twitter:
+      - 1132903314385805313
   arurandeisu:
     name: アルランディス
     avatar: https://yt3.ggpht.com/a/AATXAJztxlOTq8L18iF3ZAEjKtmi6QidpScnKRRYtBHL=s96-c-k-c0xffffffff-no-rj-mo
@@ -437,6 +508,8 @@ members:
       - 22171183
     twitcasting:
       - arurandeisu
+    twitter:
+      - 1156841498479955968
   rikka:
     name: 律可
     avatar: https://yt3.ggpht.com/a/AATXAJz9svekb90aK-De-y1OsayRVNhL2t5PNaPIZGh0=s96-c-k-c0xffffffff-no-rj-mo
@@ -449,6 +522,8 @@ members:
       - 13009645
     twitcasting:
       - rikkaroid
+    twitter:
+      - 1174223248655114246
   astelleda:
     name: アステル・レダ
     avatar: https://yt3.ggpht.com/a/AATXAJwiDWcr9ZJra0fV3WRyF9GmXmRnTznOATl_qKza=s96-c-k-c0xffffffff-no-rj-mo
@@ -461,6 +536,8 @@ members:
       - 22171189
     twitcasting:
       - astelleda
+    twitter:
+      - 1181889913517572096
   kishidotemma:
     name: 岸堂天真
     avatar: https://yt3.ggpht.com/a/AATXAJyy6jwwbrJeM8GiPWE-qJlGSmecBZnfCX5ms3Bj=s96-c-k-c0xffffffff-no-rj-mo
@@ -473,6 +550,8 @@ members:
       - 22423010
     twitcasting:
       - kishidotemma
+    twitter:
+      - 1194519616472543232
   yukokuroberu:
     name: 夕刻ロベル
     avatar: https://yt3.ggpht.com/a/AATXAJynglX3XaMMRa_dMLGP_jjcPNAWc7typZ8B-64g=s96-c-k-c0xffffffff-no-rj-mo
@@ -483,6 +562,8 @@ members:
       - UCANDOlYTJT7N5jlRC3zfzVA
     twitcasting:
       - yukokuroberu
+    twitter:
+      - 1194520283446530051
   tsukishitakaoru:
     name: 月下カオル
     avatar: https://yt3.ggpht.com/a/AATXAJzXhF7TW0jDCHcJ1DqeajdhS6IV77FLVfQej1Qq=s96-c-k-c0xffffffff-no-rj-mo
@@ -501,6 +582,8 @@ members:
       - UChSvpZYRPh0FvG4SJGSga3g
     twitcasting:
       - kageyamashien
+    twitter:
+      - 1248565757207695361
   aragamioga:
     name: 荒咬オウガ
     avatar: https://yt3.ggpht.com/a/AATXAJxHDvBIDa7-BqA8KnWhyS45S6k1-yHe8syfeEri=s96-c-k-c0xffffffff-no-rj-mo
@@ -511,6 +594,8 @@ members:
       - UCwL7dgTxKo8Y4RFIKWaf8gA
     twitcasting:
       - aragamioga
+    twitter:
+      - 1248567107173773313
   yogiri:
     name: 夜霧
     avatar: https://i1.hdslb.com/bfs/face/0d86c9462ccaab2a5ca416138c092df729c82012.jpg_96x96.jpg
@@ -569,6 +654,8 @@ members:
     graduated: false
     youtube:
       - UCOyYb1c43VlX9rc_lT6NKQw
+    twitter:
+      - 1234752200145899520
   moonahoshinova:
     name: Moona Hoshinova
     avatar: https://yt3.ggpht.com/a/AATXAJz0VbMygCxDQdJwB5LNRSdcXgyGegDBA6pyxs3EJQ=s96-c-k-c0xffffffff-no-rj-mo
@@ -579,6 +666,8 @@ members:
       - UCP0BspO_AMEe3aQqqpo89Dg
     twitcasting:
       - moonahoshinova
+    twitter:
+      - 1234753886520393729
   airaniiofifteen:
     name: Airani Iofifteen
     avatar: https://yt3.ggpht.com/a/AATXAJx28lrJ1bpfUSNv3cakn59hdqx7YOGpnvJJ9Tof=s96-c-k-c0xffffffff-no-rj-mo
@@ -587,6 +676,8 @@ members:
     graduated: false
     youtube:
       - UCAoy6rzhSf4ydcYjJw3WoVg
+    twitter:
+      - 1235180878449397764
   moricalliope:
     name: Mori Calliope
     avatar: https://yt3.ggpht.com/a/AATXAJwBT0RCEyLDyqdqy4m-Ig5U7axjMnl6neaWHhFa=s96-c-k-c0xffffffff-no-rj-mo
@@ -597,6 +688,8 @@ members:
       - UCL_qhgtOy0dy1Agp8vkySQg
     bilibili:
       - 22503360
+    twitter:
+      - 1283653858510598144
   takanashikiara:
     name: Takanashi Kiara
     avatar: https://yt3.ggpht.com/a/AATXAJz1t3Qobm0uF0QZs4iNYnfQ4PT0iiq4cUs8mTrt=s96-c-k-c0xffffffff-no-rj-mo
@@ -607,6 +700,8 @@ members:
       - UCHsx4Hqa-1ORjQTh9TYDhww
     bilibili:
       - 22503364
+    twitter:
+      - 1283646922406760448
   ninomaeinanis:
     name: Ninomae Ina'nis
     avatar: https://yt3.ggpht.com/a/AATXAJzBLvl1RZPueVo8gVdFbSK7M8MDIbWb-ISuwv6K=s96-c-k-c0xffffffff-no-rj-mo
@@ -617,6 +712,8 @@ members:
       - UCMwGHR0BTZuLsmjY_NT5Pwg
     bilibili:
       - 22503367
+    twitter:
+      - 1283650008835743744
   gawrgura:
     name: Gawr Gura
     avatar: https://yt3.ggpht.com/a/AATXAJwyNfLKBDLZoKA3c7u_vPOKbQitz4fcDwi7Iqhi=s96-c-k-c0xffffffff-no-rj-mo
@@ -627,6 +724,8 @@ members:
       - UCoSrY_IQQVpmIRZ9Xf-y93g
     bilibili:
       - 22503372
+    twitter:
+      - 1283657064410017793
   watsonamelia:
     name: Watson Amelia
     avatar: https://yt3.ggpht.com/a/AATXAJy4N7OLrI5euxdzCX_OiS6hDbHUSqqIJoWK_170=s96-c-k-c0xffffffff-no-rj-mo
@@ -637,6 +736,8 @@ members:
       - UCyl1z3jo3XHR1riLFKG5UAg
     bilibili:
       - 22503378
+    twitter:
+      - 1283656034305769472
   kureijiollie:
     name: Kureiji Ollie
     avatar: https://yt3.ggpht.com/ytc/AAUvwnitFviHjDNyLPjA95sz4Supbhvm8Ea3dKrRAKk=s96-c-k-c0x00ffffff-no-rj
@@ -647,6 +748,8 @@ members:
       - UCYz_5n-uDuChHtLo7My1HnQ
     twitcasting:
       - kureijiollie
+    twitter:
+      - 1328277233492844544
   anyamelfissa:
     name: Anya Melfissa
     avatar: https://yt3.ggpht.com/ytc/AAUvwnie9uw8oBbjgTKmoLPSo9b_K0AbNPRbD2rjCApl=s96-c-k-c0x00ffffff-no-rj
@@ -655,6 +758,8 @@ members:
     graduated: false
     youtube:
       - UC727SQYUvx5pDDGQpTICNWg
+    twitter:
+      - 1328277750000492545
   pavoliareine:
     name: Pavolia Reine
     avatar: https://yt3.ggpht.com/ytc/AAUvwnjXvzYgBg5mJv8RZLZhgn0-Zb_4zzE1zhCHrJ2w=s96-c-k-c0x00ffffff-no-rj
@@ -663,6 +768,8 @@ members:
     graduated: false
     youtube:
       - UChgTyjG-pdNvxxhdsXfHQ5Q
+    twitter:
+      - 1328275136575799297
   hololive:
     name: ホロライブ
     avatar: https://yt3.ggpht.com/ytc/AAUvwngST9tdspZgipxxe6KUzq_t-CkbVhCjkmnWxb1uZw=s96-c-k-c0x00ffffff-no-rj
@@ -703,6 +810,8 @@ members:
     graduated: false
     youtube:
       - UC8rcEBzJSleTkf_-agPM20g
+    twitter:
+      - 1363705980261855232
   tsukumosana:
     name: Tsukumo Sana
     avatar: https://yt3.ggpht.com/t1XymJVoo8trXNJ1PeHTzaROF5wqlBYigFoYzw0HEthLahxAXjpqBi6c5ttOp9kWkYCkspivEg=s96-c-k-c0x00ffffff-no-rj
@@ -711,6 +820,8 @@ members:
     graduated: false
     youtube:
       - UCsUj0dszADCGbF3gNrQEuSQ
+    twitter:
+      - 1409819816194576394
   ceresfauna:
     name: Ceres Fauna
     avatar: https://yt3.ggpht.com/1rUoSkwh5LJbR8ez3-l02cdoOIKt9IlhKJxkBTqoff2qZb-VV3wUTFpkE2cNDQnOjk8wR-TW=s96-c-k-c0x00ffffff-no-rj
@@ -719,6 +830,8 @@ members:
     graduated: false
     youtube:
       - UCO_aKKYxn4tvrqPjcTzZ6EQ
+    twitter:
+      - 1409784760805650436
   ourokronii:
     name: Ouro Kronii
     avatar: https://yt3.ggpht.com/6670YE31bbAtAi7m_UL-KWZBdL5wvmfHlLtcS4HxsBZBQNqmAk7Y-iiIOjawO_0HYXpS4HfC=s96-c-k-c0x00ffffff-no-rj
@@ -727,6 +840,8 @@ members:
     graduated: false
     youtube:
       - UCmbs8T6MWqUHP1tIQvSgKrg
+    twitter:
+      - 1409817096523968513
   nanashimumei:
     name: Nanashi Mumei
     avatar: https://yt3.ggpht.com/MI8E8Wfmc_ngNZXUwu8ad0D-OtqDhmqGVULEu25z-ccscwzJpAw-7ewFXzZYLK2jHB9d5OgQDq4=s96-c-k-c0x00ffffff-no-rj
@@ -735,6 +850,8 @@ members:
     graduated: false
     youtube:
       - UC3n5uGu18FoCy23ggWWp8tA
+    twitter:
+      - 1409817941705515015
   hakosbaelz:
     name: Hakos Baelz
     avatar: https://yt3.ggpht.com/GWIwRbtVQ2TAlvH8Mf37FMpemTrwmUSbTSazp9Aul6KwdKQmvx7IbLZepDk0sp8ReW3qBhsU=s96-c-k-c0x00ffffff-no-rj
@@ -743,3 +860,5 @@ members:
     graduated: false
     youtube:
       - UCgmPnx-EEeOrZSg5Tiw7ZRQ
+    twitter:
+      - 1409783149211443200
