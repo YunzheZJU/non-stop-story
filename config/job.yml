@@ -5,6 +5,9 @@ default: &default
   lives_check:
     delay: 10
     interval: 60
+  members_track:
+    delay: 20
+    interval: 3600
 
 development:
   <<: *default
