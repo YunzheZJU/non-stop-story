@@ -8,6 +8,9 @@ default: &default
   lives_check:
     youtube:
       - https://youtube-live-check.yunzhe35p.workers.dev
+  members_track:
+    youtube:
+      - https://youtube-live-check.yunzhe35p.workers.dev
 
 development:
   <<: *default

@@ -62,6 +62,9 @@ module NonStopStory
         LivesCheckJob.set(
           wait: Rails.configuration.job[:lives_check][:delay].seconds
         ).perform_later
+        MembersTrackJob.set(
+          wait: Rails.configuration.job[:members_track][:delay].seconds
+        ).perform_later
 
         if Rails.env.production?
           DailySummaryJob.set(wait_until: Time.current.midnight)
