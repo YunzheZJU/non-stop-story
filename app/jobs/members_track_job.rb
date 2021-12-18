@@ -19,8 +19,7 @@ class MembersTrackJob < ApplicationJob
   def request_and_sync(platform, member)
     return unless platform
 
-    channels_by_worker(platform, member)
-                   .each do |(worker, _index), channels|
+    channels_by_worker(platform, member).each do |(worker, _index), channels|
       response = Network.get_videos(worker, channels)
 
       Channel.where(channel: response.keys).find_each do |channel|
