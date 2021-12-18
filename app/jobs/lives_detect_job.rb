@@ -31,10 +31,10 @@ class LivesDetectJob < ApplicationJob
     end
   end
 
-  def channels_by_worker(platform, members, twitter_by_member)
+  def channels_by_worker(platform, members, extra_by_member)
     workers = Rails.configuration.worker[:lives_detect][platform.platform.to_sym]
     channels = Channel.of_members(members).of_platforms(platform).map do |channel|
-      [channel.channel, twitter_by_member[channel.member_id]&.first&.channel]
+      [channel.channel, extra_by_member[channel.member_id]&.first&.channel]
     end
     Transform.allocate(workers, channels)
   end
