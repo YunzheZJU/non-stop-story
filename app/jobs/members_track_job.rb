@@ -39,9 +39,7 @@ class MembersTrackJob < ApplicationJob
 
   class << self
     def update_member(member, channel_info)
-      member.update!(
-        avatar: channel_info['avatar']
-      )
+      member.update!(avatar: channel_info['avatar']) if channel_info['avatar']
     end
   end
 end
