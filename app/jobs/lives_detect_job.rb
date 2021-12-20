@@ -16,29 +16,30 @@ class LivesDetectJob < ApplicationJob
     end
   end
 
-  def request_and_sync(platform, member)
+  def request_and_sync(platform, members)
     return unless platform
 
-    LivesDetectJob.channels_by_worker(platform, member)
-                  .each do |(worker, _index), channels|
+    twitter_by_member = Channel.of_members(members).of_platforms(Platform.find_by_platform(:twitter))
+                               .group_by(&:member_id)
+
+    channels_by_worker(platform, members, twitter_by_member).each do |(worker, _index), channels|
       response = Network.get_videos(worker, channels)
 
-      Channel.where(channel: response.keys).find_each do |channel|
+      Channel.where(channel: response.keys, platform: platform).find_each do |channel|
         LivesDetectJob.sync_live_rooms channel, response[channel.channel]
       end
     end
   end
 
-  class << self
-    def channels_by_worker(platform, member)
-      workers = Rails.configuration
-                     .worker[:lives_detect][platform.platform.to_sym]
-      channels = Channel.of_platforms(platform)
-                        .of_members(member)
-                        .pluck(:channel)
-      Transform.allocate(workers, channels)
+  def channels_by_worker(platform, members, extra_by_member)
+    workers = Rails.configuration.worker[:lives_detect][platform.platform.to_sym]
+    channels = Channel.of_members(members).of_platforms(platform).map do |channel|
+      [channel.channel, extra_by_member[channel.member_id]&.first&.channel]
     end
+    Transform.allocate(workers, channels)
+  end
 
+  class << self
     def sync_live_rooms(channel, live_infos)
       room_vals = live_infos.keys
       open_room_vals = Room.open(channel).pluck(:room)
