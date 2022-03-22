@@ -18,7 +18,7 @@ end
 seeds['members'].each_pair do |_, info|
   member = Member.find_or_create_by!(info.extract!('name'))
 
-  member.update!(avatar: info.avatar) unless member.avatar.present?
+  member.update!(avatar: info['avatar']) unless member.avatar.present?
   member.update!(info.extract!('color_main', 'color_sub', 'graduated'))
 
   seeds['platforms'].each do |platform|
