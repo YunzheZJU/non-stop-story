@@ -997,7 +997,7 @@ members:
       - 1486636197908602880
   kobokanaeru:
     name: Kobo Kanaeru
-    avatar: https://yt3.ggpht.com/FDU40V14C_-YbLcd_f9zeqaFhZJ8kY1D2UL0H4L81QNBaxOQg09G7ZA1hqU8M61Vzy3gQl81PA=s176-c-k-c0x00ffffff-no-rj
+    avatar: https://yt3.ggpht.com/Zi6DMbqTrk8jpNKnJgbw_NxGnggsKX1omQnPeHxrZTmrVmon7zfmg5Q4XbqsHO9AMidW49zCPw=s96-c-k-c0x00ffffff-no-rj
     color_main: '#3aaaaf'
     color_sub: '#4de4ff'
     graduated: false
@@ -1005,3 +1005,43 @@ members:
       - UCjLEmnpCNeisMxy134KPwWw
     twitter:
       - 1486629076005634049
+  regisaltare:
+    name: Regis Altare
+    avatar: https://yt3.ggpht.com/FPQ7EP2tmlSh_Y0c6W2hM3VP-sEZsm6Q63XsMt5CcdSjX8VsyVcxxhyxMH8-zs6sc9NjtiRQ=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#588acc'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UCyxtGMdWlURZ30WSnEjDOQw
+    twitter:
+      - 1536575088996524032
+  magnidezmond:
+    name: Magni Dezmond
+    avatar: https://yt3.ggpht.com/F9xbhm8QbBSLdCtnPb5NPnXV8YpfkW76crv8pdPCFI2IEsRqGdBktWv7NnYBdKov_KZOSNFD=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#6d4c9c'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UC7MMNHR-kf9EN1rXiesMTMw
+    twitter:
+      - 1536576325296996352
+  axelsyrios:
+    name: Axel Syrios
+    avatar: https://yt3.ggpht.com/AwcClZisjhT1y-6p2pW00K3C5mpB31osfpZVecKsSIri1Cg4yN-P8fgVHJzW0nFdX-4CNVNSZw=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#e98d00'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UC2hx0xVkMoHGWijwr_lA01w
+    twitter:
+      - 1536577295632441344
+  noirvesper:
+    name: Noir Vesper
+    avatar: https://yt3.ggpht.com/owCWHzyPvuYNIJIYYlC-qZuKSBrcX1gCzO4A76syrWxXoMYMlE-AxFvlej2VhrN_-uLriK_pfg=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#b0b2b3'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UCDRWSO281bIHYVi-OV3iFYA
+    twitter:
+      - 1536579341332516864
