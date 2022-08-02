@@ -836,7 +836,7 @@ members:
     avatar: https://yt3.ggpht.com/t1XymJVoo8trXNJ1PeHTzaROF5wqlBYigFoYzw0HEthLahxAXjpqBi6c5ttOp9kWkYCkspivEg=s96-c-k-c0x00ffffff-no-rj
     color_main: '#f2d7c4'
     color_sub: '#fedf49'
-    graduated: false
+    graduated: true
     youtube:
       - UCsUj0dszADCGbF3gNrQEuSQ
     twitter:
