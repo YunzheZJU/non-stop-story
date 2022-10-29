@@ -42,25 +42,25 @@ class Api::V1::LivesController < ApplicationController
 
   def ended
     # TODO: Group by channel, Order by
-    @lives = @lives.ended.order(start_at: :desc).all
+    @lives = @lives.ended.order(start_at: :desc, id: :desc).all
     render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
   def open
-    @lives = @lives.open.order(start_at: :asc).all
+    @lives = @lives.open.order(start_at: :asc, id: :asc).all
     render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
   def current
-    @lives = @lives.current.order(start_at: :asc).all
+    @lives = @lives.current.order(start_at: :asc, id: :asc).all
     render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
 
   def scheduled
-    @lives = @lives.scheduled.order(start_at: :asc).all
+    @lives = @lives.scheduled.order(start_at: :asc, id: :asc).all
     render json: { lives: @lives.map(&:json),
                    total: @lives.total_count, }
   end
