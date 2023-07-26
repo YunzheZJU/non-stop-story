@@ -1087,3 +1087,43 @@ members:
       - UCMqGG8BRAiI1lJfKOpETM_w
     twitter:
       - 1582925071546732544
+  shiorinovella:
+    name: Shiori Novella
+    avatar: https://yt3.googleusercontent.com/ZlovVsPyh8NgS37S4dfONiCBySiboGPbT9cYuirb8JM3JhSnqlpJk-8SQUEA7jPfqXpMvjaa=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#b6a0ce'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UCgnfPPb9JI3e9A4cXHnWbyg
+    twitter:
+      - 1656536840240005121
+  kosekibijou:
+    name: Koseki Bijou
+    avatar: https://yt3.googleusercontent.com/75xH5tujXTVPHlQXask8_qTbOeyq0BY4hKxNfvgTrsuqhK_oActrFV197roYikUNZhzayfiLmg=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#6d5ef6'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UC9p_lqQ0FEDz327Vgf5JwqA
+    twitter:
+      - 1656531547279982593
+  nerissaravencroft:
+    name: Nerissa Ravencroft
+    avatar: https://yt3.googleusercontent.com/JDCIBWj11TgjY2Uyba_efZ0n5hzjysMB9GxkvHGkIN_sfFQJR5mx3iVPqgJ96IPcYjZpCLsb=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#2639fd'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UC_sFNM0z0MWm9A6WlKPuMMg
+    twitter:
+      - 1656528951303614464
+  fuwamocobyssgard:
+    name: FuwaMoco Abyssgard
+    avatar: https://yt3.googleusercontent.com/zt63obGOD6fnCX0elnzt8xkylqOTnAENmSCKmwg_PSiC857DDgB28kEjQ-FJlWGtNYZ9lqzEag=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#72b3ff'
+    color_sub: '#f0a6cb'
+    graduated: false
+    youtube:
+      - UCt9H_RpQzhxzlyBxFqrdHqA
+    twitter:
+      - 1656889310472437761
