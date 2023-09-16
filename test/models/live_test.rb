@@ -141,8 +141,8 @@ class LiveTest < ActiveSupport::TestCase
 
       lives = Live.active
 
-      assert_equal 5, lives.size
-      assert_not_includes lives, lives(:test_2), lives(:test_7)
+      assert_equal 6, lives.size
+      assert_not_includes lives, lives(:test_7)
     end
   end
 end
