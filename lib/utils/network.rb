@@ -29,7 +29,7 @@ class Network
       uri.query = if channels.first.instance_of? String
                     { channels: channels }
                   else
-                    { channels: channels.map(&:first), extra_channels: channels.map(&:last) }
+                    { channels: channels.map { |pair| pair.join(',') } }
                   end.then { |*args, **kwargs| URI.encode_www_form(*args, **kwargs) }
 
       proxy = URI(worker[:proxy]) rescue nil
