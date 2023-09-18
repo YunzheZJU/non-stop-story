@@ -40,7 +40,7 @@ class Network
     def request(uri, proxy)
       Net::HTTP.start(
         uri.host, uri.port, proxy&.host, proxy&.port,
-        open_timeout: 5, read_timeout: 5,
+        open_timeout: 10, read_timeout: 10,
         use_ssl: uri.scheme == 'https', max_retries: 3
       ) do |http|
         http.request Net::HTTP::Get.new(uri, yunzhes: 'PrivateHeader')
