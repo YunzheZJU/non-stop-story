@@ -30,7 +30,7 @@ class Live < ApplicationRecord
   scope :current, -> { open.start_before(Time.current) }
   scope :scheduled, -> { open.start_after(Time.current) }
   scope :active, lambda {
-    open.or(ended.where('lives.updated_at >= ?', 5.minutes.ago))
+    open.or(ended.where('lives.updated_at >= ?', 60.minutes.ago))
   }
 
   def cached_hotnesses

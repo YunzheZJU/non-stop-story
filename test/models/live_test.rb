@@ -137,11 +137,12 @@ class LiveTest < ActiveSupport::TestCase
   test 'should scope active' do
     travel_to 1.hour.from_now do
       lives(:test_3).update!(cover: 'NewCover')
+      lives(:test_7).update!(updated_at: 65.minutes.ago)
 
       lives = Live.active
 
-      assert_equal 5, lives.size
-      assert_not_includes lives, lives(:test_2), lives(:test_7)
+      assert_equal 6, lives.size
+      assert_not_includes lives, lives(:test_7)
     end
   end
 end
