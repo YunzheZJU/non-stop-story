@@ -73,6 +73,8 @@ members:
       - 11588230
     twitcasting:
       - shirakamifubuki
+    twitch:
+      - shirakamifubuki_holo
     twitter:
       - 997786053124616192
   natsuiromatsuri:
@@ -85,6 +87,8 @@ members:
       - UCQ0UDLQCjY0rmuxCDE38FGg
     bilibili:
       - 13946381
+    twitch:
+      - natsuiromatsuri_hololive
     twitcasting:
       - natsuiromatsuri
     twitter:
@@ -262,6 +266,8 @@ members:
       - UCvInZx9h3jC2JzsIzoOebWg
     bilibili:
       - 21572617
+    twitch:
+      - shiranuiflare_hololive
     twitcasting:
       - shiranuiflare
     twitter:
@@ -276,6 +282,8 @@ members:
       - UCdyqAaZDKHXg4Ahi7VENThQ
     bilibili:
       - 21583736
+    twitch:
+      - shiroganenoel_hololive
     twitcasting:
       - shiroganenoel
     twitter:
@@ -290,6 +298,8 @@ members:
       - UCCzUftO8KOVkV4wQG1vkUvg
     bilibili:
       - 21584153
+    twitch:
+      - houshoumarine_hololive
     twitcasting:
       - houshoumarine
     twitter:
@@ -348,6 +358,8 @@ members:
       - UCZlDXzGoo7d44bwdNObFacg
     bilibili:
       - 21752681
+    twitch:
+      - amanekanata_hololive
     twitcasting:
       - amanekanatach
     twitter:
@@ -376,6 +388,8 @@ members:
       - UCqm3BQLlJfvkTsX_hvm0UmA
     bilibili:
       - 21752694
+    twitch:
+      - tsunomakiwatame_hololive
     twitcasting:
       - tsunomakiwatame
     twitter:
@@ -406,6 +420,8 @@ members:
       - UCa9Y57gfeY0Zro_noHRVrnw
     bilibili:
       - 21752719
+    twitch:
+      - himemoriluna_hololive
     twitcasting:
       - himemoriluna
     twitter:
@@ -484,6 +500,8 @@ members:
       - UC6t3-_N8A6ME1JShZHHqOMw
     bilibili:
       - 22422987
+    twitch:
+      - hanasakimiyabi_holostars
     twitcasting:
       - miyabihanasaki
     twitter:
@@ -498,6 +516,8 @@ members:
       - UCZgOv3YDEs-ZnZWDYVwJdmA
     bilibili:
       - 21749477
+    twitch:
+      - kanadeizuru_holostars
     twitcasting:
       - kanadeizuru
     twitter:
@@ -524,6 +544,8 @@ members:
       - UCKeAhJvy8zgXWbh9duVjIaQ
     bilibili:
       - 22171183
+    twitch:
+      - arurandeisu_holostars
     twitcasting:
       - arurandeisu
     twitter:
@@ -538,6 +560,8 @@ members:
       - UC9mf_ZVpouoILRY9NUIaK-w
     bilibili:
       - 13009645
+    twitch:
+      - rikka_holostars
     twitcasting:
       - rikkaroid
     twitter:
@@ -566,6 +590,8 @@ members:
       - UCGNI4MENvnsymYjKiZwv9eg
     bilibili:
       - 22423010
+    twitch:
+      - kishidotemma_holostars
     twitcasting:
       - kishidotemma
     twitter:
@@ -578,6 +604,8 @@ members:
     graduated: false
     youtube:
       - UCANDOlYTJT7N5jlRC3zfzVA
+    twitch:
+      - yukokuroberu_holostars
     twitcasting:
       - yukokuroberu
     twitter:
@@ -598,6 +626,8 @@ members:
     graduated: false
     youtube:
       - UChSvpZYRPh0FvG4SJGSga3g
+    twitch:
+      - kageyamashien_holostars
     twitcasting:
       - kageyamashien
     twitter:
@@ -610,6 +640,8 @@ members:
     graduated: false
     youtube:
       - UCwL7dgTxKo8Y4RFIKWaf8gA
+    twitch:
+      - aragamioga_holostars
     twitcasting:
       - aragamioga
     twitter:
@@ -706,6 +738,8 @@ members:
       - UCL_qhgtOy0dy1Agp8vkySQg
     bilibili:
       - 22503360
+    twitch:
+      - moricalliope_hololiveen
     twitter:
       - 1283653858510598144
   takanashikiara:
@@ -743,6 +777,8 @@ members:
       - UCoSrY_IQQVpmIRZ9Xf-y93g
     bilibili:
       - 22503372
+    twitch:
+      - gawrgura
     twitter:
       - 1283657064410017793
   watsonamelia:
@@ -767,6 +803,8 @@ members:
     graduated: false
     youtube:
       - UCYz_5n-uDuChHtLo7My1HnQ
+    twitch:
+      - kureijiollie
     twitcasting:
       - kureijiollie
     twitter:
@@ -893,6 +931,8 @@ members:
       - UCENwRMx5Yh42zWpzURebzTw
     twitch:
       - laplusdarknesss_hololive
+    twitcasting:
+      - laplusdarknesss
     twitter:
       - 1433657158067896325
   takanelui:
@@ -903,6 +943,8 @@ members:
     graduated: false
     youtube:
       - UCs9_O1tRPMQTHQ-N_L6FU2g
+    twitch:
+      - takanelui_hololive
     twitter:
       - 1433660866063339527
   hakuikoyori:
@@ -935,6 +977,8 @@ members:
     graduated: false
     youtube:
       - UC_vMYWcDjmfdpH6r4TTn1MQ
+    twitch:
+      - kazamairoha_holo
     twitter:
       - 1434755250049589252
   yatogamifuma:
@@ -985,6 +1029,8 @@ members:
     graduated: false
     youtube:
       - UCTvHWSfBZgtxE4sILOaurIQ
+    twitch:
+      - vestiazeta_hololiveid
     twitter:
       - 1486633489101307907
   kaelakovalskia:
@@ -1015,6 +1061,8 @@ members:
     graduated: false
     youtube:
       - UCyxtGMdWlURZ30WSnEjDOQw
+    twitch:
+      - regisaltare_holostars_en
     twitter:
       - 1536575088996524032
   magnidezmond:
@@ -1025,6 +1073,8 @@ members:
     graduated: true
     youtube:
       - UC7MMNHR-kf9EN1rXiesMTMw
+    twitch:
+      - magnidezmond_holostars_en
     twitter:
       - 1536576325296996352
   axelsyrios:
@@ -1035,6 +1085,8 @@ members:
     graduated: false
     youtube:
       - UC2hx0xVkMoHGWijwr_lA01w
+    twitch:
+      - axelsyrios_holostars_en
     twitter:
       - 1536577295632441344
   noirvesper:
@@ -1045,6 +1097,8 @@ members:
     graduated: true
     youtube:
       - UCDRWSO281bIHYVi-OV3iFYA
+    twitch:
+      - noirvesper_holostars_en
     twitter:
       - 1536579341332516864
   gavisbettel:
@@ -1055,6 +1109,8 @@ members:
     graduated: false
     youtube:
       - UCHP4f7G2dWD4qib7BMatGAw
+    twitch:
+      - gavisbettel
     twitter:
       - 1582926739684339712
   machinaxflayon:
@@ -1065,6 +1121,8 @@ members:
     graduated: false
     youtube:
       - UC060r4zABV18vcahAWR1n7w
+    twitch:
+      - machinaxflayon
     twitter:
       - 1582922712166825986
   banzoinhakka:
@@ -1075,6 +1133,8 @@ members:
     graduated: false
     youtube:
       - UC7gxU6NXjKF1LrgOddPzgTw
+    twitch:
+      - banzoinhakka
     twitter:
       - 1582927907206631425
   josuijishinri:
@@ -1085,6 +1145,8 @@ members:
     graduated: false
     youtube:
       - UCMqGG8BRAiI1lJfKOpETM_w
+    twitch:
+      - josuijishinri
     twitter:
       - 1582925071546732544
   shiorinovella:
