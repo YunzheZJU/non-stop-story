@@ -98,7 +98,7 @@ members:
     avatar: https://yt3.ggpht.com/a/AATXAJw__74rAt8SKtuBzHDGXg7AlSXGjJ0aO1giMw=s96-c-k-c0xffffffff-no-rj-mo
     color_main: '#ffcf6a'
     color_sub: '#ff8813'
-    graduated: false
+    graduated: true
     youtube:
       - UCD8HOxPs4Xvsm8H0ZxXGiBw
     bilibili:
@@ -148,7 +148,7 @@ members:
     bilibili:
       - 14917277
     twitch:
-      - minatoaqua_hololive
+      - minatoaquach_hololive
     twitcasting:
       - minatoaqua
     twitter:
