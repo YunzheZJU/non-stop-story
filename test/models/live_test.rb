@@ -139,6 +139,7 @@ class LiveTest < ActiveSupport::TestCase
       lives(:test_7).update!(cover: 'NewCover')
     end
     travel_to 1.hour.from_now do
+      lives(:test_2).update!(cover: 'NewCover')
       lives(:test_3).update!(cover: 'NewCover')
 
       lives = Live.active
