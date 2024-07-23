@@ -1010,7 +1010,7 @@ members:
     avatar: https://yt3.ggpht.com/YLnsUcMTqnTsXF6cUWsChLK1bhoRMUj2G2VRG5IoQjWOJ5X_bbzcEnUaekTzHgWc3JKkX5s=s96-c-k-c0x00ffffff-no-rj
     color_main: '#dc000e'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCkT1u65YS49ca_LsFwcTakw
     twitter:
