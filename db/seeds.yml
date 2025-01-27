@@ -892,7 +892,7 @@ members:
     avatar: https://yt3.ggpht.com/1rUoSkwh5LJbR8ez3-l02cdoOIKt9IlhKJxkBTqoff2qZb-VV3wUTFpkE2cNDQnOjk8wR-TW=s96-c-k-c0x00ffffff-no-rj
     color_main: '#f4bdb8'
     color_sub: '#aed199'
-    graduated: false
+    graduated: true
     youtube:
       - UCO_aKKYxn4tvrqPjcTzZ6EQ
     twitter:
@@ -970,7 +970,7 @@ members:
     avatar: https://yt3.ggpht.com/wYWT2pueYH2nEP-PDUtvJwXTNUbaUXaz9UpOnHWif8vJsjsj3teqFPo1305ojToSCO9U5JHkoaQ=s96-c-k-c0x00ffffff-no-rj
     color_main: '#d84a46'
     color_sub: '#2f2d32'
-    graduated: false
+    graduated: true
     youtube:
       - UCIBY1ollUsauvVi4hW4cumw
     twitter:
