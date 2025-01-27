@@ -41,11 +41,10 @@ class Api::V1::LivesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy' do
-    assert_raise(StandardError) do
-      delete api_v1_live_url(lives(:test_1))
-    end
+    delete api_v1_live_url(lives(:test_1))
+    assert_nil hotnesses(:test_1)
 
-    delete api_v1_live_url lives :test_4
+    delete api_v1_live_url lives(:test_4)
 
     assert_response :success
     assert_raise(StandardError) { lives(:test_4).reload }
