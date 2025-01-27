@@ -61,6 +61,8 @@ class LivesCheckJob < ApplicationJob
         return live.update!(
           duration: live.duration || (Time.current - live.start_at).to_i
         )
+      else
+        live.hotnesses.destroy_all
       end
 
       room = live.room
