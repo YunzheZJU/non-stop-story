@@ -26,11 +26,7 @@ class Network
       is_plain_worker = worker.instance_of? String
 
       uri = URI(is_plain_worker ? worker : worker[:worker])
-      uri.query = if channels.first.instance_of? String
-                    { channels: channels }
-                  else
-                    { channels: channels.map { |pair| pair.join(',') } }
-                  end.then { |*args, **kwargs| URI.encode_www_form(*args, **kwargs) }
+      uri.query = URI.encode_www_form(channels: channels)
 
       proxy = URI(worker[:proxy]) rescue nil
 
