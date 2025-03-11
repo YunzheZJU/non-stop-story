@@ -95,7 +95,7 @@ members:
       - 996645451045617664
   yozoramel:
     name: 夜空メル
-    avatar: https://yt3.googleusercontent.com/8U3jlgaSNSJBkqyEI0j4XaT9cRLspqvjuyCkxw6xkfnWRqobKEJA-yJtx9UOZPFWN3jQimcYKc8=s96-c-k-c0x00ffffff-no-rj
+    avatar: https://yt3.googleusercontent.com/K0uzXAcc6uVhP4bzBKk3XwyFAKbc88tQHrftOjjJjGxMw7Ek-hapOlYnuI0VFAu9rmN6VkV81ZA=s96-c-k-c0x00ffffff-no-rj
     color_main: '#ffcf6a'
     color_sub: '#ff8813'
     graduated: true
@@ -1009,7 +1009,7 @@ members:
       - 1490587283849809923
   hizakigamma:
     name: 緋崎ガンマ
-    avatar: https://yt3.googleusercontent.com/OppGI1TC0fD59_jquw30zSbyCErgKPdoxcnoxQBACyfsbUM9POxWzNC3Bg3fwZyuSYJXh4DQNw=s96-c-k-c0x00ffffff-no-rj
+    avatar: https://yt3.googleusercontent.com/9pRs1RsRcCAPLuC7LJWtr5s_Wdljlsyk_4D6s2TZDUnCREC3QT3maB_PkH-fbvsDCHq1xUDt5g=s96-c-k-c0x00ffffff-no-rj
     color_main: '#dc000e'
     color_sub: '#4de4ff'
     graduated: true
@@ -1247,8 +1247,8 @@ members:
       - UC1iA6_NT4mtAcIII6ygrvCw
     twitter:
       - 1677214746481954816
-  hololivedevis:
-    name: Hololive DEV_IS
+  regloss:
+    name: DEV_IS ReGLOSS
     avatar: https://yt3.googleusercontent.com/VSEPzRMRZy7FNnZmFujYmVgG24tdNxaLYxfbnQT998wkxBBKm-1VAOq-rbsNZJ-hghM4Ov3FyQ=s96-c-k-c0x00ffffff-no-rj
     color_main: '#e90039'
     color_sub: '#000000'
@@ -1385,3 +1385,11 @@ members:
       - UCGzTVXqMQHa4AgJVJIVvtDQ
     twitter:
       - 1818951011891113984
+  flowglow:
+    name: DEV_IS FLOW GLOW
+    avatar: https://yt3.googleusercontent.com/0NYd0NnC9mCjdu6t_i-JylPkwpz-o3IZ1eLqgG4MdXS-KUPrP36e71UysuoV9eZA1-TRG3gZ=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#ffffff'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UCu2n3qHuOuQIygREMnWeQWg
