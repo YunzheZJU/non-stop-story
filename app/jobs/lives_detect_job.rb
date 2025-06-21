@@ -19,10 +19,7 @@ class LivesDetectJob < ApplicationJob
   def request_and_sync(platform, members)
     return unless platform
 
-    twitter_by_member = Channel.of_members(members).of_platforms(Platform.find_by_platform(:twitter))
-                               .group_by(&:member_id)
-
-    channels_by_worker(platform, members, twitter_by_member).each do |(worker, _index), channels|
+    channels_by_worker(platform, members).each do |(worker, _index), channels|
       response = Network.get_videos(worker, channels)
 
       Channel.where(channel: response.keys, platform: platform).find_each do |channel|
@@ -31,11 +28,9 @@ class LivesDetectJob < ApplicationJob
     end
   end
 
-  def channels_by_worker(platform, members, extra_by_member)
+  def channels_by_worker(platform, members)
     workers = Rails.configuration.worker[:lives_detect][platform.platform.to_sym]
-    channels = Channel.of_members(members).of_platforms(platform).map do |channel|
-      [channel.channel, extra_by_member[channel.member_id]&.first&.channel]
-    end
+    channels = Channel.of_members(members).of_platforms(platform).pluck(:channel)
     Transform.allocate(workers, channels)
   end
 
