@@ -191,7 +191,7 @@ members:
     avatar: https://yt3.googleusercontent.com/K91NQLuy_JMQ65n-Opf0Q2FZBO3yOURnMRusO7o5DTjaJ1QVtP-ANN4lehK57X4KXpcI2MiRig=s96-c-k-c0x00ffffff-no-rj
     color_main: '#b066e1'
     color_sub: '#eef164'
-    graduated: false
+    graduated: true
     youtube:
       - UCXTpFs_3PqI41qX2d9tL2Rw
     bilibili:
@@ -774,7 +774,7 @@ members:
     avatar: https://yt3.googleusercontent.com/6BCfAqi9yIpZbHLbw9BAWySvB3XZf9r8jFqudO5nSOsHoGzLhlKrm1M1uuMCRabi_pXGDzl7=s96-c-k-c0x00ffffff-no-rj
     color_main: '#5b9ac6'
     color_sub: '#87c6ef'
-    graduated: false
+    graduated: true
     youtube:
       - UCoSrY_IQQVpmIRZ9Xf-y93g
     bilibili:
@@ -912,7 +912,7 @@ members:
     avatar: https://yt3.googleusercontent.com/ufO7pGRu0vUfA2FLPz7yN517i8wOYxAdcxB9nSTKKfiKhjec0ulSmwWmRA00KqVpOTIesgXhMA=s96-c-k-c0x00ffffff-no-rj
     color_main: '#4a7993'
     color_sub: '#b99c8c'
-    graduated: false
+    graduated: true
     youtube:
       - UC3n5uGu18FoCy23ggWWp8tA
     twitter:
@@ -1393,3 +1393,35 @@ members:
     graduated: false
     youtube:
       - UCu2n3qHuOuQIygREMnWeQWg
+  holoan:
+    name: holoAN
+    avatar: https://yt3.googleusercontent.com/bLqkQmKBq5rRp53-TLpg1wa9Bn0aFwmjsnZ6LTPgq0NjJSs2304Rm61481alRP8mTdyNLFiJ9c0=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#3DB0E1'
+    color_sub: '#ffffff'
+    graduated: false
+    youtube:
+      - UCozx5csNhCx1wsVq3SZVkBQ
+  harusakinodoka:
+    name: 春先のどか
+    avatar: https://pbs.twimg.com/profile_images/1708510068533264384/bfm5HYQ7_400x400.jpg
+    color_main: '#CEE5A2'
+    color_sub: '#ffffff'
+    graduated: false
+    twitter:
+      - 1499026372089778181
+  friend-a:
+    name: 友人A
+    avatar: https://pbs.twimg.com/profile_images/1638362788388306945/OBwoJysj_400x400.jpg
+    color_main: '#2c2b6f'
+    color_sub: '#ffffff'
+    graduated: true
+    twitter:
+      - 1064352899705143297
+  holostarsenglish:
+    name: HOLOSTARS English
+    avatar: https://yt3.googleusercontent.com/z6zwrMvc-x5HBXMyx1UUFt_AbHiBC2SNiauTcN2e16YLqiTMuanb-XVxZktMD-twlahddrBWhw=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#9752C8'
+    color_sub: '#000000'
+    graduated: false
+    youtube:
+      - UCJxZpzx4wHzEYD-eCiZPikg
