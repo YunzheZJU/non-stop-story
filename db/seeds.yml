@@ -717,7 +717,7 @@ members:
     youtube:
       - UCP0BspO_AMEe3aQqqpo89Dg
     twitch:
-      - moonahoshinova_hololiveid
+      - moonahoshinova
     twitcasting:
       - moonahoshinova
     twitter:
@@ -757,6 +757,8 @@ members:
       - UCq4ky2drohLT7W0DmDEw1dQ
     bilibili:
       - 22503364
+    twitch:
+      - kiara
     twitter:
       - 1283646922406760448
   ninomaeinanis:
@@ -1040,7 +1042,7 @@ members:
     youtube:
       - UCTvHWSfBZgtxE4sILOaurIQ
     twitch:
-      - vestiazeta_hololiveid
+      - vestiazeta
     twitter:
       - 1486633489101307907
   kaelakovalskia:
@@ -1098,7 +1100,7 @@ members:
     youtube:
       - UC2hx0xVkMoHGWijwr_lA01w
     twitch:
-      - axelsyrios_holostars_en
+      - axelsyrios
     twitter:
       - 1536577295632441344
   noirvesper:
@@ -1179,6 +1181,8 @@ members:
     graduated: false
     youtube:
       - UC9p_lqQ0FEDz327Vgf5JwqA
+    twitch:
+      - kosekibijou
     twitter:
       - 1656531547279982593
   nerissaravencroft:
@@ -1189,6 +1193,8 @@ members:
     graduated: false
     youtube:
       - UC_sFNM0z0MWm9A6WlKPuMMg
+    twitch:
+      - nerissaravencroft
     twitter:
       - 1656528951303614464
   fuwamocobyssgard:
@@ -1199,6 +1205,8 @@ members:
     graduated: false
     youtube:
       - UCt9H_RpQzhxzlyBxFqrdHqA
+    twitch:
+      - fuwamoco
     twitter:
       - 1656889310472437761
   hiodoshiao:
@@ -1206,7 +1214,7 @@ members:
     avatar: https://yt3.googleusercontent.com/sMnKpvVB1QLNSWGX-AIZ00lFTWAUzuZRAi_rlT7Cs9bIGzvWr-1yvKrKZ0tCtX7Ywtzds6ecSXM=s96-c-k-c0x00ffffff-no-rj
     color_main: '#1e3468'
     color_sub: '#e90039'
-    graduated: false
+    graduated: true
     youtube:
       - UCMGfV7TVTmHhEErVJg1oHBQ
     twitter:
@@ -1287,6 +1295,8 @@ members:
     graduated: false
     youtube:
       - UCLk1hcmxg8rJ3Nm1_GvxTRA
+    twitch:
+      - octavioholo
     twitter:
       - 1700034755105091584
   crimzonruze:
@@ -1297,6 +1307,8 @@ members:
     graduated: false
     youtube:
       - UCajbFh6e_R8QZdHAMbbi4rQ
+    twitch:
+      - crimzonruze
     twitter:
       - 1700033280547213312
   elizabethrosebloodflame:
@@ -1307,6 +1319,8 @@ members:
     graduated: false
     youtube:
       - UCW5uhrG1eCBYditmhL0Ykjw
+    twitch:
+      - elizabethrosebloodflame
     twitter:
       - 1775408862956494848
   gigimurin:
@@ -1317,6 +1331,8 @@ members:
     graduated: false
     youtube:
       - UCDHABijvPBnJm7F-KlNME3w
+    twitch:
+      - gigimurin
     twitter:
       - 1775410215879593984
   ceciliaimmergreen:
@@ -1327,6 +1343,8 @@ members:
     graduated: false
     youtube:
       - UCvN5h1ShZtc7nly3pezRayg
+    twitch:
+      - cecilia
     twitter:
       - 1775404778912440320
   raorapanthera:
@@ -1337,6 +1355,8 @@ members:
     graduated: false
     youtube:
       - UCl69AEx4MdqMZH7Jtsm7Tig
+    twitch:
+      - raora
     twitter:
       - 1775407762673168384
   isakiriona:
@@ -1429,3 +1449,15 @@ members:
     graduated: false
     youtube:
       - UCJxZpzx4wHzEYD-eCiZPikg
+  izukimichiru:
+    name: 井月みちる
+    avatar: https://pbs.twimg.com/profile_images/1979374284351983616/lOOdibRk_400x400.png
+    color_main: '#cb4b85'
+    color_sub: '#bf3966'
+    graduated: false
+  hanazonosayaka:
+    name: 花園さやか
+    avatar: https://pbs.twimg.com/profile_images/1987737366883348480/QE2LKxfg_400x400.png
+    color_main: '#f3d086'
+    color_sub: '#d3b674'
+    graduated: false
