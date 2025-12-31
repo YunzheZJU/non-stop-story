@@ -355,7 +355,7 @@ members:
     avatar: https://yt3.googleusercontent.com/oPU9ckNcyeHD0FFsYSxkoD1mtbslSwdmMSfoCYQWphOu5e7UeCnIF-Nt0hvvF41L5Nykga07nQ=s96-c-k-c0x00ffffff-no-rj
     color_main: '#bcedfe'
     color_sub: '#bcedfe'
-    graduated: false
+    graduated: true
     youtube:
       - UCZlDXzGoo7d44bwdNObFacg
     bilibili:
@@ -1460,4 +1460,10 @@ members:
     avatar: https://pbs.twimg.com/profile_images/1987737366883348480/QE2LKxfg_400x400.png
     color_main: '#f3d086'
     color_sub: '#d3b674'
+    graduated: false
+  kazeshiroyuki:
+    name: 風白ゆき
+    avatar: https://pbs.twimg.com/profile_images/2005928805555396609/Yn6_eUYb_400x400.png
+    color_main: '#92c3e8'
+    color_sub: '#7ab4e2'
     graduated: false
