@@ -1467,3 +1467,33 @@ members:
     color_main: '#92c3e8'
     color_sub: '#7ab4e2'
     graduated: false
+  mekpark:
+    name: mekPark
+    avatar: https://yt3.googleusercontent.com/obK4i1k_VYN4OofE0IlLAM9a6HjfnCAImaIBj3CVCb_dyXs3d__dLgMPZCj4sHNguXnjGnb2=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#7c9bae'
+    color_sub: '#ffffff'
+    graduated: false
+    youtube:
+      - UCLGFMR7JOmPUuLXRh0hliTQ
+    twitter:
+      - 2030846900082290688
+  achrora:
+    name: ACHRORA
+    avatar: https://yt3.googleusercontent.com/wGOGR-OteUl35wY-H92dK1GHFf8SrYHHmgVrp7WjBNlykURyVTKS1hU-RmnhF1Y8_8tDerT4=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#e2cbf1'
+    color_sub: '#050301'
+    graduated: false
+    youtube:
+      - UChpRPsAeSZn5DistGacR3iA
+    twitter:
+      - 2048621672023138305
+  unitb:
+    name: UNIT B
+    avatar: https://yt3.googleusercontent.com/F891KmsWcmA-_LLQJuh0lQXn-gSf1CXnOgzvyoNYdm07e0BqldmGwX1RQe9Rpg3WavqKEMAREw=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#f3f3f3'
+    color_sub: '#060606'
+    graduated: false
+    youtube:
+      - UC3OH5FKQ3qtl4uRme_vZTgA
+    twitter:
+      - 2045773694606143490
