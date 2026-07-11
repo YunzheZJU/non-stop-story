@@ -497,7 +497,7 @@ members:
     avatar: https://yt3.googleusercontent.com/i0PRMJxOR1NaZQp_YuPNp9q6FsyBq3Mlj3RIbtFtPAYUYAx9HcDZn18xFXRHFiXosJBmGl2mGA=s96-c-k-c0x00ffffff-no-rj
     color_main: '#f45252'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UC6t3-_N8A6ME1JShZHHqOMw
     bilibili:
@@ -541,7 +541,7 @@ members:
     avatar: https://yt3.googleusercontent.com/e5qGJGwKTYsSJ8l_jVWV1UUpTtJSxU5H-2qQO95dMSJqHAip7YmFs4pXxZo0rzUW8ZD_H40tQL8=s96-c-k-c0x00ffffff-no-rj
     color_main: '#2a401f'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCKeAhJvy8zgXWbh9duVjIaQ
     bilibili:
@@ -557,7 +557,7 @@ members:
     avatar: https://yt3.googleusercontent.com/zDlkBDLFpnxskIUhp4gqthOauFDWnjbaPJ7t-Xa6vBr9-R6PmhVkI52RFf3cJ9-8nft_rv3Y=s96-c-k-c0x00ffffff-no-rj
     color_main: '#e890b2'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UC9mf_ZVpouoILRY9NUIaK-w
     bilibili:
@@ -587,7 +587,7 @@ members:
     avatar: https://yt3.googleusercontent.com/ytc/AIdro_nwurwFIJZ5Ekdq5WHp21uytJEo5ZmdXy-q4b8odSSThQ=s96-c-k-c0x00ffffff-no-rj
     color_main: '#fbd800'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCGNI4MENvnsymYjKiZwv9eg
     bilibili:
@@ -625,7 +625,7 @@ members:
     avatar: https://yt3.googleusercontent.com/2rchLUnoJ81nEK8W2hW6rQtpvoV_1DQ21QaViu_mYcb2MbD1eZFasEfFx4J8IbgZ4lltleWutQ=s96-c-k-c0x00ffffff-no-rj
     color_main: '#b082d1'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UChSvpZYRPh0FvG4SJGSga3g
     twitch:
@@ -1028,7 +1028,7 @@ members:
     avatar: https://yt3.googleusercontent.com/mkJzn1xrjlH3thWERXxrh-7nnjCyij8mXUTwnreWPJz34vz_QB9obnffAvVNgryyu3uMRO9AhA=s96-c-k-c0x00ffffff-no-rj
     color_main: '#a5a8d6'
     color_sub: '#4de4ff'
-    graduated: false
+    graduated: true
     youtube:
       - UCdfMHxjcCc2HSd9qFvfJgjg
     twitter:
