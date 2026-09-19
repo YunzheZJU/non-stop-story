@@ -1433,7 +1433,7 @@ members:
     graduated: false
     twitter:
       - 1499026372089778181
-  friend-a:
+  frienda:
     name: 友人A
     avatar: https://pbs.twimg.com/profile_images/1638362788388306945/OBwoJysj_400x400.jpg
     color_main: '#2c2b6f'
@@ -1497,3 +1497,53 @@ members:
       - UC3OH5FKQ3qtl4uRme_vZTgA
     twitter:
       - 2045773694606143490
+  asobimawaritai:
+    name: アソビ★まわり隊！
+    avatar: https://yt3.googleusercontent.com/dq_Yzt9WRv6MhuF04AKL6TR-Rm6cXE36D8WCtFcWx2J6ZQ5tTf_9Cno6Nb4-KiNsGJlBeG-_hg=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#ff6bc4'
+    color_sub: '#ffd444'
+    graduated: false
+    youtube:
+      - UCAHwWUotyS3l2qBetFDsjgQ
+    twitter:
+      - 2084846250344710144
+  achichimela:
+    name: 熱千めら
+    avatar: https://yt3.googleusercontent.com/85T4oBl3glSimmPGjTjSHd91h6QcgPjU4PSTjUs3uPOAvRbDqTNJkgrYyBIYL9PARGOeLVyKiw=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#1595ff'
+    color_sub: '#ffffff'
+    graduated: false
+    youtube:
+      - UC8eitCE9Z6EwUCs-VUi1blg
+    twitter:
+      - 2054829476979376128
+  sorashinasopia:
+    name: 宙科そぴあ
+    avatar: https://yt3.googleusercontent.com/YXxYUbMUyZJoaXHM6o6t5DrJKypsgFxrLoQofAa6gUlBpahlVI4fhcskR53XfzDahQkH_PsjaUY=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#7a7dfe'
+    color_sub: '#ffffff'
+    graduated: false
+    youtube:
+      - UCROQtXcp2loQEmvpe5rhJzQ
+    twitter:
+      - 2054825907916054528
+  suzunatsuzuri:
+    name: 鈴鳴つづり
+    avatar: https://yt3.googleusercontent.com/XcXvmoDV0Cx77O7Lh730dwbR-f2-XlSwPSdvcfh_zS5jBY3R2Qe0NWEGeJTWVXDY025ShlmER2o=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#df3a3e'
+    color_sub: '#ffffff'
+    graduated: false
+    youtube:
+      - UCy9mgxB8pn2C4aNK_MPthDQ
+    twitter:
+      - 2054826700715048960
+  hyakutokyoko:
+    name: 百灯キョーコ
+    avatar: https://yt3.googleusercontent.com/ICKlWnk7O6HXu8Y46SJhzgTUvCAwGWaEaGrrrT88VpGOerP9BOpZtYOKZ7MB5fIgAa4_R4u1ncM=s96-c-k-c0x00ffffff-no-rj
+    color_main: '#ff6801'
+    color_sub: '#ffffff'
+    graduated: false
+    youtube:
+      - UCSjQDxud2HkAO2DVD3lwxmw
+    twitter:
+      - 2054830382089166848
